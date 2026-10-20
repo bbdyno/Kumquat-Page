@@ -11,14 +11,15 @@ export const site = {
   appVersion: '출시 전',
 };
 
-// App Store campaign links. TODO: replace APP_ID and PROVIDER_TOKEN after App Store Connect creates the app.
+// App Store links (Kumquat 1.0.0 submitted for review 2026-10-20; links open once the app is public).
 // One `ct` value per page lets App Store Connect attribute installs to the page that sent them.
-const APP_ID = 'id0000000000';
-const PROVIDER_TOKEN = '000000';
+// TODO: add `pt` (provider token, App Store Connect › Analytics › campaign link generator) once confirmed;
+// a wrong `pt` can break the link, so it is left out until then.
+const APP_ID = 'id6824821095';
 
 export function storeLink(lang, campaign) {
   const region = lang === 'ko' ? 'kr/' : '';
-  return `https://apps.apple.com/${region}app/kumquat/${APP_ID}?mt=12&pt=${PROVIDER_TOKEN}&ct=${encodeURIComponent(campaign)}`;
+  return `https://apps.apple.com/${region}app/${APP_ID}?mt=12&ct=${encodeURIComponent(campaign)}`;
 }
 
 // Apple's official badge, loaded unchanged from Apple Marketing Tools. Do not recolor, crop or recreate it.

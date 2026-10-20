@@ -44,7 +44,7 @@ To add a guide: copy a guide module, give it a new `path`, and add it to `src/pa
 
 ## TODO before launch
 
-1. **App Store link.** `APP_ID` and `PROVIDER_TOKEN` in `src/config.mjs` are placeholders. Each CTA passes its own `ct` campaign value (`home-hero`, `guide-hometax`, …). Remove the "not released yet" notes in `00-home.mjs` after release.
+1. **App Store link.** `APP_ID` is `id6824821095` (1.0.0 submitted for review 2026-10-20). Links carry `mt=12` and a per-CTA `ct` campaign value (`home-hero`, `guide-hometax`, …); the provider token `pt` is left out until it is confirmed in App Store Connect. After approval, change the “출시 준비 중 / Coming soon” chip and the “in review” notes in `00-home.mjs`.
 2. **Support email.** `site.email` is `della.kimko@gmail.com`, the same support and ad-report address the app uses.
 3. **Site URL.** `site.url` assumes `https://bbdyno.github.io/Kumquat-Page/`. Change it if a custom domain is used; canonical, hreflang, OG and sitemap URLs follow it.
 4. **Legal review.** Privacy Policy and Terms are marked as drafts on the page. Fill in the operator's legal name and address, the governing law, and the effective date. Register the terms URL as the custom EULA in App Store Connect, or switch to Apple's standard EULA.
