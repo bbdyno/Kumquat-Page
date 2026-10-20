@@ -13,7 +13,9 @@
    - Pro 평생 $24.99(출시가 $19.99), Pro 연간 $11.99(7일 무료 체험), 광고 없음. 미국 App Store 기준 USD 계획가
    - macOS 12 이상, Intel·Apple 실리콘, 한국어·영어
    - 서버·계정·분석 SDK 없음. 개인정보 라벨은 사이트에 “데이터 수집 안 함” **목표**로 적혀 있으니, 실제 라벨이 App Store에 뜬 걸 확인한 뒤에만 “Data Not Collected”라고 단정해서 쓰세요.
-2. **1.0에 들어간 기능만 “지금 된다”고 쓰기.** 사이트 변경 기록(`src/pages/14-changelog.mjs`) 기준으로 1.0은 Shift-드래그 휠, 메뉴 막대 드롭, Finder 빠른 동작, 공유 확장, 단축어, 목표 용량과 품질 가드, 처음 10개 체험과 하루 5개 무료입니다. 목적지 인식·레시피·폴더 감시는 1.1, 온디바이스 AI·증명사진 메이커는 1.2, HWP·Office 팩은 1.3 이후 **계획**입니다. 초안은 모두 이 기준으로 썼습니다. 출시 빌드가 이와 다르면 초안부터 고치세요.
+2. **1.0에 들어간 기능만 “지금 된다”고 쓰기.** 사이트 변경 기록(`src/pages/14-changelog.mjs`) 기준으로 1.0은 Shift-드래그 휠, 메뉴 막대 드롭, Finder 서비스, 단축어, 기록·통계 메인 창(날짜별 기록·썸네일·검색·비교·실행 취소·Finder에서 보기, 합계·절약 용량·14일 차트·자주 쓰는 작업), 이미지·영상·오디오·문서 변환, 목표 용량(2 MB·1 MB, 영상 10·25 MB), 자르기·회전, PNG·JPG로 복사, 이미지 품질 설정(작게·표준·높게), QR 읽기, 처음 10개 체험과 하루 5개 무료입니다(2026-10-20 사이트 커밋 d141e6c 기준).
+   - **1.0에 없는 것**(예정이라고만 쓰기): 레시피·폴더 감시, 목적지 인식·사이트 프리셋, 온디바이스 AI(배경 제거·업스케일·마스킹), HWP, 노치 선반, 클립보드 자동 최적화, 원본 보관함, **공유 확장**, **품질 가드**(OCR 가독성 확인). Finder 연동은 “빠른 동작”이 아니라 **Finder 서비스**입니다.
+   - 초안은 모두 이 기준으로 고쳤습니다. 출시 빌드가 또 달라지면 초안부터 고치세요.
 3. **추천·투표 부탁 금지.** Product Hunt, Hacker News, AlternativeTo 모두 금지합니다. “한번 써 보고 의견 주세요”까지만.
 4. **채널 규칙은 게시 직전에 다시 확인.** 아래 초안마다 확인한 규칙과 날짜(2026-10-20)를 적어 두었습니다. 규칙은 바뀝니다.
 
@@ -35,7 +37,7 @@
 
 - [ ] **App Store Connect 피처링 추천(Featuring Nominations)** 제출. 메뉴: App Store Connect › 앱 › Featuring Nominations. Apple은 출시 **최소 2주 전**, 넓게 검토받으려면 **최대 3개월 전**을 권합니다(developer.apple.com/app-store/getting-featured, 2026-10-20 확인). 그러니 출시일이 정해지는 즉시 내는 게 가장 좋고, 늦어도 D-14는 넘기지 마세요.
   - 유형: 새 앱 출시(App Launch)
-  - 강조할 점(사실만): Mac 전용 네이티브 유틸리티, 모든 처리가 Mac 안에서, Intel Mac과 macOS 12까지 지원, 한국어·영어 현지화, Finder 빠른 동작·공유 확장·단축어 1.0부터
+  - 강조할 점(사실만): Mac 전용 네이티브 유틸리티, 모든 처리가 Mac 안에서, Intel Mac과 macOS 12까지 지원, 한국어·영어 현지화, Finder 서비스·단축어 1.0부터, 기록·통계 메인 창
   - 한국 스토어프런트용으로 한국어 설명도 함께. 피처링은 스토어프런트별로 큐레이션됩니다.
   - 선정되면 프로모션 아트워크 요청 메일이 올 수 있으니 App Store 프로모션 아트워크 가이드라인을 미리 읽어 두기
 - [ ] **ASO 필드 확정** (아래 3장). 스크린샷은 실제 1.0 빌드 화면으로 찍기. 사이트의 UI 예시를 스크린샷으로 쓰면 안 됩니다.
@@ -72,7 +74,7 @@
 
 - [ ] 1.0 빌드 기능과 초안 문구 대조(0장 2번). 빠진 기능이 있으면 초안에서 빼기
 - [ ] App Store 제품 페이지 미리보기 확인: 이름, 부제, 스크린샷 문구, 개인정보 라벨
-- [ ] 사이트 `src/config.mjs`의 `APP_ID`·`PROVIDER_TOKEN`·`site.email` 채우기, 홈의 “출시 전” 안내 제거 준비(README TODO 1·2번)
+- [ ] 사이트 `src/config.mjs`의 `APP_ID`·`PROVIDER_TOKEN` 채우기, 홈의 “출시 전” 안내 제거 준비(README TODO 1번). 지원 메일은 della.kimko@gmail.com으로 이미 반영됨
 - [ ] 출시 시각 정하기. Product Hunt 하루는 태평양 시간 00:01 시작: 한국 시간으로 **11월 1일 이전 출시면 16:01(PDT), 11월 2일 이후면 17:01(PST)** (2026년 미국 서머타임 종료는 11월 1일)
 
 ### D0 (____-__-__) 출시일
@@ -132,11 +134,12 @@ App Store Connect 한도: 이름 30자, 부제 30자, 키워드 100자(쉼표 �
 | # | 화면 | 한국어 | 영어 |
 | --- | --- | --- | --- |
 | 1 | Shift-드래그 휠 | 끌다가 Shift 한 번, 바로 변환 | Tap Shift while dragging. Done. |
-| 2 | 목표 용량 + 품질 가드 | “2MB 이하”로 줄여도 글자는 또렷하게 (Pro) | Under 2 MB, text still sharp (Pro) |
-| 3 | Finder 빠른 동작·공유 확장 | Finder에서도, 공유 메뉴에서도 | Right from Finder and the Share menu |
+| 2 | 목표 용량 | 2 MB·1 MB 이하로 한 번에 (Pro) | Under 2 MB or 1 MB in one drop (Pro) |
+| 3 | Finder 서비스·단축어 | Finder 우클릭과 단축어에서도 | Right from Finder Services and Shortcuts |
 | 4 | 비교·실행 취소 | 원본은 그대로, 언제든 되돌리기 | Originals stay. Undo anytime. |
 | 5 | 무료 범위 안내 화면 | 처음 10개는 모든 기능 무료 | Your first 10 files: every feature free |
-| 6 | 설정·개인정보 | 업로드 없음, 계정 없음, 모두 Mac 안에서 | No uploads, no account, all on your Mac |
+| 6 | 기록·통계 창 | 오늘 줄인 용량까지 한눈에 | Every conversion and the space saved, at a glance |
+| 7 | 설정·개인정보 | 업로드 없음, 계정 없음, 모두 Mac 안에서 | No uploads, no account, all on your Mac |
 
 ## 4. 리뷰어용 코드
 

@@ -25,15 +25,17 @@
 >
 > What 1.0 does:
 >
-> - Images (HEIC, JPG, PNG, WebP, TIFF, BMP), audio (MP3, AAC/M4A, WAV, AIFF), video (MP4, MOV, including audio extraction), PDF to images, merge and split, DOCX/RTF/TXT/HTML to PDF, SRT/VTT subtitles
-> - Target size ("under 2 MB") with a quality guard that checks text is still readable
-> - Finder Quick Actions, a Share extension, Shortcuts and a menu bar drop target
+> - Images (HEIC, JPG, PNG, WebP, TIFF, BMP; GIF and AVIF in Pro), audio (MP3, AAC/M4A, WAV, AIFF), video (MP4, MOV, including audio extraction), PDF to images, merge and split, DOCX/RTF/TXT/HTML to PDF, SRT/VTT subtitles
+> - Target size: under 2 MB or 1 MB, or 10 or 25 MB for video (Pro after the first 10 files)
+> - Crop and rotate, copy as PNG or JPG, an image quality setting (small, standard, high), QR reading
+> - A main window with a searchable, date-grouped history (compare, undo, show in Finder) and stats (space saved, a 14-day chart, most-used actions)
+> - Finder Services, Shortcuts and a menu bar drop target
 >
-> Everything runs locally. There's no server, no account, and no analytics, ad or crash-reporting SDK. The only network requests are for a preset list and an ad list, both static files on the website, and neither carries files or identifiers. It supports macOS 12+ on Intel and Apple silicon.
+> Everything runs locally. There's no server, no account, and no analytics, ad or crash-reporting SDK. The only network request in 1.0 is for the ad list, a static file on the website (destination presets join it from 1.1), and it carries no files or identifiers. It supports macOS 12+ on Intel and Apple silicon.
 >
 > Business model, since people will ask: it's a free download. Your first 10 files get every feature. After that, 5 basic conversions a day are free, with an ad. Pro removes limits and ads: $11.99/year (7-day trial) or $24.99 lifetime ($19.99 at launch).
 >
-> Known limits: it's Mac App Store only for now, so you need an Apple ID to install it. Recipes, folder watching and destination-aware presets are planned for 1.1, and on-device AI (background removal, OCR) for 1.2, so they aren't in this build.
+> Known limits: it's Mac App Store only for now, so you need an Apple ID to install it. Recipes, folder watching and destination-aware presets are planned for 1.1, and on-device AI (background removal, OCR) for 1.2. There's no Share extension yet either. None of those are in this build.
 >
 > I'd like to hear what breaks, which formats you'd want next, and whether the Shift wheel feels natural or gets in the way.
 

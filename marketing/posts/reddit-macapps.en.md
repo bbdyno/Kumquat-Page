@@ -25,9 +25,11 @@ reddit.com은 WebFetch와 크롬 확장 모두에서 안전 제한으로 막혀 
 > Start dragging any file and tap Shift. A wheel opens at your cursor with only the actions that fit that file: convert to JPG, combine into PDF, shrink under 2 MB and so on. Drop on one and the result lands next to the original. Originals are never overwritten, and there's undo.
 >
 > **In 1.0**
-> - Images (HEIC, JPG, PNG, WebP, TIFF, BMP), audio (MP3, AAC/M4A, WAV, AIFF), video (MP4, MOV), PDF split/merge/to images, DOCX/RTF/TXT/HTML to PDF, SRT↔VTT
-> - Target size with a quality guard (Pro)
-> - Finder Quick Actions, Share extension, Shortcuts, menu bar drop
+> - Images (HEIC, JPG, PNG, WebP, TIFF, BMP; GIF and AVIF in Pro), audio (MP3, AAC/M4A, WAV, AIFF), video (MP4, MOV), PDF split/merge/to images, DOCX/RTF/TXT/HTML to PDF, SRT↔VTT
+> - Target size: under 2 MB or 1 MB, 10 or 25 MB for video (Pro)
+> - Crop and rotate, copy as PNG or JPG, image quality setting, QR reading
+> - Main window with History (search, compare, undo, show in Finder) and Stats (space saved, 14-day chart)
+> - Finder Services, Shortcuts, menu bar drop
 > - Intel and Apple silicon, macOS 12 Monterey or later
 >
 > **Privacy**

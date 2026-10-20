@@ -21,7 +21,7 @@
 **Description** (링크 없이)
 > Kumquat converts and optimizes images, audio, video, PDFs, documents and subtitles on macOS. Start dragging a file and tap Shift: a wheel opens at the cursor with only the actions that fit that file. Results are saved next to the original, and the last action can be undone.
 >
-> Version 1.0 includes target-size compression with a quality guard that checks text stays readable, Finder Quick Actions, a Share extension, Shortcuts actions and a menu bar drop target.
+> Version 1.0 includes target-size compression (under 2 MB or 1 MB, or 10 or 25 MB for video), crop and rotate, copy as PNG or JPG, an image quality setting, QR reading, a main window with conversion history and stats, Finder Services, Shortcuts actions and a menu bar drop target.
 >
 > All processing happens on the Mac. There is no account, no Kumquat server and no analytics, ad or crash-reporting SDK.
 >
@@ -37,7 +37,7 @@
 
 **App Store link**: `<APP STORE URL without ct/pt>`
 
-**Tags/features**: file-converter, image-converter, image-compression, video-converter, audio-converter, pdf-tools, privacy-focused, works-offline, finder-integration (목록에 있는 것만)
+**Tags/features**: file-converter, image-converter, image-compression, video-converter, audio-converter, pdf-tools, privacy-focused, works-offline, finder-integration, qr-code-reader (목록에 있는 것만)
 
 ## 2) Tangerine의 대안으로 제안
 
@@ -45,7 +45,7 @@ Tangerine 페이지 › Contribute to this page › Suggest Alternatives › Kum
 
 제안 이유나 댓글 칸이 있으면 아래 문장만 씁니다. **사이트 비교표의 확인 가능한 사실 그대로**이고, 상대 앱을 평가하는 말은 넣지 않았습니다.
 
-> Like Tangerine, Kumquat converts files locally on the Mac. Differences as of 2026-10-20 (Tangerine 2.0.2 from the Mac App Store): Kumquat runs on Intel and Apple silicon Macs and requires macOS 12, while Tangerine 2.0.2 is Apple silicon only and requires macOS 13. Kumquat's free tier is every feature for the first 10 files, then 5 basic conversions a day with ads; Tangerine's is the first 20 uses. Kumquat Pro is $24.99 lifetime ($19.99 at launch) or $11.99 per year; Tangerine is a one-time $29.99. Kumquat ships Finder Quick Actions, a Share extension and Shortcuts from 1.0. I'm Kumquat's developer.
+> Like Tangerine, Kumquat converts files locally on the Mac. Differences as of 2026-10-20 (Tangerine 2.0.2 from the Mac App Store): Kumquat runs on Intel and Apple silicon Macs and requires macOS 12, while Tangerine 2.0.2 is Apple silicon only and requires macOS 13. Kumquat's free tier is every feature for the first 10 files, then 5 basic conversions a day with ads; Tangerine's is the first 20 uses. Kumquat Pro is $24.99 lifetime ($19.99 at launch) or $11.99 per year; Tangerine is a one-time $29.99. Kumquat ships Finder Services and Shortcuts from 1.0. I'm Kumquat's developer.
 
 - 사이트 각주와 같은 취지: Tangerine은 해당 개발사의 상표이며 Kumquat과 관계가 없습니다.
 - 개인정보 라벨 비교 행(Tangerine은 구매 기록 수집 신고, 사용자와 연결 안 됨)은 Kumquat 라벨이 실제로 “Data Not Collected”로 뜬 뒤에만 추가

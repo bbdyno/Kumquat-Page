@@ -15,7 +15,7 @@
 > Drop it, and it fits. A file converter for Mac
 
 **Description** (≤260 chars, 250 chars)
-> Tap Shift while dragging a file and a wheel of conversions opens right at your cursor. Shrink to a target size with a quality guard (Pro). Your first 10 files get every feature free, then 5 basic conversions a day with ads. Runs entirely on your Mac.
+> Tap Shift while dragging a file and a wheel of conversions opens right at your cursor. Shrink under 2 MB or 1 MB in one drop (Pro). Your first 10 files get every feature free, then 5 basic conversions a day with ads. Runs entirely on your Mac.
 
 **Links**: App Store URL `<APP STORE URL>` · Website `https://bbdyno.github.io/Kumquat-Page/en/`
 
@@ -26,8 +26,9 @@
 **Gallery** (실제 1.0 화면으로, 2장 이상)
 1. Shift-drag wheel on top of Finder
 2. Target size result: before/after with the size change
-3. Finder Quick Action and Share menu
-4. Free tier and Pro pricing in plain words
+3. History and Stats main window
+4. Finder Services menu and Shortcuts
+5. Free tier and Pro pricing in plain words
 
 ## Maker's first comment
 
@@ -37,8 +38,10 @@
 >
 > What's in 1.0:
 > - **Shift-drag wheel.** Start dragging a file and tap Shift. Only the actions that make sense for that file fan out around your cursor.
-> - **Target size with a quality guard.** "Under 2 MB" shrinks the file and checks that text is still readable. (Pro, and free for your first 10 files)
-> - **Finder Quick Actions, Share extension, Shortcuts**, plus a menu bar drop.
+> - **Target size.** Shrink under 2 MB or 1 MB, or 10 or 25 MB for video, in one drop. (Pro, and free for your first 10 files)
+> - **History and Stats window.** A date-grouped history with thumbnails, search, compare and undo, plus totals, space saved and a 14-day chart.
+> - **Small things that add up:** crop and rotate, copy as PNG or JPG, an image quality setting, QR reading.
+> - **Finder Services and Shortcuts**, plus a menu bar drop.
 > - Originals are never overwritten. Results are saved next to them, and you can undo.
 >
 > Everything runs on your Mac. There's no Kumquat server, no account and no analytics, ad or crash-reporting SDK. It runs on Intel and Apple silicon Macs with macOS 12 or later, in English and Korean.
