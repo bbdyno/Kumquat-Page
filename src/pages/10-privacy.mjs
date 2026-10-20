@@ -40,12 +40,12 @@ const ko = (ctx) => docPage(ctx, {
               <tr><th scope="row">무료 사용 횟수(처음 체험에 쓴 파일 수, 오늘 쓴 무료 변환 수)</th><td>무료 사용 범위 적용</td><td>이 기기의 Keychain과 사용자 본인 iCloud 계정의 키-값 저장소에만 기록. 개발자는 이 값을 볼 수 없음</td></tr>
             </tbody>
           </table></div>
-          <p>OCR, 받아쓰기, 배경 제거, 번역 같은 AI 기능은 Apple이 macOS에 제공하는 온디바이스 프레임워크(Vision, Speech, Core ML 등)로 처리합니다. Kumquat은 이 과정에서 데이터를 외부로 보내지 않습니다.</p>
+          <p>1.2부터 추가할 OCR, 받아쓰기, 배경 제거, 번역 같은 AI 기능은 Apple이 macOS에 제공하는 온디바이스 프레임워크(Vision, Speech, Core ML 등)로 처리하며, 이 과정에서 데이터를 외부로 보내지 않습니다.</p>
 
           <h3>요청하는 권한</h3>
           <ul>
-            <li><strong>파일·폴더 접근</strong>: 사용자가 직접 고른 파일과, 폴더 감시에 등록한 폴더만 접근합니다.</li>
-            <li><strong>손쉬운 사용</strong>: “변환해서 붙여넣기”를 켤 때만 요청합니다. 붙여넣기 단축키를 보내는 데에만 씁니다.</li>
+            <li><strong>파일·폴더 접근</strong>: 사용자가 직접 고른 파일과, 저장 위치로 허용한 폴더(1.1부터는 폴더 감시에 등록한 폴더 포함)만 접근합니다.</li>
+            <li><strong>손쉬운 사용</strong>(1.1 예정): “변환해서 붙여넣기”를 켤 때만 요청합니다. 붙여넣기 단축키를 보내는 데에만 씁니다.</li>
           </ul>
 
           <h2 id="network">네트워크 사용</h2>
@@ -134,12 +134,12 @@ const en = (ctx) => docPage(ctx, {
               <tr><th scope="row">Free usage counts (files used in the welcome trial, free conversions used today)</th><td>Applying the free allowance</td><td>Stored only in this Mac’s Keychain and your own iCloud key-value storage. The developer cannot see these values</td></tr>
             </tbody>
           </table></div>
-          <p>AI features such as OCR, transcription, background removal and translation use on-device frameworks Apple ships with macOS (Vision, Speech, Core ML and others). Kumquat sends nothing off your Mac in the process.</p>
+          <p>AI features coming in 1.2, such as OCR, transcription, background removal and translation, will use on-device frameworks Apple ships with macOS (Vision, Speech, Core ML and others). Nothing leaves your Mac in the process.</p>
 
           <h3>Permissions</h3>
           <ul>
-            <li><strong>Files and folders</strong>: only files you pick and folders you add to folder watching.</li>
-            <li><strong>Accessibility</strong>: requested only when you turn on convert-and-paste, and used only to send the paste shortcut.</li>
+            <li><strong>Files and folders</strong>: only files you pick and folders you allow as save locations (from 1.1, also folders you add to folder watching).</li>
+            <li><strong>Accessibility</strong> (coming in 1.1): requested only when you turn on convert-and-paste, and used only to send the paste shortcut.</li>
           </ul>
 
           <h2 id="network">Network use</h2>

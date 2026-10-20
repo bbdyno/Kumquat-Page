@@ -45,13 +45,14 @@ To add a guide: copy a guide module, give it a new `path`, and add it to `src/pa
 ## TODO before launch
 
 1. **App Store link.** `APP_ID` and `PROVIDER_TOKEN` in `src/config.mjs` are placeholders. Each CTA passes its own `ct` campaign value (`home-hero`, `guide-hometax`, …). Remove the "not released yet" notes in `00-home.mjs` after release.
-2. **Support email.** `site.email` is a placeholder (`support@kumquat.example`).
+2. **Support email.** `site.email` is `della.kimko@gmail.com`, the same support and ad-report address the app uses.
 3. **Site URL.** `site.url` assumes `https://bbdyno.github.io/Kumquat-Page/`. Change it if a custom domain is used; canonical, hreflang, OG and sitemap URLs follow it.
 4. **Legal review.** Privacy Policy and Terms are marked as drafts on the page. Fill in the operator's legal name and address, the governing law, and the effective date. Register the terms URL as the custom EULA in App Store Connect, or switch to Apple's standard EULA.
 5. **Guide facts.** Both guides tell readers to follow the limits shown on the upload screen. Confirm Hometax size limits and Gov24 photo file requirements, then add them with the date checked (see the TODO comments in each module).
 6. **Comparison table.** Tangerine facts were checked on 2026-10-20 (build 2.0.2). Re-check before publishing and after their updates; keep the date in `site.factsDate` current.
 7. **Placeholders.** App screens are real captures from the Kumquat repo (`docs/screens/`, development build 2026-10-20; `main-light` is the stats page and `main-dark` the history list, which only exists as a dark capture for now), converted to WebP in `public/assets/shots/` with light and dark versions; refresh them when the UI changes. Recipes, destinations, AI and HWP are labeled as planned (1.1–1.3) everywhere; drop the labels as each ships. The App Store privacy label capture and the press app icon are still placeholders.
-8. **Prices and free tier.** Prices mirror `Kumquat/docs/PLAN.md` §2. Free tier (decided 2026-10-20): every feature for the first `welcomeTrialFiles` (10) files, then `freeDailyFiles` (5) basic conversions a day, with ads; Pro has no limits and no ads. Both numbers live in `src/config.mjs`; the landing, terms, privacy, press and Hometax guide copy follow them.
+8. **App 1.0 scope.** Copy only presents what app 1.0 ships (wheel, menu bar drop, Finder Services, Shortcuts, main window with history and stats, conversions, target size 2 MB/1 MB and 10/25 MB for video, crop and rotate, copy as PNG/JPG, image quality setting, QR reading). Recipes, folder watching, destinations and presets, on-device AI, HWP, notch shelf, clipboard automation and the originals vault are labeled as planned. App Review can reject an app whose site or metadata promises more than it does.
+9. **Prices and free tier.** Prices mirror `Kumquat/docs/PLAN.md` §2. Free tier (decided 2026-10-20): every feature for the first `welcomeTrialFiles` (10) files, then `freeDailyFiles` (5) basic conversions a day, with ads; Pro has no limits and no ads. Both numbers live in `src/config.mjs`; the landing, terms, privacy, press and Hometax guide copy follow them.
 
 ## Sponsor ad list
 

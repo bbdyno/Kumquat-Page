@@ -4,8 +4,8 @@ export const site = {
   name: 'Kumquat',
   // TODO: replace with the custom domain if one is bought. Used only for canonical, hreflang, OG and sitemap URLs.
   url: 'https://bbdyno.github.io/Kumquat-Page/',
-  // TODO: support address is a placeholder until a domain mailbox exists.
-  email: 'support@kumquat.example',
+  // Support and ad-report address, shared with the app (Kumquat commit 3af987b) and the user's other app sites.
+  email: 'della.kimko@gmail.com',
   // Date shown on facts that can go stale (pricing, comparison table).
   factsDate: '2026-10-20',
   appVersion: '출시 전',

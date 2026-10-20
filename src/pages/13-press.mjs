@@ -36,12 +36,13 @@ const ko = (ctx) => docPage(ctx, {
           <h3>한 줄</h3>
           <blockquote>Kumquat은 파일을 올릴 곳의 규격에 맞춰 자동으로 바꿔 주는 Mac용 파일 변환 앱입니다.</blockquote>
           <h3>한 문단</h3>
-          <blockquote>Kumquat은 Mac용 파일 변환·최적화 앱입니다. 파일을 끌다가 Shift를 누르면 그 파일로 할 수 있는 작업이 휠로 펼쳐지고, 홈택스·정부24·메일처럼 올릴 곳의 허용 형식과 용량 한도에 맞춰 자동으로 변환합니다. 처음 파일 10개는 모든 기능을 무료로 써 볼 수 있고, 이후에도 기본 변환은 하루 5개까지 무료입니다. 여러 단계를 묶는 레시피, 폴더 감시, 온디바이스 AI는 Pro로 제공합니다. 모든 처리는 Mac 안에서 이루어지고, 데이터를 수집하지 않습니다. Intel Mac과 macOS 12부터 지원합니다.</blockquote>
+          <blockquote>Kumquat은 Mac용 파일 변환·최적화 앱입니다. 파일을 끌다가 Shift를 누르면 그 파일로 할 수 있는 작업이 휠로 펼쳐지고, 놓는 칸에 따라 형식을 바꾸거나 2 MB·1 MB 이하(영상은 10·25 MB)로 줄입니다. 변환 기록과 통계는 메인 창에서 봅니다. 처음 파일 10개는 모든 기능을 무료로 써 볼 수 있고, 이후에도 기본 변환은 하루 5개까지 무료입니다. 여러 단계를 묶는 레시피, 폴더 감시, 온디바이스 AI는 이후 버전에서 Pro로 추가할 예정입니다. 모든 처리는 Mac 안에서 이루어지고, 데이터를 수집하지 않습니다. Intel Mac과 macOS 12부터 지원합니다.</blockquote>
           <h3>주요 특징</h3>
           <ul>
             <li>Shift-드래그 휠: 파일을 끄는 중에 ⇧를 누르면 금귤 단면 모양 휠이 열림</li>
             <li>목적지 인식(1.1 예정): 커서 아래 앱과 브라우저 업로드 칸에 맞춰 형식·용량·픽셀 규격 자동 조정</li>
-            <li>목표 용량 + 품질 가드: “2MB 이하”로 줄이면서 글자 가독성 확인</li>
+            <li>목표 용량: 2 MB·1 MB 이하, 영상 10·25 MB 이하로 한 번에 줄이기</li>
+            <li>기록·통계 창, 결과 썸네일에서 비교·실행 취소, 자르기·회전, PNG·JPG로 복사, QR 읽기</li>
             <li>레시피와 폴더 감시(1.1 예정): 리사이즈·변환·압축·메타데이터 제거·이름 변경·이동을 한 번에</li>
             <li>한국 특화(1.2–1.3 예정): HWP/HWPX 변환, 국내 사이트 프리셋, 증명사진 메이커</li>
           </ul>
@@ -79,12 +80,13 @@ const en = (ctx) => docPage(ctx, {
           <h3>One line</h3>
           <blockquote>Kumquat is a file converter for Mac that fits files to wherever you’re uploading them.</blockquote>
           <h3>One paragraph</h3>
-          <blockquote>Kumquat is a file converter and optimizer for Mac. Tap Shift while dragging a file and the actions that make sense for it fan out in a wheel; drop it on an upload field and Kumquat matches the accepted formats and size limit automatically. Your first 10 files get every feature free and 5 basic conversions a day stay free after that, while recipes, folder watching and on-device AI are part of Pro. Everything runs on your Mac and no data is collected. It supports Intel Macs and macOS 12 or later.</blockquote>
+          <blockquote>Kumquat is a file converter and optimizer for Mac. Tap Shift while dragging a file and the actions that make sense for it fan out in a wheel; drop it on a slice to convert it or shrink it under 2 MB or 1 MB (10 or 25 MB for video). History and stats live in the main window. Your first 10 files get every feature free and 5 basic conversions a day stay free after that, while recipes, folder watching and on-device AI are planned for Pro in later versions. Everything runs on your Mac and no data is collected. It supports Intel Macs and macOS 12 or later.</blockquote>
           <h3>Highlights</h3>
           <ul>
             <li>Shift-drag wheel: tap ⇧ while dragging a file and a wheel shaped like a kumquat slice opens</li>
             <li>Destination awareness (coming in 1.1): fits format, size and dimensions to the app or upload field under the cursor</li>
-            <li>Target size with a quality guard: shrink under 2 MB while keeping text readable</li>
+            <li>Target size: under 2 MB or 1 MB, or 10 or 25 MB for video, in one drop</li>
+            <li>History and stats window, compare and undo from the result thumbnail, crop and rotate, copy as PNG or JPG, QR reading</li>
             <li>Recipes and folder watching (coming in 1.1): resize, convert, compress, strip metadata, rename and move in one go</li>
             <li>Korea-ready (coming in 1.2–1.3): HWP/HWPX conversion, local site presets, ID photo maker</li>
           </ul>

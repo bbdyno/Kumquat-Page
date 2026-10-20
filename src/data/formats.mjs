@@ -17,7 +17,7 @@ export const formats = [
   { fmt: 'TIFF', kind: 'image', to: 'JPG · PNG · WebP · HEIC · PDF', plan: 'free', release: '1.0', alias: '스캔' },
   { fmt: 'GIF', kind: 'image', to: 'JPG · PNG · WebP · MP4 · 영상 → GIF', plan: 'pro', release: '1.0', alias: '움짤 gif 만들기' },
   { fmt: 'BMP', kind: 'image', to: 'JPG · PNG · WebP', plan: 'free', release: '1.0', alias: '' },
-  { fmt: 'AVIF', kind: 'image', to: 'JPG · PNG · WebP', plan: 'pro', release: '1.3', alias: '' },
+  { fmt: 'AVIF', kind: 'image', to: 'JPG · PNG · WebP', plan: 'pro', release: '1.0', alias: '' },
   { fmt: 'JPEG XL', kind: 'image', to: 'JPG · PNG · WebP', plan: 'pro', release: '1.3', alias: 'jxl' },
   { fmt: 'MP3', kind: 'audio', to: 'AAC/M4A · WAV · AIFF', plan: 'free', release: '1.0', alias: '음악' },
   { fmt: 'AAC / M4A', kind: 'audio', to: 'MP3 · WAV · AIFF', plan: 'free', release: '1.0', alias: '녹음 음성메모' },

@@ -22,22 +22,21 @@ const ko = (ctx) => docPage(ctx, {
 
           <h2 id="start">시작하기</h2>
           <h3>요구 사양</h3>
-          <ul><li>macOS 12 Monterey 이상</li><li>Intel 또는 Apple 실리콘 Mac</li><li>일부 AI 기능은 macOS 버전에 따라 켜집니다(예: 배경 제거는 macOS 14 이상, 번역은 macOS 15 이상).</li></ul>
+          <ul><li>macOS 12 Monterey 이상</li><li>Intel 또는 Apple 실리콘 Mac</li><li>1.2부터 더할 AI 기능 일부는 macOS 버전에 따라 켜집니다(예: 배경 제거는 macOS 14 이상).</li></ul>
           <h3>기본 사용법</h3>
           <ol>
             <li>Finder에서 파일을 끌기 시작합니다.</li>
             <li>끄는 도중 <kbd>Shift</kbd>를 한 번 누르면 휠이 열립니다(설정에서 다른 키나 “누르고 있기” 방식으로 바꿀 수 있습니다).</li>
             <li>원하는 조각 위에 놓으면 결과가 원본 옆에 저장됩니다.</li>
           </ol>
-          <p>휠 말고도 메뉴바 아이콘에 놓기, Finder 우클릭 › 빠른 동작, 공유 메뉴, 단축어 앱에서 쓸 수 있습니다.</p>
+          <p>휠 말고도 메뉴 막대 아이콘에 놓기, 메인 창의 드롭 영역, Finder 우클릭 › 서비스, 단축어 앱에서 쓸 수 있습니다.</p>
 
           <h2 id="trouble">문제 해결</h2>
           ${faq([
             ['휠이 열리지 않아요', '<p>Kumquat이 실행 중인지 메뉴바 아이콘을 확인하세요. 설정 › 휠에서 트리거 키가 다른 앱 단축키와 겹치지 않는지 보고, “탭”과 “누르고 있기” 방식을 바꿔 보세요. 그래도 안 되면 앱을 종료한 뒤 다시 실행해 주세요.</p>'],
-            ['Finder 빠른 동작에 Kumquat이 보이지 않아요', '<p>시스템 설정 › 일반 › 로그인 항목 및 확장 프로그램 › Finder(macOS 버전에 따라 “확장 프로그램” 항목)에서 Kumquat을 켜 주세요.</p>'],
-            ['목표 용량까지 줄어들지 않아요', '<p>품질 가드가 글자를 읽기 어려워질 만큼 줄이는 것을 막았을 수 있습니다. 결과 창에서 “해상도를 낮춰 다시 시도”를 고르거나, PDF라면 페이지를 나눠 보세요.</p>'],
+            ['Finder 서비스 메뉴에 Kumquat이 보이지 않아요', '<p>시스템 설정 › 키보드 › 키보드 단축키 › 서비스에서 Kumquat 항목을 켜 주세요. 켜도 보이지 않으면 Kumquat을 한 번 종료했다가 다시 실행해 주세요.</p>'],
+            ['목표 용량까지 줄어들지 않아요', '<p>아주 큰 이미지나 페이지가 많은 PDF는 품질만 낮춰서는 목표에 닿지 않을 수 있습니다. 휠의 “1920 px”로 먼저 크기를 줄인 뒤 다시 “2 MB 이하”에 놓아 보세요. PDF라면 페이지를 나눠 보세요.</p>'],
             ['HEIC로 저장하는 메뉴가 없어요', '<p>HEIC 인코딩은 하드웨어 HEVC 인코더가 있는 Mac에서만 제공됩니다. 지원하지 않는 Mac에서는 메뉴에서 숨겨집니다.</p>'],
-            ['“변환해서 붙여넣기”가 동작하지 않아요', '<p>이 기능은 손쉬운 사용 권한이 필요합니다. 시스템 설정 › 개인정보 보호 및 보안 › 손쉬운 사용에서 Kumquat을 켜 주세요. 이 권한은 붙여넣기 단축키를 보내는 데에만 씁니다.</p>'],
             ['원본을 되돌리고 싶어요', '<p>메뉴 막대 아이콘 메뉴의 “실행 취소”(⌘Z), 결과 썸네일의 “실행 취소”, 또는 메인 창 › 기록에서 해당 항목의 실행 취소 버튼을 누르세요.</p>'],
           ])}
 
@@ -68,22 +67,21 @@ const en = (ctx) => docPage(ctx, {
 
           <h2 id="start">Getting started</h2>
           <h3>Requirements</h3>
-          <ul><li>macOS 12 Monterey or later</li><li>Intel or Apple silicon Mac</li><li>Some AI features depend on the macOS version (for example, background removal needs macOS 14 and translation needs macOS 15).</li></ul>
+          <ul><li>macOS 12 Monterey or later</li><li>Intel or Apple silicon Mac</li><li>Some AI features coming in 1.2 will depend on the macOS version (for example, background removal needs macOS 14).</li></ul>
           <h3>Basics</h3>
           <ol>
             <li>Start dragging a file in Finder.</li>
             <li>Tap <kbd>Shift</kbd> while dragging to open the wheel (you can pick another key, or hold-to-open, in Settings).</li>
             <li>Drop on a slice. The result is saved next to the original.</li>
           </ol>
-          <p>You can also drop on the menu bar icon, use Finder right-click › Quick Actions, the Share menu or the Shortcuts app.</p>
+          <p>You can also drop on the menu bar icon or the main window’s drop area, use Finder right-click › Services, or the Shortcuts app.</p>
 
           <h2 id="trouble">Troubleshooting</h2>
           ${faq([
             ['The wheel doesn’t open', '<p>Check that Kumquat is running (menu bar icon). In Settings › Wheel, make sure the trigger key doesn’t clash with another app’s shortcut, and try switching between tap and hold. If it still doesn’t work, quit and reopen the app.</p>'],
-            ['Kumquat isn’t in Finder Quick Actions', '<p>Turn Kumquat on in System Settings › General › Login Items & Extensions › Finder (called “Extensions” on some macOS versions).</p>'],
-            ['It won’t shrink to the target size', '<p>The quality guard may have stopped it from making text unreadable. Choose “Try again at lower resolution” in the result window, or split the PDF into parts.</p>'],
+            ['Kumquat isn’t in the Finder Services menu', '<p>Turn on the Kumquat items in System Settings › Keyboard › Keyboard Shortcuts › Services. If they still don’t appear, quit and reopen Kumquat.</p>'],
+            ['It won’t shrink to the target size', '<p>Very large images or long PDFs may not reach the target by lowering quality alone. Drop on “1920 px” first, then drop the result on “Under 2 MB”. For a PDF, try splitting it into parts.</p>'],
             ['There’s no option to save as HEIC', '<p>HEIC encoding is offered only on Macs with a hardware HEVC encoder. It’s hidden on Macs without one.</p>'],
-            ['Convert-and-paste does nothing', '<p>This feature needs Accessibility permission. Turn Kumquat on in System Settings › Privacy & Security › Accessibility. It’s only used to send the paste shortcut.</p>'],
             ['I want my original back', '<p>Choose Undo (⌘Z) from the menu bar icon’s menu, click Undo on the result thumbnail, or use the undo button on the item in the main window’s History.</p>'],
           ])}
 

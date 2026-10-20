@@ -63,7 +63,7 @@ const copy = {
     features: {
       label: '기능',
       h2: '가벼운 변환은 무료로.<br>번거로움은 <em>Pro</em>가.',
-      p: `처음 파일 ${P.welcomeTrialFiles}개는 모든 기능을, 그 뒤에도 기본 변환은 하루 ${P.freeDailyFiles}개까지 무료입니다. 반복 작업을 없애는 자동화와 제한 해제가 Pro입니다.`,
+      p: `처음 파일 ${P.welcomeTrialFiles}개는 모든 기능을, 그 뒤에도 기본 변환은 하루 ${P.freeDailyFiles}개까지 무료입니다. Pro는 제한을 풀고, 자동화 기능은 1.1부터 차례로 더해집니다.`,
       dest: {
         tag: 'Pro · 1.1 예정',
         h3: '어디에 올릴지 알면, 규격은 알아서',
@@ -83,9 +83,9 @@ const copy = {
       note: '목적지 이름은 프리셋 대상 예시이며 각 서비스와 제휴 관계가 없습니다. 실제 한도는 각 사이트 안내를 기준으로 합니다.',
     },
     ai: {
-      label: '온디바이스 AI',
+      label: '온디바이스 AI · 1.2 예정',
       h2: '사진 한 장도 서버로 <em>보내지 않는</em> AI.',
-      p: 'Apple의 Vision·Core ML로 Mac 안에서만 처리합니다. 인터넷이 끊겨 있어도 동작합니다.',
+      p: '1.2에서 추가할 AI 기능입니다. Apple의 Vision·Core ML로 Mac 안에서만 처리하고, 인터넷이 끊겨 있어도 동작하도록 만듭니다.',
       tabs: [
         ['bg', '배경 제거', '피사체만 남기고 배경을 투명하게. 증명사진 배경을 흰색으로 바꾸는 데에도 씁니다. macOS 14 이상(12–13은 인물 분리).'],
         ['up', '업스케일', '작은 이미지를 2×·4×로 키우면서 경계를 또렷하게. Apple 실리콘에서 가장 빠르고, Intel에서는 시간이 더 걸립니다.'],
@@ -124,7 +124,7 @@ const copy = {
       h2: '가볍게 쓰면 <em>무료.</em>',
       p: `처음 파일 ${P.welcomeTrialFiles}개는 Pro까지 모두 무료. 그 뒤에는 기본 변환 하루 ${P.freeDailyFiles}개가 무료이고, 무료 사용 중에는 광고가 표시됩니다.`,
       plans: [
-        { name: 'Free', price: '무료', word: true, note: `처음 ${P.welcomeTrialFiles}개는 모든 기능 체험 · 이후 기본 변환 하루 ${P.freeDailyFiles}개 · 광고 포함`, cta: 'App Store에서 받기', feats: [`처음 파일 ${P.welcomeTrialFiles}개: Pro 포함 모든 기능`, `이후 이미지·오디오·영상·문서 기본 변환 하루 ${P.freeDailyFiles}개`, 'Shift-드래그 휠, Finder 빠른 동작, 메뉴바 드롭', '기록·통계 창, 비교·실행 취소', '무료 사용 중 광고 표시'] },
+        { name: 'Free', price: '무료', word: true, note: `처음 ${P.welcomeTrialFiles}개는 모든 기능 체험 · 이후 기본 변환 하루 ${P.freeDailyFiles}개 · 광고 포함`, cta: 'App Store에서 받기', feats: [`처음 파일 ${P.welcomeTrialFiles}개: Pro 포함 모든 기능`, `이후 이미지·오디오·영상·문서 기본 변환 하루 ${P.freeDailyFiles}개`, 'Shift-드래그 휠, 메뉴 막대 드롭, Finder 서비스, 단축어', '기록·통계 창, 비교·실행 취소', '무료 사용 중 광고 표시'] },
         { name: 'Pro 연간', price: P.yearly, unit: '/ 년', note: `${P.trialDays}일 무료 체험 후 자동 갱신. 언제든 해지할 수 있습니다.`, cta: `${P.trialDays}일 무료 체험`, feats: ['제한 없음 · 광고 없음', '목표 용량과 GIF·AVIF 등 확장 포맷', '목적지 인식·레시피·폴더 감시 (1.1 예정)', '온디바이스 AI·민감정보 마스킹 (1.2 예정)', 'HWP/HWPX·Office 팩 (1.3 예정)'] },
         { name: 'Pro 평생', price: P.lifetimeLaunch, was: P.lifetime, note: `출시 할인가. 구매한 메이저 버전의 모든 업데이트 포함.`, cta: '평생 이용권 구매', featured: true, badge: '출시 할인', feats: ['Pro 연간의 모든 기능 · 광고 없음', '구매한 메이저 버전 평생 사용', '다음 메이저 업그레이드 50% 할인', '가족 공유 지원'] },
       ],
@@ -134,7 +134,7 @@ const copy = {
       mrows: [
         ['기본 변환(이미지·오디오·영상·문서)', `처음 ${P.welcomeTrialFiles}개 + 하루 ${P.freeDailyFiles}개`, '제한 없음'],
         ['일괄 처리', '오늘 남은 무료 개수만큼', '제한 없음'],
-        ['목표 용량(예: 2 MB 이하)', `처음 ${P.welcomeTrialFiles}개 체험`, '제한 없음 + 품질 가드'],
+        ['목표 용량(예: 2 MB 이하)', `처음 ${P.welcomeTrialFiles}개 체험`, '제한 없음'],
         ['GIF·AVIF·FLAC·Opus·WebM 등', `처음 ${P.welcomeTrialFiles}개 체험`, '✓'],
         ['기록 · 통계 창 · 실행 취소', '✓', '✓'],
         ['목적지 인식 · 국내 프리셋 (1.1 예정)', '—', '✓'],
@@ -157,7 +157,7 @@ const copy = {
         ['유료 가격', `평생 ${P.lifetime}(출시가 ${P.lifetimeLaunch}) 또는 연 ${P.yearly}`, '서비스마다 다름', '일회성 $29.99'],
         ['Intel Mac', '지원', '브라우저만 있으면 됨', '지원 안 함(Apple 실리콘 전용)'],
         ['최소 macOS', 'macOS 12', '—', 'macOS 13'],
-        ['Finder 빠른 동작 · 공유 확장 · 단축어', '1.0부터 제공', '—', '앱 번들에 없음'],
+        ['Finder 서비스 · 단축어', '1.0부터 제공', '—', '앱 번들에 없음'],
         ['App Store 개인정보 라벨', '“데이터 수집 안 함” 목표', '—', '구매 기록 수집 신고(사용자와 연결 안 됨)'],
         ['목적지 인식 · 국내 사이트 프리셋', '1.1 예정(Pro)', '—', '—'],
       ],
@@ -170,7 +170,7 @@ const copy = {
       items: [
         ['무료로 어디까지 쓸 수 있나요?', `처음 파일 ${P.welcomeTrialFiles}개는 Pro를 포함한 모든 기능을 무료로 써 볼 수 있습니다. 그 뒤에는 이미지·오디오·영상·문서의 기본 변환을 하루 ${P.freeDailyFiles}개(파일 기준)까지 무료로 쓰고, 일괄 처리도 그날 남은 개수만큼 됩니다. 목표 용량, GIF·AVIF·FLAC·Opus·WebM, 자동화·AI 기능은 Pro입니다.`],
         ['광고가 나오나요?', '무료 사용 중에는 앱 안에 광고가 표시됩니다. Kumquat Pro 안내이거나, 직접 계약한 스폰서 광고입니다. 광고 목록은 이 사이트에서 받아 오며, 앱은 식별자나 사용 정보를 보내지 않고 개인 맞춤·추적도 하지 않습니다. 서드파티 광고 SDK는 없습니다. Pro에서는 광고가 나오지 않습니다.'],
-        ['Intel Mac이나 오래된 macOS에서도 되나요?', 'macOS 12 Monterey 이상의 Intel Mac과 Apple 실리콘 Mac 모두 지원합니다. 배경 제거·번역 등 일부 AI 기능은 OS 버전에 따라 단계적으로 켜지며, 지원하지 않는 기능은 메뉴에 나타나지 않습니다.'],
+        ['Intel Mac이나 오래된 macOS에서도 되나요?', 'macOS 12 Monterey 이상의 Intel Mac과 Apple 실리콘 Mac 모두 지원합니다. 1.2부터 더할 AI 기능 일부는 OS 버전에 따라 켜지며, 지원하지 않는 기능은 메뉴에 나타나지 않습니다.'],
         ['파일이 인터넷으로 전송되나요?', '아니요. 변환과 AI 처리는 모두 Mac 안에서 이루어집니다. 네트워크는 광고 목록(그리고 1.1부터 목적지 프리셋 목록)을 받을 때만 쓰며, 이때도 파일이나 식별자는 보내지 않습니다. 자세한 내용은 <a href="privacy/">개인정보 처리방침</a>을 보세요.'],
         ['원본 파일이 덮어써지지 않나요?', '원본은 항상 그대로 두고 결과를 옆에 저장합니다. 변환은 메뉴 막대의 실행 취소(⌘Z), 결과 썸네일, 기록 창에서 되돌릴 수 있습니다.'],
         ['HWP 파일도 PDF로 바꿀 수 있나요?', 'HWPX와 HWP를 PDF·DOCX로 바꾸는 기능을 Pro로 준비하고 있습니다. 출시 일정은 <a href="changelog/">변경 기록</a>에서 알려 드립니다.'],
@@ -237,7 +237,7 @@ const copy = {
     features: {
       label: 'Features',
       h2: 'Light converting is free.<br>The busywork is <em>Pro.</em>',
-      p: `Your first ${P.welcomeTrialFiles} files get every feature, and after that ${P.freeDailyFiles} basic conversions a day stay free. Pro removes the limits and adds the automation.`,
+      p: `Your first ${P.welcomeTrialFiles} files get every feature, and after that ${P.freeDailyFiles} basic conversions a day stay free. Pro removes the limits, and automation arrives from 1.1.`,
       dest: {
         tag: 'Pro · coming in 1.1',
         h3: 'Know where it’s going, and the specs follow',
@@ -257,9 +257,9 @@ const copy = {
       note: 'Destination names are examples of preset targets. Kumquat is not affiliated with these services, and each site’s own instructions set the actual limits.',
     },
     ai: {
-      label: 'On-device AI',
+      label: 'On-device AI · coming in 1.2',
       h2: 'AI that never sends <em>a single photo</em> to a server.',
-      p: 'Built on Apple’s Vision and Core ML, it runs entirely on your Mac and keeps working offline.',
+      p: 'Coming in 1.2. Built on Apple’s Vision and Core ML, it will run entirely on your Mac and keep working offline.',
       tabs: [
         ['bg', 'Remove background', 'Keep the subject, drop the background. Also handy for turning an ID photo background white. macOS 14 or later (people-only on 12–13).'],
         ['up', 'Upscale', 'Enlarge small images 2× or 4× with crisp edges. Fastest on Apple silicon, slower on Intel.'],
@@ -298,7 +298,7 @@ const copy = {
       h2: 'Start <em>free.</em> Stay light.',
       p: `Your first ${P.welcomeTrialFiles} files get everything, Pro included. After that, ${P.freeDailyFiles} basic conversions a day are free, and the free version shows ads.`,
       plans: [
-        { name: 'Free', price: '$0', note: `Every feature for your first ${P.welcomeTrialFiles} files · then ${P.freeDailyFiles} basic conversions a day · with ads`, cta: 'Get it on the App Store', feats: [`First ${P.welcomeTrialFiles} files: every feature, Pro included`, `Then ${P.freeDailyFiles} basic image, audio, video and document conversions a day`, 'Shift-drag wheel, Finder Quick Actions, menu bar drop', 'History and stats window, compare and undo', 'Shows ads while free'] },
+        { name: 'Free', price: '$0', note: `Every feature for your first ${P.welcomeTrialFiles} files · then ${P.freeDailyFiles} basic conversions a day · with ads`, cta: 'Get it on the App Store', feats: [`First ${P.welcomeTrialFiles} files: every feature, Pro included`, `Then ${P.freeDailyFiles} basic image, audio, video and document conversions a day`, 'Shift-drag wheel, menu bar drop, Finder Services, Shortcuts', 'History and stats window, compare and undo', 'Shows ads while free'] },
         { name: 'Pro Yearly', price: P.yearly, unit: '/ year', note: `${P.trialDays}-day free trial, then renews yearly. Cancel anytime.`, cta: `Start ${P.trialDays}-day free trial`, feats: ['No limits · no ads', 'Target size, GIF, AVIF and more formats', 'Destinations, recipes, folder watching (coming in 1.1)', 'On-device AI and redaction (coming in 1.2)', 'HWP/HWPX and Office pack (coming in 1.3)'] },
         { name: 'Pro Lifetime', price: P.lifetimeLaunch, was: P.lifetime, note: 'Launch price. Includes every update to the major version you buy.', cta: 'Buy lifetime', featured: true, badge: 'Launch offer', feats: ['Everything in Pro Yearly · no ads', 'Use your major version for life', '50% off the next major upgrade', 'Family Sharing'] },
       ],
@@ -308,7 +308,7 @@ const copy = {
       mrows: [
         ['Basic conversions (image, audio, video, document)', `First ${P.welcomeTrialFiles} + ${P.freeDailyFiles} a day`, 'No limit'],
         ['Batch size', 'Up to today’s remaining free files', 'No limit'],
-        ['Target size (e.g. under 2 MB)', `First ${P.welcomeTrialFiles} files`, 'No limit + quality guard'],
+        ['Target size (e.g. under 2 MB)', `First ${P.welcomeTrialFiles} files`, 'No limit'],
         ['GIF, AVIF, FLAC, Opus, WebM and more', `First ${P.welcomeTrialFiles} files`, '✓'],
         ['History and stats window, undo', '✓', '✓'],
         ['Destination awareness and presets (coming in 1.1)', '—', '✓'],
@@ -331,7 +331,7 @@ const copy = {
         ['Paid price', `Lifetime ${P.lifetime} (launch ${P.lifetimeLaunch}) or ${P.yearly}/year`, 'Varies', 'One-time $29.99'],
         ['Intel Macs', 'Supported', 'Any browser', 'Not supported (Apple silicon only)'],
         ['Minimum macOS', 'macOS 12', '—', 'macOS 13'],
-        ['Finder Quick Actions, Share extension, Shortcuts', 'From 1.0', '—', 'Not in the app bundle'],
+        ['Finder Services, Shortcuts', 'From 1.0', '—', 'Not in the app bundle'],
         ['App Store privacy label', 'Aiming for “Data Not Collected”', '—', 'Declares purchase history (not linked to you)'],
         ['Destination awareness and site presets', 'Coming in 1.1 (Pro)', '—', '—'],
       ],
@@ -344,7 +344,7 @@ const copy = {
       items: [
         ['How much can I do for free?', `Your first ${P.welcomeTrialFiles} files can use every feature, Pro included. After that, basic image, audio, video and document conversions are free for ${P.freeDailyFiles} files a day, and batches run up to the files you have left that day. Target size, GIF, AVIF, FLAC, Opus, WebM, automation and AI are Pro.`],
         ['Are there ads?', 'The free version shows ads inside the app: either a note about Kumquat Pro or a sponsor we work with directly. The ad list is downloaded from this website; the app sends no identifiers or usage data, and nothing is personalized or tracked. There is no third-party ad SDK. Pro has no ads.'],
-        ['Does it run on Intel Macs or older macOS?', 'It supports Intel and Apple silicon Macs on macOS 12 Monterey or later. Some AI features turn on depending on the OS version, and anything your Mac can’t run is hidden from the menus.'],
+        ['Does it run on Intel Macs or older macOS?', 'It supports Intel and Apple silicon Macs on macOS 12 Monterey or later. Some AI features coming in 1.2 will depend on the OS version, and anything your Mac can’t run is hidden from the menus.'],
         ['Are my files sent over the internet?', 'No. Conversion and AI run on your Mac. The network is only used to download the ad list (and, from 1.1, destination presets), and neither request carries your files or any identifier. See the <a href="privacy/">Privacy Policy</a>.'],
         ['Will it overwrite my originals?', 'Never. Originals stay in place and results are saved next to them. Undo a conversion from the menu bar (⌘Z), the result thumbnail or the History window.'],
         ['Can it convert Korean HWP files?', 'HWPX and HWP to PDF and DOCX are planned for Pro. We’ll announce timing in the <a href="changelog/">changelog</a>.'],
