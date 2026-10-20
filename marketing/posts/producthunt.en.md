@@ -14,7 +14,7 @@
 **Tagline** (46 chars)
 > Drop it, and it fits. A file converter for Mac
 
-**Description** (≤260 chars, 250 chars)
+**Description** (≤260 chars, 243 chars)
 > Tap Shift while dragging a file and a wheel of conversions opens right at your cursor. Shrink under 2 MB or 1 MB in one drop (Pro). Your first 10 files get every feature free, then 5 basic conversions a day with ads. Runs entirely on your Mac.
 
 **Links**: App Store URL `<APP STORE URL>` · Website `https://bbdyno.github.io/Kumquat-Page/en/`
