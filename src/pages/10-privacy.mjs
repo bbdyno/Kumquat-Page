@@ -31,12 +31,12 @@ const ko = (ctx) => docPage(ctx, {
           <div class="table-scroll"><table>
             <thead><tr><th scope="col">정보</th><th scope="col">용도</th><th scope="col">저장 위치·기간</th></tr></thead>
             <tbody>
-              <tr><th scope="row">사용자가 끌어 놓거나 선택한 파일</th><td>변환·압축·편집·AI 처리</td><td>결과 파일은 사용자가 정한 위치. 원본 보관함 사본은 앱 컨테이너에 두고 설정한 기간(기본 24시간) 후 삭제</td></tr>
-              <tr><th scope="row">작업 기록(파일 이름, 경로, 작업 종류, 시각)</th><td>기록 보기, 실행 취소</td><td>앱 컨테이너의 로컬 데이터베이스. Free 24시간, Pro 최대 30일 후 자동 삭제. 설정에서 즉시 지울 수 있음</td></tr>
-              <tr><th scope="row">커서 아래 앱의 번들 ID</th><td>목적지 인식(예: 메일에 놓으면 첨부 규격 적용)</td><td>저장하지 않음. 창 제목이나 화면 내용은 읽지 않음</td></tr>
-              <tr><th scope="row">브라우저 확장이 읽는 업로드 칸 정보(허용 형식, 용량 안내 문구, 현재 도메인)</th><td>업로드 칸에 맞춘 자동 변환</td><td>앱으로만 전달하고 저장하지 않음. 페이지 내용은 수집하지 않음</td></tr>
-              <tr><th scope="row">클립보드 내용(기능을 켠 경우)</th><td>복사한 이미지 자동 최적화, 변환해서 붙여넣기</td><td>저장하지 않음</td></tr>
-              <tr><th scope="row">설정, 레시피, 사용자 프리셋</th><td>앱 동작</td><td>앱 컨테이너. 앱 삭제 시 함께 삭제</td></tr>
+              <tr><th scope="row">사용자가 끌어 놓거나 선택한 파일</th><td>변환·압축·편집·AI 처리</td><td>결과 파일은 원본 옆(또는 설정에서 허용한 폴더)에 저장. 원본은 그대로 둠</td></tr>
+              <tr><th scope="row">최근 작업(파일 이름, 작업 종류, 시각)</th><td>메뉴 막대의 최근 작업, 마지막 변환 실행 취소</td><td>앱 컨테이너에만 저장. 앱 삭제 시 함께 삭제</td></tr>
+              <tr><th scope="row">커서 아래 앱의 번들 ID</th><td>목적지 인식(1.1 예정 기능. 예: 메일에 놓으면 첨부 규격 적용)</td><td>저장하지 않음. 창 제목이나 화면 내용은 읽지 않음</td></tr>
+              <tr><th scope="row">브라우저 확장이 읽는 업로드 칸 정보(허용 형식, 용량 안내 문구, 현재 도메인)</th><td>업로드 칸에 맞춘 자동 변환(1.1 예정 기능)</td><td>앱으로만 전달하고 저장하지 않음. 페이지 내용은 수집하지 않음</td></tr>
+              <tr><th scope="row">클립보드 내용(기능을 켠 경우)</th><td>복사한 이미지 자동 최적화, 변환해서 붙여넣기(1.1 예정 기능)</td><td>저장하지 않음</td></tr>
+              <tr><th scope="row">설정(레시피·사용자 프리셋은 1.1부터)</th><td>앱 동작</td><td>앱 컨테이너. 앱 삭제 시 함께 삭제</td></tr>
               <tr><th scope="row">무료 사용 횟수(처음 체험에 쓴 파일 수, 오늘 쓴 무료 변환 수)</th><td>무료 사용 범위 적용</td><td>이 기기의 Keychain과 사용자 본인 iCloud 계정의 키-값 저장소에만 기록. 개발자는 이 값을 볼 수 없음</td></tr>
             </tbody>
           </table></div>
@@ -125,12 +125,12 @@ const en = (ctx) => docPage(ctx, {
           <div class="table-scroll"><table>
             <thead><tr><th scope="col">Information</th><th scope="col">Purpose</th><th scope="col">Where and how long</th></tr></thead>
             <tbody>
-              <tr><th scope="row">Files you drop or choose</th><td>Converting, compressing, editing, AI</td><td>Results go where you choose. Copies in the originals vault live in the app container and are deleted after the period you set (24 hours by default)</td></tr>
-              <tr><th scope="row">Activity history (file name, path, action, time)</th><td>History and undo</td><td>Local database in the app container. Deleted automatically after 24 hours (Free) or up to 30 days (Pro). You can clear it anytime</td></tr>
-              <tr><th scope="row">Bundle ID of the app under the cursor</th><td>Destination awareness (e.g. attachment specs when dropping on Mail)</td><td>Not stored. Window titles and screen contents are never read</td></tr>
-              <tr><th scope="row">Upload field details read by the browser extension (accepted types, size hint text, current domain)</th><td>Converting to fit the upload field</td><td>Passed to the app only and not stored. Page contents are not collected</td></tr>
-              <tr><th scope="row">Clipboard contents (if you turn it on)</th><td>Optimizing copied images, convert-and-paste</td><td>Not stored</td></tr>
-              <tr><th scope="row">Settings, recipes, custom presets</th><td>App behavior</td><td>App container. Removed when you delete the app</td></tr>
+              <tr><th scope="row">Files you drop or choose</th><td>Converting, compressing, editing, AI</td><td>Results are saved next to the original (or in a folder you allowed in Settings). Originals are left as they are</td></tr>
+              <tr><th scope="row">Recent actions (file name, action, time)</th><td>Recent actions in the menu bar, undoing the last conversion</td><td>Stored only in the app container. Removed when you delete the app</td></tr>
+              <tr><th scope="row">Bundle ID of the app under the cursor</th><td>Destination awareness (coming in 1.1; e.g. attachment specs when dropping on Mail)</td><td>Not stored. Window titles and screen contents are never read</td></tr>
+              <tr><th scope="row">Upload field details read by the browser extension (accepted types, size hint text, current domain)</th><td>Converting to fit the upload field (coming in 1.1)</td><td>Passed to the app only and not stored. Page contents are not collected</td></tr>
+              <tr><th scope="row">Clipboard contents (if you turn it on)</th><td>Optimizing copied images, convert-and-paste (coming in 1.1)</td><td>Not stored</td></tr>
+              <tr><th scope="row">Settings (recipes and custom presets from 1.1)</th><td>App behavior</td><td>App container. Removed when you delete the app</td></tr>
               <tr><th scope="row">Free usage counts (files used in the welcome trial, free conversions used today)</th><td>Applying the free allowance</td><td>Stored only in this Mac’s Keychain and your own iCloud key-value storage. The developer cannot see these values</td></tr>
             </tbody>
           </table></div>

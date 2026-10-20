@@ -6,10 +6,10 @@ Chosen on 2026-10-20 after reviewing about 140 Pinterest results (searches: "mac
 | --- | --- |
 | Warm stone canvas instead of white or pure black; one or two lighter paper surfaces | `--bg #ece6dd`, `--paper #f6f2ec`; dark mode is warm near-black `#110f0d`, never cool grey |
 | Large editorial serif headline, left-aligned, one word emphasized (italic in Latin, color in Korean) | Instrument Serif / Noto Serif KR 500 for h1–h2; `<em>` is italic in English and orange in Korean |
-| Real photograph inside an arch-shaped frame with soft directional light | Hero arch holds a sunlit kumquat photo (Unsplash) with a frosted conversion-wheel panel and a file chip floating over it |
+| Real photograph inside an arch-shaped frame with soft directional light | Hero arch holds a sunlit kumquat photo (Unsplash) with the real app's wheel and result thumbnail captures over it |
 | A small brand symbol next to the wordmark, echoed in the number band | Kumquat cross-section symbol (`mark` in `src/layout.mjs`) in the header, band, footer wordmark and favicon |
 | Thin-line icons in soft square tiles beside short feature text | Phosphor Light icons in `.feat-ico` / `.tile-ico` squares |
-| A realistic product UI window next to a feature list | `#app` section: macOS window with sidebar, stat cards and a recent-files list with photo thumbnails |
+| A real product UI next to a feature list | `#app` section: real captures of the Settings window, menu-bar drop menu and result thumbnail, layered. The app is menu-bar only, so there is no dashboard window to show (a main window is planned with recipes and destinations) |
 | A black band of big serif numbers under the hero | `.band` with four facts (10개, 0, 12+, 5개) |
 | Orange used for one CTA and one tile only, against neutrals | Orange pill CTA, one solid orange bento tile, the final CTA panel; everything else neutral |
 | Bento grid on cream with mixed tile sizes, one dark tile, one orange tile | `.bento`: destination (wide), recipe (tall), privacy (dark), HWP, Pro trial (orange) |

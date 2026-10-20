@@ -59,34 +59,10 @@
   var stage = document.querySelector('.stage');
   var steps = document.querySelectorAll('.step');
   if (stage && steps.length) {
-    var sizeEl = stage.querySelector('[data-size]');
-    var from = parseFloat(stage.dataset.from);
-    var to = parseFloat(stage.dataset.to);
-    var current = from;
-    var animateSize = function (target) {
-      if (!sizeEl) return;
-      if (reduceMotion) { current = target; sizeEl.textContent = target.toFixed(1); return; }
-      var start = current, t0 = performance.now();
-      var tick = function (now) {
-        var p = Math.min(1, (now - t0) / 900);
-        var eased = 1 - Math.pow(1 - p, 3);
-        current = start + (target - start) * eased;
-        sizeEl.textContent = current.toFixed(1);
-        if (p < 1) requestAnimationFrame(tick);
-      };
-      requestAnimationFrame(tick);
-    };
     var setStep = function (n) {
       if (stage.dataset.step === String(n)) return;
       stage.dataset.step = n;
       steps.forEach(function (s) { s.classList.toggle('is-active', s.dataset.step === String(n)); });
-      stage.style.setProperty('--fill', n === 3 ? (to / from * 100) + '%' : '100%');
-      animateSize(n === 3 ? to : from);
-      stage.querySelectorAll('.seg-hot').forEach(function (el) {
-        if (!el.dataset.baseFill) el.dataset.baseFill = el.getAttribute('fill');
-        el.setAttribute('fill', n >= 2 ? el.dataset.hotFill : el.dataset.baseFill);
-      });
-      stage.querySelectorAll('.label-hot').forEach(function (el) { el.classList.toggle('hot', n >= 2); });
     };
     if ('IntersectionObserver' in window) {
       var so = new IntersectionObserver(function (entries) {

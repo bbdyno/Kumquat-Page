@@ -38,7 +38,7 @@ const ko = (ctx) => docPage(ctx, {
             ['목표 용량까지 줄어들지 않아요', '<p>품질 가드가 글자를 읽기 어려워질 만큼 줄이는 것을 막았을 수 있습니다. 결과 창에서 “해상도를 낮춰 다시 시도”를 고르거나, PDF라면 페이지를 나눠 보세요.</p>'],
             ['HEIC로 저장하는 메뉴가 없어요', '<p>HEIC 인코딩은 하드웨어 HEVC 인코더가 있는 Mac에서만 제공됩니다. 지원하지 않는 Mac에서는 메뉴에서 숨겨집니다.</p>'],
             ['“변환해서 붙여넣기”가 동작하지 않아요', '<p>이 기능은 손쉬운 사용 권한이 필요합니다. 시스템 설정 › 개인정보 보호 및 보안 › 손쉬운 사용에서 Kumquat을 켜 주세요. 이 권한은 붙여넣기 단축키를 보내는 데에만 씁니다.</p>'],
-            ['원본을 되돌리고 싶어요', '<p>메뉴바 › 기록에서 작업을 고르고 “실행 취소”를 누르세요. Free는 최근 24시간, Pro는 설정한 기간 동안 되돌릴 수 있습니다.</p>'],
+            ['원본을 되돌리고 싶어요', '<p>메뉴 막대 아이콘 메뉴에서 “실행 취소”(⌘Z)를 고르거나, 결과 썸네일에 마우스를 올려 “실행 취소”를 누르세요. 지금은 마지막 변환만 되돌릴 수 있습니다.</p>'],
           ])}
 
           <h2 id="purchase">구매·구독</h2>
@@ -84,7 +84,7 @@ const en = (ctx) => docPage(ctx, {
             ['It won’t shrink to the target size', '<p>The quality guard may have stopped it from making text unreadable. Choose “Try again at lower resolution” in the result window, or split the PDF into parts.</p>'],
             ['There’s no option to save as HEIC', '<p>HEIC encoding is offered only on Macs with a hardware HEVC encoder. It’s hidden on Macs without one.</p>'],
             ['Convert-and-paste does nothing', '<p>This feature needs Accessibility permission. Turn Kumquat on in System Settings › Privacy & Security › Accessibility. It’s only used to send the paste shortcut.</p>'],
-            ['I want my original back', '<p>Open History from the menu bar, pick the action and choose Undo. Free keeps 24 hours of history; Pro keeps it for the period you set.</p>'],
+            ['I want my original back', '<p>Choose Undo (⌘Z) from the menu bar icon’s menu, or hover the result thumbnail and click Undo. Only the last conversion can be undone for now.</p>'],
           ])}
 
           <h2 id="purchase">Purchases and subscriptions</h2>

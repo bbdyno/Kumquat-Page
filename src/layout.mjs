@@ -199,3 +199,12 @@ ${body}
       </div>
     </article>`;
 }
+
+// Real app captures (2x PNG from the app repo, converted to WebP). Shown at half their pixel size.
+// Both themes are in the page; CSS shows the one matching the site theme, so the manual toggle works too.
+const shotSizes = { wheel: [700, 700], toasthover: [468, 444], toastad: [468, 444], settings: [1304, 1014], settings1: [1304, 960], dropmenu: [366, 888], welcome: [1336, 1194] };
+export function shot(ctx, name, alt, { cls = '', eager = false } = {}) {
+  const [w, h] = shotSizes[name];
+  const attrs = `width="${w / 2}" height="${h / 2}" decoding="async"${eager ? '' : ' loading="lazy"'}`;
+  return `<span class="shot ${cls}"><img class="shot-light" src="${ctx.root}assets/shots/${name}-light.webp" ${attrs} alt="${alt}"><img class="shot-dark" src="${ctx.root}assets/shots/${name}-dark.webp" ${attrs} alt="${alt}"></span>`;
+}

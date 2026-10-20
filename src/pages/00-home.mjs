@@ -1,5 +1,5 @@
 import { site, pricing, storeLink } from '../config.mjs';
-import { placeholder, btn, arrowSvg, mark } from '../layout.mjs';
+import { placeholder, btn, arrowSvg, mark, shot } from '../layout.mjs';
 import { icon } from '../icons.mjs';
 import { formats, kinds } from '../data/formats.mjs';
 import { maskIllustration } from '../data/illustrations.mjs';
@@ -20,11 +20,11 @@ const copy = {
       announceTag: '출시 준비 중',
       announce: `처음 파일 ${P.welcomeTrialFiles}개는 모든 기능 무료`,
       alt: '햇살 아래 놓인 금귤 사진',
-      wheelTitle: '변환 휠',
-      wheelRows: [['file-image', 'JPG로 바꾸기', '⇧ J'], ['target', '2 MB 이하로', '⇧ 2'], ['file-pdf', 'PDF로 합치기', '⇧ P']],
-      uiTag: 'UI 예시',
+      wheelAlt: 'Kumquat 휠: 금귤 단면 모양으로 JPG, PNG, HEIC, WebP, 2 MB 이하, 1 MB 이하, 1920 px, 메타데이터 제거가 펼쳐진 실제 화면',
+      toastAlt: '변환 뒤 화면 구석에 뜨는 결과 썸네일',
+      uiTag: '실제 앱 화면',
       h1: '드롭하면,<br><em>목적지에</em> 딱 맞게.',
-      lede: '파일을 끌다가 <kbd>Shift</kbd>를 한 번. 원하는 형식과 크기로 바로 바뀌고, <span class="nowrap">홈택스·정부24·메일</span>처럼 올릴 곳의 제한까지 알아서 맞춥니다. 모든 처리는 내 Mac 안에서만.',
+      lede: '파일을 끌다가 <kbd>Shift</kbd>를 한 번. 원하는 형식으로 바로 바뀌고, <span class="nowrap">홈택스·정부24·메일</span>에 올릴 파일을 2 MB·1 MB 이하로 줄이는 것도 한 번에. 모든 처리는 내 Mac 안에서만.',
       cta: 'App Store에서 받기',
       more: '작동 방식 보기',
       note: '출시 전입니다. App Store 링크는 캠페인 링크 자리표시자입니다.',
@@ -33,20 +33,12 @@ const copy = {
       tag: '앱 녹화 영상 자리 · 16:10',
     },
     app: {
-      label: '한눈에',
-      h2: '필요한 건 전부,<br>조용한 창 <em>하나에.</em>',
-      feats: [['stack', '휠로 바로 변환', '메뉴를 찾지 않아도 됩니다. 끌다가 Shift 한 번이면 할 수 있는 작업만 펼쳐집니다.'], ['target', '목적지에 맞춤', '업로드 칸의 허용 형식과 용량 한도를 읽어, 올릴 곳에 맞는 파일을 만듭니다.'], ['arrow-counter-clockwise', '기록과 실행 취소', '원본은 그대로 둡니다. 마지막 작업은 언제든 되돌릴 수 있습니다.']],
-      ui: {
-        nav: [['clock-counter-clockwise', '기록'], ['flow-arrow', '레시피'], ['map-pin-area', '목적지'], ['tray-arrow-down', '원본 보관함'], ['gear-six', '설정']],
-        plan: '무료 · 오늘 남은 변환', left: '1 / 5',
-        hello: '좋은 오후예요', title: '오늘 파일 4개를 맞췄어요.',
-        stats: [['변환한 파일', '4', '어제보다 2개 더'], ['줄인 용량', '18.2 MB', '평균 74% 감소'], ['남은 무료 변환', '1', '내일 다시 5개']],
-        listTitle: '최근 작업', all: '모두 보기',
-        rows: [['thumb-1.webp', '금귤_정물.heic', 'JPG · 메일 첨부 맞춤', '4.8 → 1.2 MB', 75], ['thumb-2.webp', '레시피_사진.png', 'WebP · 블로그 1600px', '3.1 → 0.4 MB', 87], ['thumb-3.webp', '화분.jpg', '배경 제거 · PNG', '2.6 → 1.9 MB', 27]],
-        tag: 'UI 예시 · 실제 앱 화면으로 교체 예정',
-      },
+      label: '실제 화면',
+      h2: '메뉴 막대에 조용히,<br>필요할 때만 <em>나타납니다.</em>',
+      feats: [['stack', '드래그 중 Shift, 그리고 휠', '파일을 끄는 동안 ⇧를 누르면 커서 둘레에 휠이 뜹니다. 가운데에 놓으면 입력해서 찾을 수 있습니다.'], ['image-square', '결과 썸네일', '변환이 끝나면 화면 구석에 결과만 뜹니다. 마우스를 올리면 비교, 실행 취소, 줄어든 용량이 나옵니다.'], ['sliders-horizontal', '메뉴 막대와 설정', 'Dock 아이콘도 큰 창도 없습니다. 메뉴 막대 아이콘에 파일을 놓거나, 설정에서 휠 키와 누르는 방식을 고릅니다.']],
+      shots: { settings: '설정 창의 휠 탭: 휠 사용, 키, 동작 설정', hover: '결과 썸네일에 마우스를 올린 모습: 비교, 실행 취소, 2 MB 줄였습니다', drop: '메뉴 막대 아이콘에 이미지를 놓았을 때 나오는 동작 목록' },
+      tag: '실제 앱 화면 · 2026-10-20 개발 빌드',
     },
-    slice: ['JPG', 'PNG', 'PDF', '2MB 이하', 'WebP', 'HEIC'],
     band: [
       [`${P.welcomeTrialFiles}개`, '처음 파일', 'Pro 포함 모든 기능 무료 체험'],
       ['0', '업로드·수집', '서버도, 계정도, 분석 SDK도 없음'],
@@ -56,16 +48,16 @@ const copy = {
     how: {
       label: '작동 방식',
       h2: '끌어서, 고르고, <em>놓으면</em> 끝.',
-      p: '변환 메뉴를 찾아 헤매지 않아도 됩니다. 파일이 갈 곳을 알면, 형식과 용량은 Kumquat이 맞춥니다.',
-      file: '종합소득세_증빙_스캔.pdf',
+      p: '변환 메뉴를 찾아 헤매지 않아도 됩니다. 끌고, ⇧를 누르고, 원하는 칸에 놓으면 됩니다.',
+      file: '금귤_정물.heic',
       drop: '홈택스 · 증빙서류 첨부',
       dropSmall: '예시 화면 · 업로드 칸의 허용 형식과 용량 한도를 읽어 옵니다',
       ok: '한도 안으로',
-      tag: '인터랙션 예시 · 앱 녹화로 교체 예정',
+      tag: '휠과 결과 썸네일은 실제 앱 화면',
       steps: [
         ['파일을 끌기 시작합니다', 'Finder, 메일 첨부, 스크린샷 어디서든. 평소처럼 끌면 됩니다. 앱을 먼저 열 필요가 없습니다.'],
-        ['<kbd>Shift</kbd>를 누르면 휠이 열립니다', '그 파일로 할 수 있는 작업만 커서 둘레에 펼쳐집니다. 자주 쓰는 순서대로, 키보드로 “we”만 쳐도 WebP가 골라집니다.'],
-        ['업로드 칸에 놓으면, 한도 안으로', '허용 형식과 용량 한도에 맞춰 줄이고, 글자가 뭉개지지 않았는지 품질 가드로 한 번 더 확인합니다. 원본은 그대로 남습니다.'],
+        ['<kbd>Shift</kbd>를 누르면 휠이 열립니다', '그 파일로 할 수 있는 작업이 금귤 단면 모양 휠로 커서 둘레에 펼쳐집니다. 가운데에 놓으면 입력해서 찾을 수 있습니다.'],
+        ['원하는 칸에 놓으면 끝', '결과는 원본 옆에 저장되고, 화면 구석에 결과 썸네일이 뜹니다. 마우스를 올려 비교하거나 실행 취소할 수 있습니다.'],
       ],
     },
     features: {
@@ -73,20 +65,20 @@ const copy = {
       h2: '가벼운 변환은 무료로.<br>번거로움은 <em>Pro</em>가.',
       p: `처음 파일 ${P.welcomeTrialFiles}개는 모든 기능을, 그 뒤에도 기본 변환은 하루 ${P.freeDailyFiles}개까지 무료입니다. 반복 작업을 없애는 자동화와 제한 해제가 Pro입니다.`,
       dest: {
-        tag: 'Pro',
+        tag: 'Pro · 1.1 예정',
         h3: '어디에 올릴지 알면, 규격은 알아서',
-        p: '커서 아래 앱과 브라우저 업로드 칸을 보고 형식·용량·픽셀 규격을 맞춥니다. 국내 사이트 프리셋은 앱 업데이트 없이 갱신됩니다.',
+        p: '커서 아래 앱과 브라우저 업로드 칸을 보고 형식·용량·픽셀 규격을 맞추는 기능을 준비하고 있습니다. 지금은 휠의 2 MB·1 MB 이하로 용량을 맞춥니다.',
         list: [['정부24', '증명사진 규격 · 민원 첨부', true], ['홈택스', '증빙서류 PDF 용량', true], ['사람인 · 잡코리아', '이력서 사진 · 첨부 파일'], ['대학 LMS', '과제 제출 형식'], ['카카오톡 · 메일', '보내기 전 최적화, 한도 초과 시 분할']],
       },
       recipe: {
-        tag: 'Pro',
+        tag: 'Pro · 1.1 예정',
         h3: '다섯 단계를 한 번의 드롭으로',
-        p: '블록처럼 쌓아 두면 드롭 한 번에 끝. 폴더를 지켜보다 자동으로 실행합니다.',
+        p: '블록처럼 쌓아 두면 드롭 한 번에 끝. 폴더를 지켜보다 자동으로 실행하는 기능을 준비하고 있습니다.',
         steps: ['긴 변 1600px', 'HEIC → WebP', '500 KB 이하', '위치 정보 제거', '날짜-제목으로 이름 변경'],
         watch: '스크린샷 폴더 감시 중',
       },
       privacy: { tag: '모두', zero: '0', h3: '업로드도, 수집도 없음', p: '모든 처리가 Mac 안에서. App Store 라벨 “데이터 수집 안 함” 기준.' },
-      hwp: { tag: 'Pro', mark: 'HWP<span>→</span>PDF', h3: '한국 특화', p: 'HWP·HWPX 변환, 국내 사이트 프리셋, 증명사진 메이커.' },
+      hwp: { tag: 'Pro · 1.3 예정', mark: 'HWP<span>→</span>PDF', h3: '한국 특화', p: 'HWP·HWPX 변환, 국내 사이트 프리셋, 증명사진 메이커.' },
       cta: { h3: `처음 파일 ${P.welcomeTrialFiles}개는 모든 기능 무료`, p: 'Pro 기능까지 직접 써 보고 결정하세요.' },
       note: '목적지 이름은 프리셋 대상 예시이며 각 서비스와 제휴 관계가 없습니다. 실제 한도는 각 사이트 안내를 기준으로 합니다.',
     },
@@ -132,8 +124,8 @@ const copy = {
       h2: '가볍게 쓰면 <em>무료.</em>',
       p: `처음 파일 ${P.welcomeTrialFiles}개는 Pro까지 모두 무료. 그 뒤에는 기본 변환 하루 ${P.freeDailyFiles}개가 무료이고, 무료 사용 중에는 광고가 표시됩니다.`,
       plans: [
-        { name: 'Free', price: '무료', word: true, note: `처음 ${P.welcomeTrialFiles}개는 모든 기능 체험 · 이후 기본 변환 하루 ${P.freeDailyFiles}개 · 광고 포함`, cta: 'App Store에서 받기', feats: [`처음 파일 ${P.welcomeTrialFiles}개: Pro 포함 모든 기능`, `이후 이미지·오디오·영상·문서 기본 변환 하루 ${P.freeDailyFiles}개`, 'Shift-드래그 휠, Finder 빠른 동작, 메뉴바 드롭', '비포/애프터 미리보기, 24시간 기록, 실행 취소', '무료 사용 중 광고 표시'] },
-        { name: 'Pro 연간', price: P.yearly, unit: '/ 년', note: `${P.trialDays}일 무료 체험 후 자동 갱신. 언제든 해지할 수 있습니다.`, cta: `${P.trialDays}일 무료 체험`, feats: ['제한 없음 · 광고 없음', '목적지 인식, 국내 사이트 프리셋', '레시피 무제한, 폴더 감시', '온디바이스 AI, 민감정보 마스킹', 'HWP/HWPX, Office 팩, 포맷 확장'] },
+        { name: 'Free', price: '무료', word: true, note: `처음 ${P.welcomeTrialFiles}개는 모든 기능 체험 · 이후 기본 변환 하루 ${P.freeDailyFiles}개 · 광고 포함`, cta: 'App Store에서 받기', feats: [`처음 파일 ${P.welcomeTrialFiles}개: Pro 포함 모든 기능`, `이후 이미지·오디오·영상·문서 기본 변환 하루 ${P.freeDailyFiles}개`, 'Shift-드래그 휠, Finder 빠른 동작, 메뉴바 드롭', '결과 썸네일에서 비교·실행 취소', '무료 사용 중 광고 표시'] },
+        { name: 'Pro 연간', price: P.yearly, unit: '/ 년', note: `${P.trialDays}일 무료 체험 후 자동 갱신. 언제든 해지할 수 있습니다.`, cta: `${P.trialDays}일 무료 체험`, feats: ['제한 없음 · 광고 없음', '목표 용량과 GIF·AVIF 등 확장 포맷', '목적지 인식·레시피·폴더 감시 (1.1 예정)', '온디바이스 AI·민감정보 마스킹 (1.2 예정)', 'HWP/HWPX·Office 팩 (1.3 예정)'] },
         { name: 'Pro 평생', price: P.lifetimeLaunch, was: P.lifetime, note: `출시 할인가. 구매한 메이저 버전의 모든 업데이트 포함.`, cta: '평생 이용권 구매', featured: true, badge: '출시 할인', feats: ['Pro 연간의 모든 기능 · 광고 없음', '구매한 메이저 버전 평생 사용', '다음 메이저 업그레이드 50% 할인', '가족 공유 지원'] },
       ],
       foot: `가격은 미국 App Store 기준(USD) 계획가입니다. 원화 가격은 App Store 국가별 가격표에 따라 정해지며, 구매·해지·환불은 Apple을 통해 처리됩니다. ${site.factsDate} 기준.`,
@@ -144,13 +136,13 @@ const copy = {
         ['일괄 처리', '오늘 남은 무료 개수만큼', '제한 없음'],
         ['목표 용량(예: 2 MB 이하)', `처음 ${P.welcomeTrialFiles}개 체험`, '제한 없음 + 품질 가드'],
         ['GIF·AVIF·FLAC·Opus·WebM 등', `처음 ${P.welcomeTrialFiles}개 체험`, '✓'],
-        ['기록 · 실행 취소', '24시간', '30일 · 원본 보관함'],
-        ['목적지 인식 · 국내 프리셋', `처음 ${P.welcomeTrialFiles}개 체험`, '✓'],
-        ['레시피 · 폴더 감시', `처음 ${P.welcomeTrialFiles}개 체험`, '✓'],
-        ['온디바이스 AI(배경 제거·OCR·자막·업스케일)', `처음 ${P.welcomeTrialFiles}개 체험`, '✓'],
-        ['민감정보 자동 마스킹', `처음 ${P.welcomeTrialFiles}개 체험`, '✓'],
-        ['HWP/HWPX · 증명사진 메이커', `처음 ${P.welcomeTrialFiles}개 체험`, '✓'],
-        ['노치 선반 · 클립보드 자동화', '기본 선반 1칸', '✓'],
+        ['실행 취소', '마지막 변환', '마지막 변환'],
+        ['목적지 인식 · 국내 프리셋 (1.1 예정)', '—', '✓'],
+        ['레시피 · 폴더 감시 (1.1 예정)', '—', '✓'],
+        ['노치 선반 · 클립보드 자동화 (1.1 예정)', '—', '✓'],
+        ['온디바이스 AI: 배경 제거·OCR·자막·업스케일 (1.2 예정)', '—', '✓'],
+        ['민감정보 자동 마스킹 (1.2 예정)', '—', '✓'],
+        ['HWP/HWPX · 증명사진 메이커 (1.2–1.3 예정)', '—', '✓'],
         ['광고', '표시', '없음'],
       ],
     },
@@ -167,7 +159,7 @@ const copy = {
         ['최소 macOS', 'macOS 12', '—', 'macOS 13'],
         ['Finder 빠른 동작 · 공유 확장 · 단축어', '1.0부터 제공', '—', '앱 번들에 없음'],
         ['App Store 개인정보 라벨', '“데이터 수집 안 함” 목표', '—', '구매 기록 수집 신고(사용자와 연결 안 됨)'],
-        ['목적지 인식 · 국내 사이트 프리셋', '제공(Pro)', '—', '—'],
+        ['목적지 인식 · 국내 사이트 프리셋', '1.1 예정(Pro)', '—', '—'],
       ],
       foot: `Tangerine 정보: Mac App Store 설치본 2.0.2(빌드 9)의 Info.plist·개인정보 매니페스트·번들 구성과 App Store 표시 가격을 ${site.factsDate}에 확인. Tangerine은 해당 개발사의 상표이며 Kumquat과 관계가 없습니다. Kumquat 항목은 출시 계획이며 바뀔 수 있습니다.`,
     },
@@ -179,8 +171,8 @@ const copy = {
         ['무료로 어디까지 쓸 수 있나요?', `처음 파일 ${P.welcomeTrialFiles}개는 Pro를 포함한 모든 기능을 무료로 써 볼 수 있습니다. 그 뒤에는 이미지·오디오·영상·문서의 기본 변환을 하루 ${P.freeDailyFiles}개(파일 기준)까지 무료로 쓰고, 일괄 처리도 그날 남은 개수만큼 됩니다. 목표 용량, GIF·AVIF·FLAC·Opus·WebM, 자동화·AI 기능은 Pro입니다.`],
         ['광고가 나오나요?', '무료 사용 중에는 앱 안에 광고가 표시됩니다. Kumquat Pro 안내이거나, 직접 계약한 스폰서 광고입니다. 광고 목록은 이 사이트에서 받아 오며, 앱은 식별자나 사용 정보를 보내지 않고 개인 맞춤·추적도 하지 않습니다. 서드파티 광고 SDK는 없습니다. Pro에서는 광고가 나오지 않습니다.'],
         ['Intel Mac이나 오래된 macOS에서도 되나요?', 'macOS 12 Monterey 이상의 Intel Mac과 Apple 실리콘 Mac 모두 지원합니다. 배경 제거·번역 등 일부 AI 기능은 OS 버전에 따라 단계적으로 켜지며, 지원하지 않는 기능은 메뉴에 나타나지 않습니다.'],
-        ['파일이 인터넷으로 전송되나요?', '아니요. 변환과 AI 처리는 모두 Mac 안에서 이루어집니다. 네트워크는 목적지 프리셋 목록과 광고 목록을 받을 때만 쓰며, 이때도 파일이나 식별자는 보내지 않습니다. 자세한 내용은 <a href="privacy/">개인정보 처리방침</a>을 보세요.'],
-        ['원본 파일이 덮어써지지 않나요?', '원본은 항상 그대로 두고 결과를 옆에 저장합니다. 마지막 작업은 실행 취소할 수 있고, Pro에서는 원본 보관함 보존 기간을 정할 수 있습니다.'],
+        ['파일이 인터넷으로 전송되나요?', '아니요. 변환과 AI 처리는 모두 Mac 안에서 이루어집니다. 네트워크는 광고 목록(그리고 1.1부터 목적지 프리셋 목록)을 받을 때만 쓰며, 이때도 파일이나 식별자는 보내지 않습니다. 자세한 내용은 <a href="privacy/">개인정보 처리방침</a>을 보세요.'],
+        ['원본 파일이 덮어써지지 않나요?', '원본은 항상 그대로 두고 결과를 옆에 저장합니다. 마지막 변환은 메뉴 막대의 실행 취소(⌘Z)나 결과 썸네일의 “실행 취소”로 되돌릴 수 있습니다.'],
         ['HWP 파일도 PDF로 바꿀 수 있나요?', 'HWPX와 HWP를 PDF·DOCX로 바꾸는 기능을 Pro로 준비하고 있습니다. 출시 일정은 <a href="changelog/">변경 기록</a>에서 알려 드립니다.'],
         ['구독을 해지하거나 환불받으려면?', '구매와 결제는 App Store에서만 처리합니다. 구독 해지는 시스템 설정 › Apple ID › 미디어 및 구입 항목 › 구독 관리에서, 환불 요청은 Apple의 문제 신고 페이지에서 할 수 있습니다. <a href="support/">지원</a> 페이지에 단계별로 정리했습니다.'],
       ],
@@ -202,11 +194,11 @@ const copy = {
       announceTag: 'Coming soon',
       announce: `Your first ${P.welcomeTrialFiles} files get every feature free`,
       alt: 'Kumquats on a table in late sunlight',
-      wheelTitle: 'Conversion wheel',
-      wheelRows: [['file-image', 'Convert to JPG', '⇧ J'], ['target', 'Under 2 MB', '⇧ 2'], ['file-pdf', 'Combine into PDF', '⇧ P']],
-      uiTag: 'UI sketch',
+      wheelAlt: 'The Kumquat wheel, shaped like a kumquat slice, showing JPG, PNG, HEIC, WebP, under 2 MB, under 1 MB, 1920 px and strip metadata (Korean UI)',
+      toastAlt: 'Result thumbnail shown in the corner after converting',
+      uiTag: 'Real app screens (Korean UI)',
       h1: 'Drop it,<br>and it <em>fits.</em>',
-      lede: 'Start dragging a file and tap <kbd>Shift</kbd>. It turns into the format and size you need, and fits the limits of wherever you’re dropping it. Everything runs on your Mac.',
+      lede: 'Start dragging a file and tap <kbd>Shift</kbd>. It turns into the format you need, and can shrink a file under 2 MB or 1 MB for uploads in the same move. Everything runs on your Mac.',
       cta: 'Get it on the App Store',
       more: 'See how it works',
       note: 'Not released yet. The App Store link is a placeholder campaign link.',
@@ -215,20 +207,12 @@ const copy = {
       tag: 'App recording goes here · 16:10',
     },
     app: {
-      label: 'At a glance',
-      h2: 'Everything you need,<br>in one <em>quiet</em> window.',
-      feats: [['stack', 'Convert from the wheel', 'No menus to dig through. Tap Shift while dragging and only the actions that fit appear.'], ['target', 'Fit the destination', 'Kumquat reads the upload field’s accepted formats and size limit, then makes a file that fits.'], ['arrow-counter-clockwise', 'History and undo', 'Originals stay where they are, and you can undo the last action anytime.']],
-      ui: {
-        nav: [['clock-counter-clockwise', 'History'], ['flow-arrow', 'Recipes'], ['map-pin-area', 'Destinations'], ['tray-arrow-down', 'Originals vault'], ['gear-six', 'Settings']],
-        plan: 'Free · conversions left today', left: '1 / 5',
-        hello: 'Good afternoon', title: 'You fitted 4 files today.',
-        stats: [['Files converted', '4', '2 more than yesterday'], ['Space saved', '18.2 MB', '74% smaller on average'], ['Free left today', '1', '5 more tomorrow']],
-        listTitle: 'Recent', all: 'View all',
-        rows: [['thumb-1.webp', 'kumquats.heic', 'JPG · fitted for Mail', '4.8 → 1.2 MB', 75], ['thumb-2.webp', 'recipe-photo.png', 'WebP · blog 1600px', '3.1 → 0.4 MB', 87], ['thumb-3.webp', 'plant.jpg', 'Background removed · PNG', '2.6 → 1.9 MB', 27]],
-        tag: 'UI sketch · to be replaced with the real app',
-      },
+      label: 'Real screens',
+      h2: 'Quiet in the menu bar,<br>there <em>when you need it.</em>',
+      feats: [['stack', 'Shift while dragging, then the wheel', 'Tap ⇧ while dragging a file and the wheel opens around the cursor. Drop on the center to type and search.'], ['image-square', 'Result thumbnail', 'When a conversion finishes, only the result appears in the corner. Hover it to compare, undo or see how much smaller it got.'], ['sliders-horizontal', 'Menu bar and Settings', 'No Dock icon, no big window. Drop files on the menu bar icon, or pick the wheel key and trigger in Settings.']],
+      shots: { settings: 'Settings, Wheel tab: use the wheel, key and trigger', hover: 'Hovering the result thumbnail: compare, undo, 2 MB smaller', drop: 'Actions shown after dropping an image on the menu bar icon' },
+      tag: 'Real app screens, Korean UI · development build, 2026-10-20',
     },
-    slice: ['JPG', 'PNG', 'PDF', 'Under 2MB', 'WebP', 'HEIC'],
     band: [
       [`${P.welcomeTrialFiles}`, 'First files', 'Every feature free, Pro included'],
       ['0', 'Uploads & data', 'No server, no account, no analytics'],
@@ -238,16 +222,16 @@ const copy = {
     how: {
       label: 'How it works',
       h2: 'Drag, pick, <em>drop.</em> Done.',
-      p: 'No hunting through export menus. Once Kumquat knows where a file is going, it takes care of the format and the size.',
-      file: 'tax-receipts-scan.pdf',
+      p: 'No hunting through export menus. Drag, tap ⇧, drop on the slice you want.',
+      file: 'kumquats.heic',
       drop: 'Tax portal · Attach receipts',
       dropSmall: 'Example screen · reads the accepted types and size limit from the upload field',
       ok: 'Fits the limit',
-      tag: 'Interaction sketch · to be replaced with a recording',
+      tag: 'Wheel and result thumbnail are real app screens',
       steps: [
         ['Start dragging a file', 'From Finder, a mail attachment or a screenshot. Drag it the way you always do. There’s no app to open first.'],
-        ['Tap <kbd>Shift</kbd> to open the wheel', 'Only the actions that make sense for that file fan out around your cursor, most-used first. Type “we” and WebP is picked.'],
-        ['Drop it on the upload field, and it fits', 'Kumquat matches the accepted formats and size limit, then checks with a quality guard that text is still readable. The original stays untouched.'],
+        ['Tap <kbd>Shift</kbd> to open the wheel', 'The actions for that file fan out around your cursor in a wheel shaped like a kumquat slice. Drop on the center to type and search.'],
+        ['Drop on a slice. Done.', 'The result is saved next to the original and a thumbnail appears in the corner. Hover it to compare or undo.'],
       ],
     },
     features: {
@@ -255,20 +239,20 @@ const copy = {
       h2: 'Light converting is free.<br>The busywork is <em>Pro.</em>',
       p: `Your first ${P.welcomeTrialFiles} files get every feature, and after that ${P.freeDailyFiles} basic conversions a day stay free. Pro removes the limits and adds the automation.`,
       dest: {
-        tag: 'Pro',
+        tag: 'Pro · coming in 1.1',
         h3: 'Know where it’s going, and the specs follow',
-        p: 'Kumquat reads the app under your cursor and the browser upload field, then matches formats, file size and pixel dimensions. Presets update without an app update.',
+        p: 'Coming in 1.1: Kumquat reads the app under your cursor and the browser upload field, then matches formats, file size and pixel dimensions. Today, the wheel’s under 2 MB and under 1 MB slices fit the size.',
         list: [['Mail', 'Split ZIP over the attachment limit', true], ['Slack · KakaoTalk', 'Optimize before sending', true], ['Job sites', 'Résumé photo and attachments'], ['University LMS', 'Assignment formats'], ['Government & tax portals', 'ID photo specs, receipt PDFs']],
       },
       recipe: {
-        tag: 'Pro',
+        tag: 'Pro · coming in 1.1',
         h3: 'Five steps, one drop',
-        p: 'Stack steps like blocks and run them with one drop, or let a watched folder run them for you.',
+        p: 'Coming in 1.1: stack steps like blocks and run them with one drop, or let a watched folder run them for you.',
         steps: ['Long edge 1600px', 'HEIC → WebP', 'Under 500 KB', 'Strip location data', 'Rename date-title'],
         watch: 'Watching Screenshots folder',
       },
       privacy: { tag: 'Everyone', zero: '0', h3: 'No uploads, no data collected', p: 'Everything runs on your Mac. Built for the “Data Not Collected” App Store label.' },
-      hwp: { tag: 'Pro', mark: 'HWP<span>→</span>PDF', h3: 'Korea-ready', p: 'HWP and HWPX conversion, Korean site presets, an ID photo maker.' },
+      hwp: { tag: 'Pro · 1.3 예정', mark: 'HWP<span>→</span>PDF', h3: 'Korea-ready', p: 'HWP and HWPX conversion, Korean site presets, an ID photo maker.' },
       cta: { h3: `Your first ${P.welcomeTrialFiles} files get every feature free`, p: 'Try Pro for real before you decide.' },
       note: 'Destination names are examples of preset targets. Kumquat is not affiliated with these services, and each site’s own instructions set the actual limits.',
     },
@@ -314,8 +298,8 @@ const copy = {
       h2: 'Start <em>free.</em> Stay light.',
       p: `Your first ${P.welcomeTrialFiles} files get everything, Pro included. After that, ${P.freeDailyFiles} basic conversions a day are free, and the free version shows ads.`,
       plans: [
-        { name: 'Free', price: '$0', note: `Every feature for your first ${P.welcomeTrialFiles} files · then ${P.freeDailyFiles} basic conversions a day · with ads`, cta: 'Get it on the App Store', feats: [`First ${P.welcomeTrialFiles} files: every feature, Pro included`, `Then ${P.freeDailyFiles} basic image, audio, video and document conversions a day`, 'Shift-drag wheel, Finder Quick Actions, menu bar drop', 'Before/after preview, 24-hour history, undo', 'Shows ads while free'] },
-        { name: 'Pro Yearly', price: P.yearly, unit: '/ year', note: `${P.trialDays}-day free trial, then renews yearly. Cancel anytime.`, cta: `Start ${P.trialDays}-day free trial`, feats: ['No limits · no ads', 'Destination awareness and site presets', 'Unlimited recipes and folder watching', 'On-device AI and redaction', 'HWP/HWPX, Office pack, more formats'] },
+        { name: 'Free', price: '$0', note: `Every feature for your first ${P.welcomeTrialFiles} files · then ${P.freeDailyFiles} basic conversions a day · with ads`, cta: 'Get it on the App Store', feats: [`First ${P.welcomeTrialFiles} files: every feature, Pro included`, `Then ${P.freeDailyFiles} basic image, audio, video and document conversions a day`, 'Shift-drag wheel, Finder Quick Actions, menu bar drop', 'Compare and undo from the result thumbnail', 'Shows ads while free'] },
+        { name: 'Pro Yearly', price: P.yearly, unit: '/ year', note: `${P.trialDays}-day free trial, then renews yearly. Cancel anytime.`, cta: `Start ${P.trialDays}-day free trial`, feats: ['No limits · no ads', 'Target size, GIF, AVIF and more formats', 'Destinations, recipes, folder watching (coming in 1.1)', 'On-device AI and redaction (coming in 1.2)', 'HWP/HWPX and Office pack (coming in 1.3)'] },
         { name: 'Pro Lifetime', price: P.lifetimeLaunch, was: P.lifetime, note: 'Launch price. Includes every update to the major version you buy.', cta: 'Buy lifetime', featured: true, badge: 'Launch offer', feats: ['Everything in Pro Yearly · no ads', 'Use your major version for life', '50% off the next major upgrade', 'Family Sharing'] },
       ],
       foot: `Planned US App Store prices in USD. Local prices follow Apple’s price tiers for each storefront. Purchases, cancellations and refunds go through Apple. As of ${site.factsDate}.`,
@@ -326,13 +310,13 @@ const copy = {
         ['Batch size', 'Up to today’s remaining free files', 'No limit'],
         ['Target size (e.g. under 2 MB)', `First ${P.welcomeTrialFiles} files`, 'No limit + quality guard'],
         ['GIF, AVIF, FLAC, Opus, WebM and more', `First ${P.welcomeTrialFiles} files`, '✓'],
-        ['History and undo', '24 hours', '30 days + originals vault'],
-        ['Destination awareness and presets', `First ${P.welcomeTrialFiles} files`, '✓'],
-        ['Recipes and folder watching', `First ${P.welcomeTrialFiles} files`, '✓'],
-        ['On-device AI (background, OCR, subtitles, upscale)', `First ${P.welcomeTrialFiles} files`, '✓'],
-        ['Automatic redaction', `First ${P.welcomeTrialFiles} files`, '✓'],
-        ['HWP/HWPX and ID photo maker', `First ${P.welcomeTrialFiles} files`, '✓'],
-        ['Notch shelf and clipboard automation', 'One basic shelf', '✓'],
+        ['Undo', 'Last conversion', 'Last conversion'],
+        ['Destination awareness and presets (coming in 1.1)', '—', '✓'],
+        ['Recipes and folder watching (coming in 1.1)', '—', '✓'],
+        ['Notch shelf and clipboard automation (coming in 1.1)', '—', '✓'],
+        ['On-device AI: background, OCR, subtitles, upscale (coming in 1.2)', '—', '✓'],
+        ['Automatic redaction (coming in 1.2)', '—', '✓'],
+        ['HWP/HWPX and ID photo maker (coming in 1.2–1.3)', '—', '✓'],
         ['Ads', 'Shown', 'None'],
       ],
     },
@@ -349,7 +333,7 @@ const copy = {
         ['Minimum macOS', 'macOS 12', '—', 'macOS 13'],
         ['Finder Quick Actions, Share extension, Shortcuts', 'From 1.0', '—', 'Not in the app bundle'],
         ['App Store privacy label', 'Aiming for “Data Not Collected”', '—', 'Declares purchase history (not linked to you)'],
-        ['Destination awareness and site presets', 'Yes (Pro)', '—', '—'],
+        ['Destination awareness and site presets', 'Coming in 1.1 (Pro)', '—', '—'],
       ],
       foot: `Tangerine details: checked on ${site.factsDate} from the Mac App Store build 2.0.2 (build 9) — its Info.plist, privacy manifest and bundle contents — and the App Store price. Tangerine is a trademark of its developer and is not affiliated with Kumquat. Kumquat entries are the launch plan and may change.`,
     },
@@ -361,8 +345,8 @@ const copy = {
         ['How much can I do for free?', `Your first ${P.welcomeTrialFiles} files can use every feature, Pro included. After that, basic image, audio, video and document conversions are free for ${P.freeDailyFiles} files a day, and batches run up to the files you have left that day. Target size, GIF, AVIF, FLAC, Opus, WebM, automation and AI are Pro.`],
         ['Are there ads?', 'The free version shows ads inside the app: either a note about Kumquat Pro or a sponsor we work with directly. The ad list is downloaded from this website; the app sends no identifiers or usage data, and nothing is personalized or tracked. There is no third-party ad SDK. Pro has no ads.'],
         ['Does it run on Intel Macs or older macOS?', 'It supports Intel and Apple silicon Macs on macOS 12 Monterey or later. Some AI features turn on depending on the OS version, and anything your Mac can’t run is hidden from the menus.'],
-        ['Are my files sent over the internet?', 'No. Conversion and AI run on your Mac. The network is only used to download the destination presets and the ad list, and neither request carries your files or any identifier. See the <a href="privacy/">Privacy Policy</a>.'],
-        ['Will it overwrite my originals?', 'Never. Originals stay in place and results are saved next to them. You can undo the last action, and Pro lets you choose how long the originals vault keeps copies.'],
+        ['Are my files sent over the internet?', 'No. Conversion and AI run on your Mac. The network is only used to download the ad list (and, from 1.1, destination presets), and neither request carries your files or any identifier. See the <a href="privacy/">Privacy Policy</a>.'],
+        ['Will it overwrite my originals?', 'Never. Originals stay in place and results are saved next to them. Undo the last conversion from the menu bar (⌘Z) or the result thumbnail’s Undo button.'],
         ['Can it convert Korean HWP files?', 'HWPX and HWP to PDF and DOCX are planned for Pro. We’ll announce timing in the <a href="changelog/">changelog</a>.'],
         ['How do I cancel or get a refund?', 'All purchases go through the App Store. Cancel in System Settings › Apple ID › Media & Purchases › Manage Subscriptions, and request refunds through Apple’s Report a Problem page. Step-by-step instructions are on the <a href="support/">support</a> page.'],
       ],
@@ -376,37 +360,6 @@ const copy = {
     },
   },
 };
-
-// The Shift wheel drawn as a kumquat cross-section: rind, pith, six segments. Original artwork.
-function sliceSvg(labels, { hot = 3, hotAttr = false, id = 's' } = {}) {
-  const cx = 200, cy = 200, r1 = 30, r2 = 170;
-  const n = labels.length;
-  const gap = 0.05;
-  const p = (r, a) => `${(cx + r * Math.cos(a)).toFixed(1)} ${(cy + r * Math.sin(a)).toFixed(1)}`;
-  const segs = labels.map((label, i) => {
-    const a0 = (i / n) * Math.PI * 2 - Math.PI / 2 - Math.PI / n + gap;
-    const a1 = ((i + 1) / n) * Math.PI * 2 - Math.PI / 2 - Math.PI / n - gap;
-    const d = `M${p(r1, a0)} L${p(r2, a0)} A${r2} ${r2} 0 0 1 ${p(r2, a1)} L${p(r1, a1)} A${r1} ${r1} 0 0 0 ${p(r1, a0)}Z`;
-    const am = (a0 + a1) / 2;
-    const isHot = i === hot;
-    const fill = isHot ? `url(#${id}-hot)` : `url(#${id}-seg)`;
-    const hotFill = `url(#${id}-hot)`;
-    const attrs = hotAttr && isHot ? ` data-hot-fill="${hotFill}"` : '';
-    const segFill = hotAttr ? `url(#${id}-seg)` : fill;
-    return `<path d="${d}" fill="${segFill}"${attrs} class="seg${hotAttr && isHot ? ' seg-hot' : ''}"/><text class="slice-label${isHot && !hotAttr ? ' hot' : ''}${hotAttr && isHot ? ' label-hot' : ''}" x="${(cx + 108 * Math.cos(am)).toFixed(1)}" y="${(cy + 108 * Math.sin(am)).toFixed(1)}">${label}</text>`;
-  });
-  return `<svg viewBox="0 0 400 400" aria-hidden="true">
-              <defs>
-                <radialGradient id="${id}-rind" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#ffa24a"/><stop offset="1" stop-color="#e2550f"/></radialGradient>
-                <radialGradient id="${id}-seg" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffd6a0"/><stop offset=".7" stop-color="#ffab5c"/><stop offset="1" stop-color="#f88a35"/></radialGradient>
-                <radialGradient id="${id}-hot" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ff8a3d"/><stop offset="1" stop-color="#d9480c"/></radialGradient>
-              </defs>
-              <circle cx="200" cy="200" r="196" fill="url(#${id}-rind)"/>
-              <circle cx="200" cy="200" r="182" fill="#fff1dc"/>
-              ${segs.join('\n              ')}
-              <circle cx="200" cy="200" r="16" fill="#fff1dc"/>
-            </svg>`;
-}
 
 export function render(ctx) {
   const c = copy[ctx.lang];
@@ -439,11 +392,8 @@ export function render(ctx) {
         </div>
         <figure class="arch">
           <img src="${img(ctx, 'hero-kumquats.webp')}" width="900" height="1046" alt="${c.hero.alt}" fetchpriority="high">
-          <div class="wheel-pop" aria-hidden="true">
-            <div class="wheel-pop-head"><span>${c.hero.wheelTitle}</span><kbd>${icon('arrow-fat-up')} Shift</kbd></div>
-            ${c.hero.wheelRows.map(([ic, t, k], i) => `<div class="wheel-pop-row${i === 1 ? ' on' : ''}"><span class="ico">${icon(ic)}</span>${t}<em>${k}</em></div>`).join('')}
-          </div>
-          <div class="drop-chip" aria-hidden="true"><span class="file-tile">${icon('file-pdf')}</span><span><b>${c.hero.chipTitle}</b><small>${c.hero.chipSub}</small></span></div>
+          ${shot(ctx, 'wheel', c.hero.wheelAlt, { cls: 'hero-wheel', eager: true })}
+          ${shot(ctx, 'toastad', c.hero.toastAlt, { cls: 'hero-toast', eager: true })}
           <figcaption class="ph-tag">${c.hero.uiTag}</figcaption>
         </figure>
       </div>
@@ -464,27 +414,11 @@ export function render(ctx) {
             ${c.app.feats.map(([ic, t, d]) => `<li><span class="feat-ico">${icon(ic)}</span><div><h3>${t}</h3><p>${d}</p></div></li>`).join('\n            ')}
           </ul>
         </div>
-        <figure class="appwin reveal" aria-label="${c.app.ui.tag}">
-          <div class="appwin-bar"><i></i><i></i><i></i></div>
-          <div class="appwin-body">
-            <aside class="appwin-side">
-              <div class="appwin-brand">${mark}Kumquat</div>
-              ${c.app.ui.nav.map(([ic, t], i) => `<span class="appwin-nav${i === 0 ? ' on' : ''}">${icon(ic)}${t}</span>`).join('')}
-              <div class="appwin-plan"><small>${c.app.ui.plan}</small><b>${c.app.ui.left}</b><span class="meter"><i style="width:80%"></i></span></div>
-            </aside>
-            <div class="appwin-main">
-              <p class="appwin-hello">${c.app.ui.hello}</p>
-              <p class="appwin-title">${c.app.ui.title}</p>
-              <div class="appwin-stats">
-                ${c.app.ui.stats.map(([k, v, d]) => `<div><small>${k}</small><b>${v}</b><span>${d}</span></div>`).join('')}
-              </div>
-              <div class="appwin-list">
-                <div class="appwin-list-head"><b>${c.app.ui.listTitle}</b><span>${c.app.ui.all}</span></div>
-                ${c.app.ui.rows.map(([t, n, d, sz, pct]) => `<div class="appwin-row"><img src="${img(ctx, t)}" width="56" height="56" alt=""><div><b>${n}</b><small>${d}</small></div><span class="sz">${sz}</span><span class="meter"><i style="width:${pct}%"></i></span></div>`).join('')}
-              </div>
-            </div>
-          </div>
-          <figcaption class="ph-tag">${c.app.ui.tag}</figcaption>
+        <figure class="shots-stage reveal">
+          ${shot(ctx, 'settings1', c.app.shots.settings, { cls: 'st-settings' })}
+          ${shot(ctx, 'dropmenu', c.app.shots.drop, { cls: 'st-drop' })}
+          ${shot(ctx, 'toasthover', c.app.shots.hover, { cls: 'st-hover' })}
+          <figcaption class="ph-tag">${c.app.tag}</figcaption>
         </figure>
       </div>
     </section>
@@ -497,21 +431,16 @@ export function render(ctx) {
             ${c.how.steps.map(([h, p], i) => `<li class="step${i === 0 ? ' is-active' : ''}" data-step="${i + 1}"><span class="num">0${i + 1}</span><div><h3>${h}</h3><p>${p}</p></div></li>`).join('\n            ')}
           </ol>
           <div class="how-stage">
-            <div class="stage" data-step="1" data-from="8.4" data-to="1.8">
+            <div class="stage" data-step="1">
               <div class="stage-grid"></div>
               <span class="ph-tag">${c.how.tag}</span>
-              <div class="stage-wheel">${sliceSvg(c.slice, { id: 'ws', hotAttr: true })}</div>
+              <div class="stage-wheel">${shot(ctx, 'wheel', c.hero.wheelAlt)}</div>
               <div class="stage-file">
-                <span class="file-tile">${icon('file-pdf')}</span>
+                <span class="file-tile">${icon('file-image')}</span>
                 <strong>${c.how.file}</strong>
-                <div class="stage-size"><b data-size>8.4</b> MB</div>
-                <div class="stage-bar"><i></i></div>
+                <div class="stage-size"><b>4.8</b> MB</div>
               </div>
-              <div class="stage-drop">
-                <span class="ok">${icon('check')}${c.how.ok}</span>
-                <strong>${c.how.drop}</strong>
-                <small>${c.how.dropSmall}</small>
-              </div>
+              <div class="stage-result">${shot(ctx, 'toasthover', c.app.shots.hover)}</div>
             </div>
           </div>
         </div>
