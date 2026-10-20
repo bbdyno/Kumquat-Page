@@ -50,7 +50,7 @@ To add a guide: copy a guide module, give it a new `path`, and add it to `src/pa
 4. **Legal review.** Privacy Policy and Terms are marked as drafts on the page. Fill in the operator's legal name and address, the governing law, and the effective date. Register the terms URL as the custom EULA in App Store Connect, or switch to Apple's standard EULA.
 5. **Guide facts.** Both guides tell readers to follow the limits shown on the upload screen. Confirm Hometax size limits and Gov24 photo file requirements, then add them with the date checked (see the TODO comments in each module).
 6. **Comparison table.** Tangerine facts were checked on 2026-10-20 (build 2.0.2). Re-check before publishing and after their updates; keep the date in `site.factsDate` current.
-7. **Placeholders.** Hero video, scroll demo, AI before/after images, the App Store privacy label capture, press screenshots and the OG images are placeholders, labeled on the page.
+7. **Placeholders.** The floating wheel panel, the app window and the scroll demo are UI sketches built in HTML, labeled on the page; replace them with real app captures. The App Store privacy label capture and press screenshots are still placeholders.
 8. **Prices and free tier.** Prices mirror `Kumquat/docs/PLAN.md` §2. Free tier (decided 2026-10-20): every feature for the first `welcomeTrialFiles` (10) files, then `freeDailyFiles` (5) basic conversions a day, with ads; Pro has no limits and no ads. Both numbers live in `src/config.mjs`; the landing, terms, privacy, press and Hometax guide copy follow them.
 
 ## Sponsor ad list
@@ -68,3 +68,17 @@ The app downloads `/ads/v1.json` (source: `public/ads/v1.json`) about once a day
 ```
 
 An empty `ads` array means no sponsors; the app then shows its own Kumquat Pro note. Update `updated` whenever the list changes.
+
+## Credits
+
+Photos (Unsplash License, free for commercial use; credited as a courtesy):
+
+| File | Unsplash photo | Photographer |
+| --- | --- | --- |
+| `assets/img/hero-kumquats.webp`, `kumquats-wide.webp`, `thumb-1.webp`, OG images | [4rWiSnmX9uY](https://unsplash.com/photos/a-group-of-oranges-4rWiSnmX9uY) | @rens23 |
+| `assets/img/ai-bg-before.webp`, `ai-bg-after.webp`, `thumb-3.webp` | [bcrmOZjw_V8](https://unsplash.com/photos/yellow-round-fruit-on-brown-plant-pot-bcrmOZjw_V8) | Gabriel Miklós (@gebgramm) |
+| `assets/img/ai-up-before.webp`, `ai-up-after.webp`, `thumb-2.webp` | [_qQRpA_HnaI](https://unsplash.com/photos/a-bowl-filled-with-oranges-on-top-of-a-wooden-table-_qQRpA_HnaI) | Joanna Stołowicz (@joanna_stolowicz) |
+
+`ai-bg-after.webp` is a real background-removal result made on this Mac with Apple Vision (`VNGenerateForegroundInstanceMaskRequest`), the framework the app uses. `ai-up-before.webp` is the same crop reduced to 1/5 and enlarged again, to show the difference upscaling targets; it is labeled as a comparison, not as app output.
+
+Icons: [Phosphor Icons](https://phosphoricons.com) Light, MIT (`licenses/phosphor-icons-MIT.txt`), inlined by `src/icons.mjs`. Fonts: Instrument Serif and Noto Serif KR, SIL OFL 1.1 (`licenses/`).

@@ -1,4 +1,5 @@
 import { docPage, storeCta } from '../layout.mjs';
+import { icon } from '../icons.mjs';
 import { guides } from './_guides.mjs';
 
 export const path = 'guides/';
@@ -7,7 +8,7 @@ export const priority = 0.7;
 
 export function render(ctx) {
   const cards = guides
-    .map((g) => `<a class="card" href="${g.slug}/"><span class="kicker">${g.pill}</span><h2>${g.title}</h2><p>${g.summary}</p><span class="more">읽기 →</span></a>`)
+    .map((g) => `<a class="card" href="${g.slug}/"><span class="kicker">${g.pill}</span><h2>${g.title}</h2><p>${g.summary}</p><span class="more">읽기 ${icon('arrow-up-right')}</span></a>`)
     .join('\n            ');
   return {
     title: '목적지 가이드 · 업로드 규격 맞추기',

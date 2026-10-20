@@ -1,7 +1,10 @@
 import { site, pricing, storeLink } from '../config.mjs';
-import { placeholder, storeCta, btn, arrowSvg } from '../layout.mjs';
+import { placeholder, btn, arrowSvg, mark } from '../layout.mjs';
+import { icon } from '../icons.mjs';
 import { formats, kinds } from '../data/formats.mjs';
-import { aiIllustrations } from '../data/illustrations.mjs';
+import { maskIllustration } from '../data/illustrations.mjs';
+
+const img = (ctx, name) => `${ctx.root}assets/img/${name}`;
 
 export const path = '';
 export const priority = 1.0;
@@ -14,6 +17,12 @@ const copy = {
     description: 'Mac용 파일 변환·최적화 앱. 처음 파일 10개는 모든 기능을 무료로, 이후 기본 변환은 하루 5개 무료. 업로드 용량에 맞춰 자동 규격화, 여러 단계를 묶는 레시피, 온디바이스 AI. 파일은 Mac 밖으로 나가지 않습니다. Intel Mac·macOS 12 지원.',
     hero: {
       label: 'Mac 파일 변환 · 출시 준비 중',
+      announceTag: '출시 준비 중',
+      announce: `처음 파일 ${P.welcomeTrialFiles}개는 모든 기능 무료`,
+      alt: '햇살 아래 놓인 금귤 사진',
+      wheelTitle: '변환 휠',
+      wheelRows: [['file-image', 'JPG로 바꾸기', '⇧ J'], ['target', '2 MB 이하로', '⇧ 2'], ['file-pdf', 'PDF로 합치기', '⇧ P']],
+      uiTag: 'UI 예시',
       h1: '드롭하면,<br><em>목적지에</em> 딱 맞게.',
       lede: '파일을 끌다가 <kbd>Shift</kbd>를 한 번. 원하는 형식과 크기로 바로 바뀌고, <span class="nowrap">홈택스·정부24·메일</span>처럼 올릴 곳의 제한까지 알아서 맞춥니다. 모든 처리는 내 Mac 안에서만.',
       cta: 'App Store에서 받기',
@@ -21,8 +30,21 @@ const copy = {
       note: '출시 전입니다. App Store 링크는 캠페인 링크 자리표시자입니다.',
       chipTitle: '증빙_스캔.pdf',
       chipSub: '8.4 MB → 1.8 MB',
-      shift: '드래그 중',
       tag: '앱 녹화 영상 자리 · 16:10',
+    },
+    app: {
+      label: '한눈에',
+      h2: '필요한 건 전부,<br>조용한 창 <em>하나에.</em>',
+      feats: [['stack', '휠로 바로 변환', '메뉴를 찾지 않아도 됩니다. 끌다가 Shift 한 번이면 할 수 있는 작업만 펼쳐집니다.'], ['target', '목적지에 맞춤', '업로드 칸의 허용 형식과 용량 한도를 읽어, 올릴 곳에 맞는 파일을 만듭니다.'], ['arrow-counter-clockwise', '기록과 실행 취소', '원본은 그대로 둡니다. 마지막 작업은 언제든 되돌릴 수 있습니다.']],
+      ui: {
+        nav: [['clock-counter-clockwise', '기록'], ['flow-arrow', '레시피'], ['map-pin-area', '목적지'], ['tray-arrow-down', '원본 보관함'], ['gear-six', '설정']],
+        plan: '무료 · 오늘 남은 변환', left: '1 / 5',
+        hello: '좋은 오후예요', title: '오늘 파일 4개를 맞췄어요.',
+        stats: [['변환한 파일', '4', '어제보다 2개 더'], ['줄인 용량', '18.2 MB', '평균 74% 감소'], ['남은 무료 변환', '1', '내일 다시 5개']],
+        listTitle: '최근 작업', all: '모두 보기',
+        rows: [['thumb-1.webp', '금귤_정물.heic', 'JPG · 메일 첨부 맞춤', '4.8 → 1.2 MB', 75], ['thumb-2.webp', '레시피_사진.png', 'WebP · 블로그 1600px', '3.1 → 0.4 MB', 87], ['thumb-3.webp', '화분.jpg', '배경 제거 · PNG', '2.6 → 1.9 MB', 27]],
+        tag: 'UI 예시 · 실제 앱 화면으로 교체 예정',
+      },
     },
     slice: ['JPG', 'PNG', 'PDF', '2MB 이하', 'WebP', 'HEIC'],
     band: [
@@ -38,7 +60,7 @@ const copy = {
       file: '종합소득세_증빙_스캔.pdf',
       drop: '홈택스 · 증빙서류 첨부',
       dropSmall: '예시 화면 · 업로드 칸의 허용 형식과 용량 한도를 읽어 옵니다',
-      ok: '✓ 한도 안으로',
+      ok: '한도 안으로',
       tag: '인터랙션 예시 · 앱 녹화로 교체 예정',
       steps: [
         ['파일을 끌기 시작합니다', 'Finder, 메일 첨부, 스크린샷 어디서든. 평소처럼 끌면 됩니다. 앱을 먼저 열 필요가 없습니다.'],
@@ -78,7 +100,7 @@ const copy = {
         ['mask', '민감정보 마스킹', '주민등록번호·전화번호·카드번호·이메일을 찾아 가린 사본을 만듭니다. 원본은 건드리지 않습니다.'],
       ],
       before: '이전', after: '이후',
-      tag: '예시 일러스트 · 실제 결과로 교체 예정',
+      tags: { bg: 'macOS Vision으로 만든 실제 결과', up: '해상도 비교 예시', mask: '예시 문서' },
       slider: '이전/이후 비교 위치',
     },
     formats: {
@@ -177,6 +199,12 @@ const copy = {
     description: 'A file converter and optimizer for Mac. Your first 10 files get every feature free, then 5 basic conversions a day stay free. Kumquat fits files to upload limits, chains steps into recipes and runs AI on device. Your files never leave your Mac. Supports Intel Macs and macOS 12.',
     hero: {
       label: 'File converter for Mac · Coming soon',
+      announceTag: 'Coming soon',
+      announce: `Your first ${P.welcomeTrialFiles} files get every feature free`,
+      alt: 'Kumquats on a table in late sunlight',
+      wheelTitle: 'Conversion wheel',
+      wheelRows: [['file-image', 'Convert to JPG', '⇧ J'], ['target', 'Under 2 MB', '⇧ 2'], ['file-pdf', 'Combine into PDF', '⇧ P']],
+      uiTag: 'UI sketch',
       h1: 'Drop it,<br>and it <em>fits.</em>',
       lede: 'Start dragging a file and tap <kbd>Shift</kbd>. It turns into the format and size you need, and fits the limits of wherever you’re dropping it. Everything runs on your Mac.',
       cta: 'Get it on the App Store',
@@ -184,8 +212,21 @@ const copy = {
       note: 'Not released yet. The App Store link is a placeholder campaign link.',
       chipTitle: 'receipts-scan.pdf',
       chipSub: '8.4 MB → 1.8 MB',
-      shift: 'while dragging',
       tag: 'App recording goes here · 16:10',
+    },
+    app: {
+      label: 'At a glance',
+      h2: 'Everything you need,<br>in one <em>quiet</em> window.',
+      feats: [['stack', 'Convert from the wheel', 'No menus to dig through. Tap Shift while dragging and only the actions that fit appear.'], ['target', 'Fit the destination', 'Kumquat reads the upload field’s accepted formats and size limit, then makes a file that fits.'], ['arrow-counter-clockwise', 'History and undo', 'Originals stay where they are, and you can undo the last action anytime.']],
+      ui: {
+        nav: [['clock-counter-clockwise', 'History'], ['flow-arrow', 'Recipes'], ['map-pin-area', 'Destinations'], ['tray-arrow-down', 'Originals vault'], ['gear-six', 'Settings']],
+        plan: 'Free · conversions left today', left: '1 / 5',
+        hello: 'Good afternoon', title: 'You fitted 4 files today.',
+        stats: [['Files converted', '4', '2 more than yesterday'], ['Space saved', '18.2 MB', '74% smaller on average'], ['Free left today', '1', '5 more tomorrow']],
+        listTitle: 'Recent', all: 'View all',
+        rows: [['thumb-1.webp', 'kumquats.heic', 'JPG · fitted for Mail', '4.8 → 1.2 MB', 75], ['thumb-2.webp', 'recipe-photo.png', 'WebP · blog 1600px', '3.1 → 0.4 MB', 87], ['thumb-3.webp', 'plant.jpg', 'Background removed · PNG', '2.6 → 1.9 MB', 27]],
+        tag: 'UI sketch · to be replaced with the real app',
+      },
     },
     slice: ['JPG', 'PNG', 'PDF', 'Under 2MB', 'WebP', 'HEIC'],
     band: [
@@ -201,7 +242,7 @@ const copy = {
       file: 'tax-receipts-scan.pdf',
       drop: 'Tax portal · Attach receipts',
       dropSmall: 'Example screen · reads the accepted types and size limit from the upload field',
-      ok: '✓ Fits the limit',
+      ok: 'Fits the limit',
       tag: 'Interaction sketch · to be replaced with a recording',
       steps: [
         ['Start dragging a file', 'From Finder, a mail attachment or a screenshot. Drag it the way you always do. There’s no app to open first.'],
@@ -241,7 +282,7 @@ const copy = {
         ['mask', 'Redact personal info', 'Finds ID numbers, phone numbers, card numbers and emails, then makes a redacted copy. The original stays as it was.'],
       ],
       before: 'Before', after: 'After',
-      tag: 'Illustration · to be replaced with real results',
+      tags: { bg: 'Real result made with macOS Vision', up: 'Resolution comparison (illustration)', mask: 'Sample document' },
       slider: 'Before/after position',
     },
     formats: {
@@ -370,7 +411,7 @@ function sliceSvg(labels, { hot = 3, hotAttr = false, id = 's' } = {}) {
 export function render(ctx) {
   const c = copy[ctx.lang];
   const ko = ctx.lang === 'ko';
-  const ill = aiIllustrations();
+  const mask = maskIllustration();
   const enTo = (s) => (ko ? s : s.replace('병합', 'merge').replace('분할', 'split').replace('목표 용량', 'target size').replace(/\(오디오 추출\)/g, ' (audio only)').replace('이미지', 'images').replace('영상 → GIF', 'video → GIF'));
   const head = (h, extra = '') => `<div class="sec-head reveal"><p class="label">${h.label}</p><h2>${h.h2}</h2>${h.p ? `<p>${h.p}</p>` : ''}${extra}</div>`;
 
@@ -387,27 +428,64 @@ export function render(ctx) {
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <p class="label">${c.hero.label}</p>
+          <a class="announce" href="#pricing"><span class="announce-tag">${c.hero.announceTag}</span>${c.hero.announce}${icon('arrow-up-right')}</a>
           <h1>${c.hero.h1}</h1>
           <p class="lede">${c.hero.lede}</p>
           <div class="hero-actions">
             ${btn(storeLink(ctx.lang, 'home-hero'), c.hero.cta, 'btn-orange')}
-            <a class="link-arrow" href="#how">${c.hero.more}</a>
+            <a class="play-link" href="#how"><span class="play">${icon('play')}</span>${c.hero.more}</a>
           </div>
           <p class="hero-note">${c.hero.note}</p>
         </div>
-        <div class="arch" role="img" aria-label="${ko ? '귤 단면 모양의 변환 휠 일러스트' : 'Illustration of the conversion wheel drawn as a kumquat slice'}">
-          <div class="shift-hint"><kbd>⇧ Shift</kbd>${c.hero.shift}</div>
-          <div class="drop-chip"><span class="file-ico">PDF</span><span><b>${c.hero.chipTitle}</b><small>${c.hero.chipSub}</small></span></div>
-          <div class="slice">${sliceSvg(c.slice, { id: 'hs' })}</div>
-          <span class="ph-tag">${c.hero.tag}</span>
-        </div>
+        <figure class="arch">
+          <img src="${img(ctx, 'hero-kumquats.webp')}" width="900" height="1046" alt="${c.hero.alt}" fetchpriority="high">
+          <div class="wheel-pop" aria-hidden="true">
+            <div class="wheel-pop-head"><span>${c.hero.wheelTitle}</span><kbd>${icon('arrow-fat-up')} Shift</kbd></div>
+            ${c.hero.wheelRows.map(([ic, t, k], i) => `<div class="wheel-pop-row${i === 1 ? ' on' : ''}"><span class="ico">${icon(ic)}</span>${t}<em>${k}</em></div>`).join('')}
+          </div>
+          <div class="drop-chip" aria-hidden="true"><span class="file-tile">${icon('file-pdf')}</span><span><b>${c.hero.chipTitle}</b><small>${c.hero.chipSub}</small></span></div>
+          <figcaption class="ph-tag">${c.hero.uiTag}</figcaption>
+        </figure>
       </div>
       <div class="wrap band-wrap">
         <div class="band reveal">
           ${c.band.map(([n, l, s]) => `<div class="band-item"><strong>${n}</strong><span>${l}</span><small>${s}</small></div>`).join('\n          ')}
-          <span class="band-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9" stroke="currentColor" stroke-width="1.2"/></svg></span>
+          <span class="band-mark" aria-hidden="true">${mark}</span>
         </div>
+      </div>
+    </section>
+
+    <section class="section app-sec" id="app">
+      <div class="wrap app-grid">
+        <div class="app-copy reveal">
+          <p class="label">${c.app.label}</p>
+          <h2>${c.app.h2}</h2>
+          <ul class="feat-list">
+            ${c.app.feats.map(([ic, t, d]) => `<li><span class="feat-ico">${icon(ic)}</span><div><h3>${t}</h3><p>${d}</p></div></li>`).join('\n            ')}
+          </ul>
+        </div>
+        <figure class="appwin reveal" aria-label="${c.app.ui.tag}">
+          <div class="appwin-bar"><i></i><i></i><i></i></div>
+          <div class="appwin-body">
+            <aside class="appwin-side">
+              <div class="appwin-brand">${mark}Kumquat</div>
+              ${c.app.ui.nav.map(([ic, t], i) => `<span class="appwin-nav${i === 0 ? ' on' : ''}">${icon(ic)}${t}</span>`).join('')}
+              <div class="appwin-plan"><small>${c.app.ui.plan}</small><b>${c.app.ui.left}</b><span class="meter"><i style="width:80%"></i></span></div>
+            </aside>
+            <div class="appwin-main">
+              <p class="appwin-hello">${c.app.ui.hello}</p>
+              <p class="appwin-title">${c.app.ui.title}</p>
+              <div class="appwin-stats">
+                ${c.app.ui.stats.map(([k, v, d]) => `<div><small>${k}</small><b>${v}</b><span>${d}</span></div>`).join('')}
+              </div>
+              <div class="appwin-list">
+                <div class="appwin-list-head"><b>${c.app.ui.listTitle}</b><span>${c.app.ui.all}</span></div>
+                ${c.app.ui.rows.map(([t, n, d, sz, pct]) => `<div class="appwin-row"><img src="${img(ctx, t)}" width="56" height="56" alt=""><div><b>${n}</b><small>${d}</small></div><span class="sz">${sz}</span><span class="meter"><i style="width:${pct}%"></i></span></div>`).join('')}
+              </div>
+            </div>
+          </div>
+          <figcaption class="ph-tag">${c.app.ui.tag}</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -424,13 +502,13 @@ export function render(ctx) {
               <span class="ph-tag">${c.how.tag}</span>
               <div class="stage-wheel">${sliceSvg(c.slice, { id: 'ws', hotAttr: true })}</div>
               <div class="stage-file">
-                <div class="file-ico">PDF</div>
+                <span class="file-tile">${icon('file-pdf')}</span>
                 <strong>${c.how.file}</strong>
                 <div class="stage-size"><b data-size>8.4</b> MB</div>
                 <div class="stage-bar"><i></i></div>
               </div>
               <div class="stage-drop">
-                <span class="ok">${c.how.ok}</span>
+                <span class="ok">${icon('check')}${c.how.ok}</span>
                 <strong>${c.how.drop}</strong>
                 <small>${c.how.dropSmall}</small>
               </div>
@@ -445,12 +523,14 @@ export function render(ctx) {
         ${head(F)}
         <div class="bento">
           <article class="tile t-dest reveal">
+            <span class="tile-ico">${icon('map-pin-area')}</span>
             <span class="tag">${F.dest.tag}</span>
             <ul class="dest-list">${F.dest.list.map(([n, s, hot]) => `<li${hot ? ' class="hot"' : ''}><b>${n}</b><span>${s}</span></li>`).join('')}</ul>
             <h3>${F.dest.h3}</h3>
             <p>${F.dest.p}</p>
           </article>
           <article class="tile t-recipe reveal">
+            <span class="tile-ico">${icon('flow-arrow')}</span>
             <span class="tag">${F.recipe.tag}</span>
             <ol class="recipe-steps">${F.recipe.steps.map((s, i) => `<li style="--i:${i}">${s}</li>`).join('')}</ol>
             <h3>${F.recipe.h3}</h3>
@@ -458,12 +538,14 @@ export function render(ctx) {
             <p class="watch"><i></i>${F.recipe.watch}</p>
           </article>
           <article class="tile t-privacy reveal">
+            <span class="tile-ico">${icon('shield-check')}</span>
             <span class="tag">${F.privacy.tag}</span>
             <div class="big-zero">${F.privacy.zero}</div>
             <h3>${F.privacy.h3}</h3>
             <p>${F.privacy.p}</p>
           </article>
           <article class="tile t-hwp reveal">
+            <span class="tile-ico">${icon('file-text')}</span>
             <span class="tag">${F.hwp.tag}</span>
             <div class="hwp-mark">${F.hwp.mark}</div>
             <h3>${F.hwp.h3}</h3>
@@ -475,7 +557,7 @@ export function render(ctx) {
             <p>${F.cta.p}</p>
           </a>
         </div>
-        <p class="bento-note">${F.note}${ko ? ' <a href="guides/">목적지별 가이드 →</a>' : ''}</p>
+        <p class="bento-note">${F.note}${ko ? ' <a class="link-arrow" href="guides/">목적지별 가이드</a>' : ''}</p>
       </div>
     </section>
 
@@ -490,12 +572,13 @@ export function render(ctx) {
             ${c.ai.tabs
               .map(
                 ([k], i) => `<div class="ba" id="ba-${k}" role="tabpanel" aria-labelledby="tab-${k}"${i === 0 ? '' : ' hidden'}>
-              <div class="ba-layer ba-before">${ill[k][0]}</div>
-              <div class="ba-layer ba-after">${ill[k][1]}</div>
+              ${k === 'mask'
+                ? `<div class="ba-layer ba-before">${mask[0]}</div><div class="ba-layer ba-after">${mask[1]}</div>`
+                : `<div class="ba-layer ba-before"><img src="${img(ctx, `ai-${k}-before.webp`)}" alt="" loading="lazy"></div><div class="ba-layer ba-after${k === 'bg' ? ' checker' : ''}"><img src="${img(ctx, `ai-${k}-after.webp`)}" alt="" loading="lazy"></div>`}
               <span class="ba-label before">${c.ai.before}</span><span class="ba-label after">${c.ai.after}</span>
               <div class="ba-handle" aria-hidden="true"></div>
               <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="${c.ai.slider}">
-              <span class="ph-tag">${c.ai.tag}</span>
+              <span class="ph-tag">${c.ai.tags[k]}</span>
             </div>`,
               )
               .join('\n            ')}
@@ -509,7 +592,7 @@ export function render(ctx) {
         ${head(c.formats)}
         <div class="tools">
           <label class="search"><span class="visually-hidden">${c.formats.search}</span>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            ${icon('magnifying-glass')}
             <input type="search" placeholder="${c.formats.search}" data-formats-search autocomplete="off">
           </label>
           <div class="chips" role="group" aria-label="${ko ? '필터' : 'Filter'}">
@@ -571,7 +654,7 @@ export function render(ctx) {
             <table>
               <thead><tr>${c.pricing.mcols.map((h) => `<th scope="col">${h}</th>`).join('')}</tr></thead>
               <tbody>
-                ${c.pricing.mrows.map(([f, a, b]) => `<tr><th scope="row">${f}</th><td class="${a === '—' ? 'no' : ''}">${a}</td><td class="${b === '✓' ? 'yes' : ''}">${b}</td></tr>`).join('\n                ')}
+                ${c.pricing.mrows.map(([f, a, b]) => `<tr><th scope="row">${f}</th><td class="${a === '—' ? 'no' : ''}">${a}</td><td class="${b === '✓' ? 'yes' : ''}">${b === '✓' ? icon('check') : b}</td></tr>`).join('\n                ')}
               </tbody>
             </table>
           </div>
@@ -602,7 +685,7 @@ export function render(ctx) {
           <p>${c.faq.side}</p>
         </div>
         <div class="faq">
-          ${c.faq.items.map(([q, a]) => `<details><summary>${q}</summary><div class="answer"><p>${a}</p></div></details>`).join('\n          ')}
+          ${c.faq.items.map(([q, a]) => `<details><summary>${q}<span class="plus">${icon('plus')}</span></summary><div class="answer"><p>${a}</p></div></details>`).join('\n          ')}
         </div>
       </div>
     </section>

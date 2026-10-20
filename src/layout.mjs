@@ -1,4 +1,5 @@
 import { site, storeLink } from './config.mjs';
+import { icon } from './icons.mjs';
 
 export const strings = {
   ko: {
@@ -62,9 +63,12 @@ export const strings = {
   },
 };
 
-export const arrowSvg = `<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12L12 4M5.5 4H12v6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+export const arrowSvg = icon('arrow-up-right');
 
-const themeIcon = `<svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><svg class="icon-auto" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/></svg>`;
+// Brand symbol: a kumquat cross-section (rind, six segments, core). Also used for the favicon.
+export const mark = `<svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="15.5" fill="#f2661b"/><circle cx="16" cy="16" r="12" fill="none" stroke="#fff3e2" stroke-width="1.5"/><path d="M16 4.6v22.8M6.1 10.3l19.8 11.4M6.1 21.7l19.8-11.4" stroke="#fff3e2" stroke-width="1.5"/><circle cx="16" cy="16" r="2.6" fill="#fff3e2"/></svg>`;
+
+const themeIcon = icon('sun', 'icon-sun') + icon('moon', 'icon-moon') + icon('circle-half', 'icon-auto');
 
 // Runs before first paint so a saved theme never flashes.
 const themeBoot = `<script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('kq-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>`;
@@ -124,7 +128,7 @@ export function layout(ctx, page) {
   <a class="skip-link" href="#main">${s.skip}</a>
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="brand" href="${ctx.href('')}" aria-label="${s.home}">Kumquat<i aria-hidden="true"></i></a>
+      <a class="brand" href="${ctx.href('')}" aria-label="${s.home}">${mark}<span>Kumquat</span></a>
       <nav class="nav" aria-label="${ctx.lang === 'ko' ? '주 메뉴' : 'Main'}">${navLinks}</nav>
       <div class="header-actions">
         <a class="lang-link" href="${otherHref}" lang="${s.otherLangCode}" hreflang="${s.otherLangCode}" aria-label="${s.otherLangName}">${s.otherLang}</a>
@@ -145,13 +149,14 @@ ${page.body}
       <div class="footer-grid">
         <div class="footer-brand">
           <p>${s.footer.tagline}</p>
+          <p class="credit">${ctx.lang === 'ko' ? '사진' : 'Photos'}: <a href="https://unsplash.com/license" rel="noopener">Unsplash</a> · ${ctx.lang === 'ko' ? '아이콘' : 'Icons'}: <a href="https://phosphoricons.com" rel="noopener">Phosphor</a></p>
           <a href="mailto:${site.email}">${site.email}</a>
         </div>
         ${footCol('product')}
         ${footCol('resources')}
         ${footCol('legal')}
       </div>
-      <p class="wordmark" aria-hidden="true">Kumquat<i></i></p>
+      <p class="wordmark" aria-hidden="true">Kumquat${mark}</p>
       <div class="footer-fine"><p>${s.footer.fine}</p><p>© 2026 Kumquat</p></div>
     </div>
   </footer>
