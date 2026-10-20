@@ -32,12 +32,14 @@ const ko = (ctx) => docPage(ctx, {
 
           <h2 id="t3">3. 무료 기능과 Pro</h2>
           <ul>
-            <li>기본 변환 기능은 기간·횟수 제한 없이 무료로 제공됩니다.</li>
-            <li>Pro 기능은 기능별 체험 횟수(현재 ${P.proTrialCredits}회)를 무료로 쓸 수 있고, 그 이후에는 Pro 구매가 필요합니다.</li>
+            <li><strong>처음 체험</strong>: 처음 파일 ${P.welcomeTrialFiles}개까지는 Pro 기능을 포함한 모든 기능을 무료로 사용할 수 있습니다.</li>
+            <li><strong>무료 사용</strong>: 체험 이후에는 이미지·오디오·영상·문서의 기본 변환을 하루 ${P.freeDailyFiles}개 파일까지 무료로 사용할 수 있습니다. 개수는 파일 단위로 세며, 일괄 처리는 그날 남은 무료 개수만큼 실행됩니다. 목표 용량, GIF·AVIF·FLAC·Opus·WebM 등 일부 포맷, 자동화·AI 기능에는 Pro가 필요합니다.</li>
+            <li><strong>광고</strong>: 무료 사용 중에는 앱 안에 광고가 표시됩니다. 광고는 Kumquat Pro 안내 또는 개발자가 직접 계약한 스폰서 광고입니다. Pro 평생 이용권 구매자와 Pro 연간 구독 기간에는 광고가 표시되지 않습니다.</li>
             <li><strong>Pro 평생 이용권</strong>(비소모성 인앱 구매, 정가 ${P.lifetime}): 구매한 메이저 버전(예: 1.x)과 그 업데이트를 기간 제한 없이 사용합니다. 다음 메이저 버전은 별도 업그레이드 구매가 필요할 수 있습니다.</li>
             <li><strong>Pro 연간 구독</strong>(자동 갱신 구독, ${P.yearly}/년): 구독 기간 동안 최신 버전의 모든 Pro 기능을 사용합니다.</li>
           </ul>
-          <p>표시 가격은 미국 App Store 기준이며, 실제 가격과 통화는 사용자의 App Store 국가에 따라 결제 화면에 표시됩니다. 기능 구성은 업데이트로 바뀔 수 있으나, 이미 구매한 평생 이용권의 기능을 구매 당시보다 줄이지는 않습니다.</p>
+          <p>표시 가격은 미국 App Store 기준이며, 실제 가격과 통화는 사용자의 App Store 국가에 따라 결제 화면에 표시됩니다. 무료 사용 범위와 기능 구성은 업데이트로 바뀔 수 있으나, 이미 구매한 평생 이용권의 기능을 구매 당시보다 줄이지는 않습니다.</p>
+          <p>스폰서 광고의 내용과 광고주의 상품·서비스에 대한 책임은 해당 광고주에게 있습니다. 광고를 누르면 광고주의 웹사이트가 브라우저에서 열리며, 그 사이트의 이용은 광고주의 약관과 개인정보 처리방침을 따릅니다.</p>
 
           <h2 id="t4">4. 자동 갱신 구독</h2>
           <ul>
@@ -107,12 +109,14 @@ const en = (ctx) => docPage(ctx, {
 
           <h2 id="t3">3. Free and Pro</h2>
           <ul>
-            <li>Basic conversions are free with no time or usage limits.</li>
-            <li>Each Pro feature can be tried a limited number of times (currently ${P.proTrialCredits}) for free; after that, Pro is required.</li>
+            <li><strong>Welcome trial</strong>: your first ${P.welcomeTrialFiles} files can use every feature, including Pro features, for free.</li>
+            <li><strong>Free use</strong>: after the trial, basic image, audio, video and document conversions are free for up to ${P.freeDailyFiles} files a day. Usage is counted per file, and a batch runs up to the free files you have left that day. Target size, some formats such as GIF, AVIF, FLAC, Opus and WebM, and automation and AI features require Pro.</li>
+            <li><strong>Ads</strong>: the free version shows ads inside the app, either a note about Kumquat Pro or a sponsor the Developer works with directly. No ads are shown to Pro Lifetime owners or during a Pro Yearly subscription.</li>
             <li><strong>Pro Lifetime</strong> (non-consumable in-app purchase, regular price ${P.lifetime}): use the major version you bought (for example 1.x) and its updates with no time limit. A later major version may require a separate upgrade purchase.</li>
             <li><strong>Pro Yearly</strong> (auto-renewable subscription, ${P.yearly}/year): all Pro features in the latest version while subscribed.</li>
           </ul>
-          <p>Prices shown are US App Store prices. The price and currency you pay are shown at checkout for your App Store country. Features may change with updates, but a Pro Lifetime purchase will not lose features it had when you bought it.</p>
+          <p>Prices shown are US App Store prices. The price and currency you pay are shown at checkout for your App Store country. The free allowance and features may change with updates, but a Pro Lifetime purchase will not lose features it had when you bought it.</p>
+          <p>Advertisers are responsible for their ads and for their products and services. Tapping an ad opens the advertiser’s website in your browser, and your use of that site is governed by the advertiser’s terms and privacy policy.</p>
 
           <h2 id="t4">4. Auto-renewing subscription</h2>
           <ul>

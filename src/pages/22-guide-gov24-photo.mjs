@@ -71,7 +71,7 @@ export function render(ctx) {
             <li>배경을 흰색 또는 지정한 단색으로 교체(macOS 14 이상에서 가장 정확)</li>
             <li>파일 용량 한도에 맞춰 JPG 품질 자동 조절</li>
           </ul>
-          <div class=\"doc-cta\">${storeCta(ctx, 'guide-gov24-photo')}</div>
+          <div class="doc-cta">${storeCta(ctx, 'guide-gov24-photo')}</div>
 
           <h2 id="check">5. 올리기 전 확인</h2>
           <ul>

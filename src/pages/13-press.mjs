@@ -27,7 +27,7 @@ const ko = (ctx) => docPage(ctx, {
             <tr><th scope="row">분류</th><td>macOS 유틸리티 · 파일 변환·최적화</td></tr>
             <tr><th scope="row">출시</th><td>준비 중(Mac App Store 단독 배포)</td></tr>
             <tr><th scope="row">요구 사양</th><td>macOS 12 이상, Intel·Apple 실리콘</td></tr>
-            <tr><th scope="row">가격</th><td>무료(기본 변환 무제한) · Pro 연 ${pricing.yearly} 또는 평생 ${pricing.lifetime}(출시가 ${pricing.lifetimeLaunch}), USD 기준 계획가</td></tr>
+            <tr><th scope="row">가격</th><td>무료(처음 파일 ${pricing.welcomeTrialFiles}개는 모든 기능, 이후 기본 변환 하루 ${pricing.freeDailyFiles}개, 광고 포함) · Pro 연 ${pricing.yearly} 또는 평생 ${pricing.lifetime}(출시가 ${pricing.lifetimeLaunch}), 광고 없음 · USD 기준 계획가</td></tr>
             <tr><th scope="row">언어</th><td>한국어, 영어</td></tr>
             <tr><th scope="row">개인정보</th><td>데이터 수집 안 함, 계정 없음, 모든 처리 온디바이스</td></tr>
           </tbody></table></div>
@@ -36,7 +36,7 @@ const ko = (ctx) => docPage(ctx, {
           <h3>한 줄</h3>
           <blockquote>Kumquat은 파일을 올릴 곳의 규격에 맞춰 자동으로 바꿔 주는 Mac용 파일 변환 앱입니다.</blockquote>
           <h3>한 문단</h3>
-          <blockquote>Kumquat은 Mac용 파일 변환·최적화 앱입니다. 파일을 끌다가 Shift를 누르면 그 파일로 할 수 있는 작업이 휠로 펼쳐지고, 홈택스·정부24·메일처럼 올릴 곳의 허용 형식과 용량 한도에 맞춰 자동으로 변환합니다. 기본 변환은 횟수 제한 없이 무료이며, 여러 단계를 묶는 레시피, 폴더 감시, 온디바이스 AI는 Pro로 제공합니다. 모든 처리는 Mac 안에서 이루어지고, 데이터를 수집하지 않습니다. Intel Mac과 macOS 12부터 지원합니다.</blockquote>
+          <blockquote>Kumquat은 Mac용 파일 변환·최적화 앱입니다. 파일을 끌다가 Shift를 누르면 그 파일로 할 수 있는 작업이 휠로 펼쳐지고, 홈택스·정부24·메일처럼 올릴 곳의 허용 형식과 용량 한도에 맞춰 자동으로 변환합니다. 처음 파일 10개는 모든 기능을 무료로 써 볼 수 있고, 이후에도 기본 변환은 하루 5개까지 무료입니다. 여러 단계를 묶는 레시피, 폴더 감시, 온디바이스 AI는 Pro로 제공합니다. 모든 처리는 Mac 안에서 이루어지고, 데이터를 수집하지 않습니다. Intel Mac과 macOS 12부터 지원합니다.</blockquote>
           <h3>주요 특징</h3>
           <ul>
             <li>목적지 인식: 커서 아래 앱과 브라우저 업로드 칸에 맞춰 형식·용량·픽셀 규격 자동 조정</li>
@@ -67,7 +67,7 @@ const en = (ctx) => docPage(ctx, {
             <tr><th scope="row">Category</th><td>macOS utility · file conversion and optimization</td></tr>
             <tr><th scope="row">Release</th><td>Coming soon (Mac App Store only)</td></tr>
             <tr><th scope="row">Requirements</th><td>macOS 12 or later, Intel and Apple silicon</td></tr>
-            <tr><th scope="row">Price</th><td>Free (unlimited basic conversions) · Pro ${pricing.yearly}/year or ${pricing.lifetime} lifetime (launch ${pricing.lifetimeLaunch}), planned USD prices</td></tr>
+            <tr><th scope="row">Price</th><td>Free (every feature for the first ${pricing.welcomeTrialFiles} files, then ${pricing.freeDailyFiles} basic conversions a day, with ads) · Pro ${pricing.yearly}/year or ${pricing.lifetime} lifetime (launch ${pricing.lifetimeLaunch}), no ads · planned USD prices</td></tr>
             <tr><th scope="row">Languages</th><td>English, Korean</td></tr>
             <tr><th scope="row">Privacy</th><td>Data Not Collected, no account, all processing on device</td></tr>
           </tbody></table></div>
@@ -76,7 +76,7 @@ const en = (ctx) => docPage(ctx, {
           <h3>One line</h3>
           <blockquote>Kumquat is a file converter for Mac that fits files to wherever you’re uploading them.</blockquote>
           <h3>One paragraph</h3>
-          <blockquote>Kumquat is a file converter and optimizer for Mac. Tap Shift while dragging a file and the actions that make sense for it fan out in a wheel; drop it on an upload field and Kumquat matches the accepted formats and size limit automatically. Basic conversions are free with no limits, while recipes, folder watching and on-device AI are part of Pro. Everything runs on your Mac and no data is collected. It supports Intel Macs and macOS 12 or later.</blockquote>
+          <blockquote>Kumquat is a file converter and optimizer for Mac. Tap Shift while dragging a file and the actions that make sense for it fan out in a wheel; drop it on an upload field and Kumquat matches the accepted formats and size limit automatically. Your first 10 files get every feature free and 5 basic conversions a day stay free after that, while recipes, folder watching and on-device AI are part of Pro. Everything runs on your Mac and no data is collected. It supports Intel Macs and macOS 12 or later.</blockquote>
           <h3>Highlights</h3>
           <ul>
             <li>Destination awareness: fits format, size and dimensions to the app or upload field under the cursor</li>

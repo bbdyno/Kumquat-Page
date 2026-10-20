@@ -7,7 +7,7 @@ Chosen on 2026-10-20 after reviewing about 140 Pinterest results (searches: "mac
 | Warm stone canvas instead of white or pure black; one or two lighter paper surfaces | `--bg #ece6dd`, `--paper #f6f2ec`; dark mode is warm near-black `#110f0d`, never cool grey |
 | Large editorial serif headline, left-aligned, one word emphasized (italic in Latin, color in Korean) | Instrument Serif / Noto Serif KR 500 for h1–h2; `<em>` is italic in English and orange in Korean |
 | Product visual inside an arch-shaped frame with soft directional light | Hero arch with an orange glow; the Shift wheel is drawn as a kumquat cross-section |
-| A black band of big serif numbers under the hero | `.band` with four facts (∞, 0, 12+, 5회) |
+| A black band of big serif numbers under the hero | `.band` with four facts (10개, 0, 12+, 5개) |
 | Orange used for one CTA and one tile only, against neutrals | Orange pill CTA, one solid orange bento tile, the final CTA panel; everything else neutral |
 | Bento grid on cream with mixed tile sizes, one dark tile, one orange tile | `.bento`: destination (wide), recipe (tall), privacy (dark), HWP, Pro trial (orange) |
 | Editorial hairline lists and numbered steps instead of boxed cards | Steps 01–03, AI tab list, FAQ, tables and document TOCs all use 1px rules |

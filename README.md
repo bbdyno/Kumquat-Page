@@ -51,4 +51,20 @@ To add a guide: copy a guide module, give it a new `path`, and add it to `src/pa
 5. **Guide facts.** Both guides tell readers to follow the limits shown on the upload screen. Confirm Hometax size limits and Gov24 photo file requirements, then add them with the date checked (see the TODO comments in each module).
 6. **Comparison table.** Tangerine facts were checked on 2026-10-20 (build 2.0.2). Re-check before publishing and after their updates; keep the date in `site.factsDate` current.
 7. **Placeholders.** Hero video, scroll demo, AI before/after images, the App Store privacy label capture, press screenshots and the OG images are placeholders, labeled on the page.
-8. **Prices and Free/Pro split.** Mirrors `Kumquat/docs/PLAN.md` §2. Update `src/config.mjs` and the landing copy if the plan changes.
+8. **Prices and free tier.** Prices mirror `Kumquat/docs/PLAN.md` §2. Free tier (decided 2026-10-20): every feature for the first `welcomeTrialFiles` (10) files, then `freeDailyFiles` (5) basic conversions a day, with ads; Pro has no limits and no ads. Both numbers live in `src/config.mjs`; the landing, terms, privacy, press and Hometax guide copy follow them.
+
+## Sponsor ad list
+
+The app downloads `/ads/v1.json` (source: `public/ads/v1.json`) about once a day to show sponsor ads to free users. It sends no identifiers or usage data, and the privacy policy says so; keep it that way. Format:
+
+```json
+{
+  "version": 1,
+  "updated": "YYYY-MM-DD",
+  "ads": [
+    { "id": "…", "advertiser": "…", "headline": "…", "body": "…", "url": "https://…", "locale": "ko|en|*", "start": "YYYY-MM-DD", "end": "YYYY-MM-DD" }
+  ]
+}
+```
+
+An empty `ads` array means no sponsors; the app then shows its own Kumquat Pro note. Update `updated` whenever the list changes.

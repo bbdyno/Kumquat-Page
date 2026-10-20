@@ -27,11 +27,14 @@ export function storeBadge(lang) {
   return `https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-mac-app-store/black/${locale}`;
 }
 
-// Prices from docs/PLAN.md §2 (planned, USD). App Store sets local prices per storefront.
+// Prices and free tier from docs/PLAN.md §2 (planned, USD). App Store sets local prices per storefront.
+// Free tier (decided 2026-10-20): the first `welcomeTrialFiles` files get every feature including Pro;
+// after that, basic conversions only, `freeDailyFiles` files a day, with ads. Pro has no limits and no ads.
 export const pricing = {
   lifetime: '$24.99',
   lifetimeLaunch: '$19.99',
   yearly: '$11.99',
   trialDays: 7,
-  proTrialCredits: 5,
+  welcomeTrialFiles: 10,
+  freeDailyFiles: 5,
 };

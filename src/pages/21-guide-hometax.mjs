@@ -63,8 +63,8 @@ export function render(ctx) {
             <li><strong>목표 용량</strong> 조각에 놓고, 첨부 화면에서 확인한 한도보다 조금 작은 값을 고릅니다.</li>
             <li>결과가 원본 옆에 저장됩니다. 원본은 그대로 남습니다.</li>
           </ol>
-          <div class="callout tip"><p><strong>Free</strong>: 목표 용량을 하루 5회 쓸 수 있습니다.<br><strong>Pro</strong>: 브라우저 확장이 홈택스 첨부 칸의 형식·용량 안내를 읽어, 칸에 바로 놓아도 맞춰 줍니다. 한도를 넘는 묶음은 여러 파일로 나눠 줍니다.</p></div>
-          <div class=\"doc-cta\">${storeCta(ctx, 'guide-hometax')}</div>
+          <div class="callout tip"><p><strong>무료</strong>: 목표 용량은 처음 파일 10개 체험 안에서 써 볼 수 있고, 이후에는 Pro 기능입니다. 체험이 끝난 뒤에는 2~4번의 기본 앱 방법을 쓰세요.<br><strong>Pro</strong>: 브라우저 확장이 홈택스 첨부 칸의 형식·용량 안내를 읽어, 칸에 바로 놓아도 맞춰 줍니다. 한도를 넘는 묶음은 여러 파일로 나눠 줍니다.</p></div>
+          <div class="doc-cta">${storeCta(ctx, 'guide-hometax')}</div>
 
           <h2 id="final">6. 올리기 전 확인</h2>
           <ul>

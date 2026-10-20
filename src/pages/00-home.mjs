@@ -11,7 +11,7 @@ const P = pricing;
 const copy = {
   ko: {
     title: 'Kumquat — 드롭하면, 목적지에 딱 맞게 | Mac 파일 변환',
-    description: 'Mac용 파일 변환·최적화 앱. 기본 변환은 횟수 제한 없이 무료, 업로드 용량에 맞춰 자동 규격화, 여러 단계를 묶는 레시피, 온디바이스 AI. 파일은 Mac 밖으로 나가지 않습니다. Intel Mac·macOS 12 지원.',
+    description: 'Mac용 파일 변환·최적화 앱. 처음 파일 10개는 모든 기능을 무료로, 이후 기본 변환은 하루 5개 무료. 업로드 용량에 맞춰 자동 규격화, 여러 단계를 묶는 레시피, 온디바이스 AI. 파일은 Mac 밖으로 나가지 않습니다. Intel Mac·macOS 12 지원.',
     hero: {
       label: 'Mac 파일 변환 · 출시 준비 중',
       h1: '드롭하면,<br><em>목적지에</em> 딱 맞게.',
@@ -26,10 +26,10 @@ const copy = {
     },
     slice: ['JPG', 'PNG', 'PDF', '2MB 이하', 'WebP', 'HEIC'],
     band: [
-      ['∞', '기본 변환', '횟수·기간 제한 없이 무료'],
+      [`${P.welcomeTrialFiles}개`, '처음 파일', 'Pro 포함 모든 기능 무료 체험'],
       ['0', '업로드·수집', '서버도, 계정도, 분석 SDK도 없음'],
       ['12+', 'macOS Monterey부터', 'Intel과 Apple 실리콘 모두'],
-      [`${P.proTrialCredits}회`, 'Pro 기능 체험', '기능마다 무료로 써 보기'],
+      [`${P.freeDailyFiles}개`, '매일 무료 기본 변환', '체험 후에도 하루 5개, 광고 포함'],
     ],
     how: {
       label: '작동 방식',
@@ -48,8 +48,8 @@ const copy = {
     },
     features: {
       label: '기능',
-      h2: '변환은 무료로.<br>번거로움은 <em>Pro</em>가.',
-      p: '매일 하는 변환은 횟수 제한 없이 무료입니다. 반복 작업을 없애는 자동화가 Pro입니다.',
+      h2: '가벼운 변환은 무료로.<br>번거로움은 <em>Pro</em>가.',
+      p: `처음 파일 ${P.welcomeTrialFiles}개는 모든 기능을, 그 뒤에도 기본 변환은 하루 ${P.freeDailyFiles}개까지 무료입니다. 반복 작업을 없애는 자동화와 제한 해제가 Pro입니다.`,
       dest: {
         tag: 'Pro',
         h3: '어디에 올릴지 알면, 규격은 알아서',
@@ -63,9 +63,9 @@ const copy = {
         steps: ['긴 변 1600px', 'HEIC → WebP', '500 KB 이하', '위치 정보 제거', '날짜-제목으로 이름 변경'],
         watch: '스크린샷 폴더 감시 중',
       },
-      privacy: { tag: '무료', zero: '0', h3: '업로드도, 수집도 없음', p: '모든 처리가 Mac 안에서. App Store 라벨 “데이터 수집 안 함” 기준.' },
+      privacy: { tag: '모두', zero: '0', h3: '업로드도, 수집도 없음', p: '모든 처리가 Mac 안에서. App Store 라벨 “데이터 수집 안 함” 기준.' },
       hwp: { tag: 'Pro', mark: 'HWP<span>→</span>PDF', h3: '한국 특화', p: 'HWP·HWPX 변환, 국내 사이트 프리셋, 증명사진 메이커.' },
-      cta: { h3: `Pro 기능마다 ${P.proTrialCredits}회 무료`, p: '구매 전에 충분히 써 보세요.' },
+      cta: { h3: `처음 파일 ${P.welcomeTrialFiles}개는 모든 기능 무료`, p: 'Pro 기능까지 직접 써 보고 결정하세요.' },
       note: '목적지 이름은 프리셋 대상 예시이며 각 서비스와 제휴 관계가 없습니다. 실제 한도는 각 사이트 안내를 기준으로 합니다.',
     },
     ai: {
@@ -84,7 +84,7 @@ const copy = {
     formats: {
       label: '지원 포맷',
       h2: '찾는 형식이 있나요?',
-      p: '출시 계획 기준 목록입니다. Free 포맷은 횟수 제한 없이 변환합니다.',
+      p: `출시 계획 기준 목록입니다. 처음 파일 ${P.welcomeTrialFiles}개는 모든 포맷을, 이후 Free 포맷은 하루 ${P.freeDailyFiles}개까지 무료로 변환합니다.`,
       search: '포맷 검색 (예: heic, 한글, 자막)',
       filters: [['all', '전체'], ['image', '이미지'], ['audio', '오디오'], ['video', '영상'], ['doc', '문서'], ['free', 'Free'], ['pro', 'Pro']],
       cols: ['포맷', '종류', '바꿀 수 있는 형식', '요금제', '버전'],
@@ -107,28 +107,29 @@ const copy = {
     },
     pricing: {
       label: '가격',
-      h2: '매일 쓰는 변환은 <em>무료.</em>',
-      p: `자동화가 필요해지면 Pro로. Pro 기능도 기능별 ${P.proTrialCredits}회씩 무료로 써 볼 수 있습니다.`,
+      h2: '가볍게 쓰면 <em>무료.</em>',
+      p: `처음 파일 ${P.welcomeTrialFiles}개는 Pro까지 모두 무료. 그 뒤에는 기본 변환 하루 ${P.freeDailyFiles}개가 무료이고, 무료 사용 중에는 광고가 표시됩니다.`,
       plans: [
-        { name: 'Free', price: '무료', word: true, note: '설치하면 바로. 기간·횟수 제한 없음.', cta: 'App Store에서 받기', feats: ['이미지·오디오·영상·문서 기본 변환 무제한', 'Shift-드래그 휠, Finder 빠른 동작, 메뉴바 드롭', '비포/애프터 미리보기, 24시간 기록, 실행 취소', '목표 용량 하루 5회', '한 번에 10개 일괄 처리'] },
-        { name: 'Pro 연간', price: P.yearly, unit: '/ 년', note: `${P.trialDays}일 무료 체험 후 자동 갱신. 언제든 해지할 수 있습니다.`, cta: `${P.trialDays}일 무료 체험`, feats: ['Free의 모든 기능', '목적지 인식, 국내 사이트 프리셋', '레시피 무제한, 폴더 감시', '온디바이스 AI, 민감정보 마스킹', 'HWP/HWPX, Office 팩, 포맷 확장'] },
-        { name: 'Pro 평생', price: P.lifetimeLaunch, was: P.lifetime, note: `출시 할인가. 구매한 메이저 버전의 모든 업데이트 포함.`, cta: '평생 이용권 구매', featured: true, badge: '출시 할인', feats: ['Pro 연간의 모든 기능', '구매한 메이저 버전 평생 사용', '다음 메이저 업그레이드 50% 할인', '가족 공유 지원'] },
+        { name: 'Free', price: '무료', word: true, note: `처음 ${P.welcomeTrialFiles}개는 모든 기능 체험 · 이후 기본 변환 하루 ${P.freeDailyFiles}개 · 광고 포함`, cta: 'App Store에서 받기', feats: [`처음 파일 ${P.welcomeTrialFiles}개: Pro 포함 모든 기능`, `이후 이미지·오디오·영상·문서 기본 변환 하루 ${P.freeDailyFiles}개`, 'Shift-드래그 휠, Finder 빠른 동작, 메뉴바 드롭', '비포/애프터 미리보기, 24시간 기록, 실행 취소', '무료 사용 중 광고 표시'] },
+        { name: 'Pro 연간', price: P.yearly, unit: '/ 년', note: `${P.trialDays}일 무료 체험 후 자동 갱신. 언제든 해지할 수 있습니다.`, cta: `${P.trialDays}일 무료 체험`, feats: ['제한 없음 · 광고 없음', '목적지 인식, 국내 사이트 프리셋', '레시피 무제한, 폴더 감시', '온디바이스 AI, 민감정보 마스킹', 'HWP/HWPX, Office 팩, 포맷 확장'] },
+        { name: 'Pro 평생', price: P.lifetimeLaunch, was: P.lifetime, note: `출시 할인가. 구매한 메이저 버전의 모든 업데이트 포함.`, cta: '평생 이용권 구매', featured: true, badge: '출시 할인', feats: ['Pro 연간의 모든 기능 · 광고 없음', '구매한 메이저 버전 평생 사용', '다음 메이저 업그레이드 50% 할인', '가족 공유 지원'] },
       ],
       foot: `가격은 미국 App Store 기준(USD) 계획가입니다. 원화 가격은 App Store 국가별 가격표에 따라 정해지며, 구매·해지·환불은 Apple을 통해 처리됩니다. ${site.factsDate} 기준.`,
       matrix: 'Free와 Pro 전체 비교',
       mcols: ['기능', 'Free', 'Pro'],
       mrows: [
-        ['기본 변환(이미지·오디오·영상·문서)', '무제한', '무제한'],
-        ['일괄 처리', '10개씩', '무제한'],
-        ['목표 용량(예: 2 MB 이하)', '하루 5회', '무제한 + 품질 가드'],
+        ['기본 변환(이미지·오디오·영상·문서)', `처음 ${P.welcomeTrialFiles}개 + 하루 ${P.freeDailyFiles}개`, '제한 없음'],
+        ['일괄 처리', '오늘 남은 무료 개수만큼', '제한 없음'],
+        ['목표 용량(예: 2 MB 이하)', `처음 ${P.welcomeTrialFiles}개 체험`, '제한 없음 + 품질 가드'],
+        ['GIF·AVIF·FLAC·Opus·WebM 등', `처음 ${P.welcomeTrialFiles}개 체험`, '✓'],
         ['기록 · 실행 취소', '24시간', '30일 · 원본 보관함'],
-        ['목적지 인식 · 국내 프리셋', `${P.proTrialCredits}회 체험`, '✓'],
-        ['레시피 · 폴더 감시', `${P.proTrialCredits}회 체험`, '✓'],
-        ['온디바이스 AI(배경 제거·OCR·자막·업스케일)', `${P.proTrialCredits}회 체험`, '✓'],
-        ['민감정보 자동 마스킹', `${P.proTrialCredits}회 체험`, '✓'],
-        ['HWP/HWPX · 증명사진 메이커', `${P.proTrialCredits}회 체험`, '✓'],
+        ['목적지 인식 · 국내 프리셋', `처음 ${P.welcomeTrialFiles}개 체험`, '✓'],
+        ['레시피 · 폴더 감시', `처음 ${P.welcomeTrialFiles}개 체험`, '✓'],
+        ['온디바이스 AI(배경 제거·OCR·자막·업스케일)', `처음 ${P.welcomeTrialFiles}개 체험`, '✓'],
+        ['민감정보 자동 마스킹', `처음 ${P.welcomeTrialFiles}개 체험`, '✓'],
+        ['HWP/HWPX · 증명사진 메이커', `처음 ${P.welcomeTrialFiles}개 체험`, '✓'],
         ['노치 선반 · 클립보드 자동화', '기본 선반 1칸', '✓'],
-        ['WebM·MKV·FLAC·AVIF 등 포맷 확장', '—', '✓'],
+        ['광고', '표시', '없음'],
       ],
     },
     compare: {
@@ -138,7 +139,7 @@ const copy = {
       cols: ['', 'Kumquat (출시 계획)', '온라인 변환기 (일반적인 경우)', 'Tangerine 2.0.2'],
       rows: [
         ['파일 처리 위치', 'Mac 안', '서비스 서버', 'Mac 안'],
-        ['무료 범위', '기본 변환 횟수 제한 없음', '서비스마다 다름(횟수·용량 제한이 흔함)', '처음 20회'],
+        ['무료 범위', `처음 파일 ${P.welcomeTrialFiles}개는 모든 기능, 이후 기본 변환 하루 ${P.freeDailyFiles}개(광고 포함)`, '서비스마다 다름(횟수·용량 제한이 흔함)', '처음 20회'],
         ['유료 가격', `평생 ${P.lifetime}(출시가 ${P.lifetimeLaunch}) 또는 연 ${P.yearly}`, '서비스마다 다름', '일회성 $29.99'],
         ['Intel Mac', '지원', '브라우저만 있으면 됨', '지원 안 함(Apple 실리콘 전용)'],
         ['최소 macOS', 'macOS 12', '—', 'macOS 13'],
@@ -153,9 +154,10 @@ const copy = {
       h2: '자주 묻는 질문',
       side: '여기 없는 질문은 <a href="support/">지원 페이지</a>에서 찾거나 메일로 보내 주세요.',
       items: [
-        ['정말 기본 변환이 계속 무료인가요?', '네. 이미지·오디오·영상·문서의 기본 변환은 횟수와 기간 제한 없이 무료입니다. 목적지 인식, 레시피, AI 같은 자동화 기능이 Pro이며, Pro 기능도 기능별로 몇 번씩 무료로 써 볼 수 있습니다.'],
+        ['무료로 어디까지 쓸 수 있나요?', `처음 파일 ${P.welcomeTrialFiles}개는 Pro를 포함한 모든 기능을 무료로 써 볼 수 있습니다. 그 뒤에는 이미지·오디오·영상·문서의 기본 변환을 하루 ${P.freeDailyFiles}개(파일 기준)까지 무료로 쓰고, 일괄 처리도 그날 남은 개수만큼 됩니다. 목표 용량, GIF·AVIF·FLAC·Opus·WebM, 자동화·AI 기능은 Pro입니다.`],
+        ['광고가 나오나요?', '무료 사용 중에는 앱 안에 광고가 표시됩니다. Kumquat Pro 안내이거나, 직접 계약한 스폰서 광고입니다. 광고 목록은 이 사이트에서 받아 오며, 앱은 식별자나 사용 정보를 보내지 않고 개인 맞춤·추적도 하지 않습니다. 서드파티 광고 SDK는 없습니다. Pro에서는 광고가 나오지 않습니다.'],
         ['Intel Mac이나 오래된 macOS에서도 되나요?', 'macOS 12 Monterey 이상의 Intel Mac과 Apple 실리콘 Mac 모두 지원합니다. 배경 제거·번역 등 일부 AI 기능은 OS 버전에 따라 단계적으로 켜지며, 지원하지 않는 기능은 메뉴에 나타나지 않습니다.'],
-        ['파일이 인터넷으로 전송되나요?', '아니요. 변환과 AI 처리는 모두 Mac 안에서 이루어집니다. 네트워크는 목적지 프리셋 목록을 갱신할 때만 쓰며, 설정에서 완전 오프라인 모드로 끌 수 있습니다. 자세한 내용은 <a href="privacy/">개인정보 처리방침</a>을 보세요.'],
+        ['파일이 인터넷으로 전송되나요?', '아니요. 변환과 AI 처리는 모두 Mac 안에서 이루어집니다. 네트워크는 목적지 프리셋 목록과 광고 목록을 받을 때만 쓰며, 이때도 파일이나 식별자는 보내지 않습니다. 자세한 내용은 <a href="privacy/">개인정보 처리방침</a>을 보세요.'],
         ['원본 파일이 덮어써지지 않나요?', '원본은 항상 그대로 두고 결과를 옆에 저장합니다. 마지막 작업은 실행 취소할 수 있고, Pro에서는 원본 보관함 보존 기간을 정할 수 있습니다.'],
         ['HWP 파일도 PDF로 바꿀 수 있나요?', 'HWPX와 HWP를 PDF·DOCX로 바꾸는 기능을 Pro로 준비하고 있습니다. 출시 일정은 <a href="changelog/">변경 기록</a>에서 알려 드립니다.'],
         ['구독을 해지하거나 환불받으려면?', '구매와 결제는 App Store에서만 처리합니다. 구독 해지는 시스템 설정 › Apple ID › 미디어 및 구입 항목 › 구독 관리에서, 환불 요청은 Apple의 문제 신고 페이지에서 할 수 있습니다. <a href="support/">지원</a> 페이지에 단계별로 정리했습니다.'],
@@ -163,7 +165,7 @@ const copy = {
     },
     final: {
       h2: '다음 업로드부터는<br>한 번에 맞게.',
-      p: '기본 변환은 무료입니다. 설치하고, 파일을 끌다가 Shift를 눌러 보세요.',
+      p: `처음 파일 ${P.welcomeTrialFiles}개는 모든 기능이 무료입니다. 설치하고, 파일을 끌다가 Shift를 눌러 보세요.`,
       cta: 'App Store에서 받기',
       note: '출시 전 · 캠페인 링크 자리표시자',
       reqs: ['macOS 12 Monterey 이상', 'Intel · Apple 실리콘', '한국어 · 영어', '데이터 수집 안 함'],
@@ -172,7 +174,7 @@ const copy = {
 
   en: {
     title: 'Kumquat — Drop it, and it fits | File converter for Mac',
-    description: 'A file converter and optimizer for Mac. Basic conversions are free with no limits. Kumquat fits files to upload limits, chains steps into recipes and runs AI on device. Your files never leave your Mac. Supports Intel Macs and macOS 12.',
+    description: 'A file converter and optimizer for Mac. Your first 10 files get every feature free, then 5 basic conversions a day stay free. Kumquat fits files to upload limits, chains steps into recipes and runs AI on device. Your files never leave your Mac. Supports Intel Macs and macOS 12.',
     hero: {
       label: 'File converter for Mac · Coming soon',
       h1: 'Drop it,<br>and it <em>fits.</em>',
@@ -187,10 +189,10 @@ const copy = {
     },
     slice: ['JPG', 'PNG', 'PDF', 'Under 2MB', 'WebP', 'HEIC'],
     band: [
-      ['∞', 'Basic conversions', 'Free, with no count or time limit'],
+      [`${P.welcomeTrialFiles}`, 'First files', 'Every feature free, Pro included'],
       ['0', 'Uploads & data', 'No server, no account, no analytics'],
       ['12+', 'macOS Monterey and up', 'Intel and Apple silicon'],
-      [`${P.proTrialCredits}×`, 'Pro feature tries', 'Try each one free first'],
+      [`${P.freeDailyFiles}/day`, 'Free basic conversions', 'After the trial, with ads'],
     ],
     how: {
       label: 'How it works',
@@ -209,8 +211,8 @@ const copy = {
     },
     features: {
       label: 'Features',
-      h2: 'Converting is free.<br>The busywork is <em>Pro.</em>',
-      p: 'The conversions you do every day are free with no limits. Pro is the automation that removes repeat work.',
+      h2: 'Light converting is free.<br>The busywork is <em>Pro.</em>',
+      p: `Your first ${P.welcomeTrialFiles} files get every feature, and after that ${P.freeDailyFiles} basic conversions a day stay free. Pro removes the limits and adds the automation.`,
       dest: {
         tag: 'Pro',
         h3: 'Know where it’s going, and the specs follow',
@@ -224,9 +226,9 @@ const copy = {
         steps: ['Long edge 1600px', 'HEIC → WebP', 'Under 500 KB', 'Strip location data', 'Rename date-title'],
         watch: 'Watching Screenshots folder',
       },
-      privacy: { tag: 'Free', zero: '0', h3: 'No uploads, no data collected', p: 'Everything runs on your Mac. Built for the “Data Not Collected” App Store label.' },
+      privacy: { tag: 'Everyone', zero: '0', h3: 'No uploads, no data collected', p: 'Everything runs on your Mac. Built for the “Data Not Collected” App Store label.' },
       hwp: { tag: 'Pro', mark: 'HWP<span>→</span>PDF', h3: 'Korea-ready', p: 'HWP and HWPX conversion, Korean site presets, an ID photo maker.' },
-      cta: { h3: `${P.proTrialCredits} free tries of every Pro feature`, p: 'Try it properly before you buy.' },
+      cta: { h3: `Your first ${P.welcomeTrialFiles} files get every feature free`, p: 'Try Pro for real before you decide.' },
       note: 'Destination names are examples of preset targets. Kumquat is not affiliated with these services, and each site’s own instructions set the actual limits.',
     },
     ai: {
@@ -245,7 +247,7 @@ const copy = {
     formats: {
       label: 'Formats',
       h2: 'Looking for a format?',
-      p: 'This list reflects the launch plan. Free formats convert with no limits.',
+      p: `This list reflects the launch plan. Your first ${P.welcomeTrialFiles} files can use every format; after that, Free formats convert ${P.freeDailyFiles} files a day.`,
       search: 'Search formats (e.g. heic, subtitles)',
       filters: [['all', 'All'], ['image', 'Image'], ['audio', 'Audio'], ['video', 'Video'], ['doc', 'Document'], ['free', 'Free'], ['pro', 'Pro']],
       cols: ['Format', 'Type', 'Converts to', 'Plan', 'Version'],
@@ -268,28 +270,29 @@ const copy = {
     },
     pricing: {
       label: 'Pricing',
-      h2: 'Everyday conversions are <em>free.</em>',
-      p: `Go Pro when you want automation. Every Pro feature includes ${P.proTrialCredits} free tries.`,
+      h2: 'Start <em>free.</em> Stay light.',
+      p: `Your first ${P.welcomeTrialFiles} files get everything, Pro included. After that, ${P.freeDailyFiles} basic conversions a day are free, and the free version shows ads.`,
       plans: [
-        { name: 'Free', price: '$0', note: 'Ready when installed. No time or usage limits.', cta: 'Get it on the App Store', feats: ['Unlimited basic image, audio, video and document conversions', 'Shift-drag wheel, Finder Quick Actions, menu bar drop', 'Before/after preview, 24-hour history, undo', 'Target size 5 times a day', 'Batches of 10 files'] },
-        { name: 'Pro Yearly', price: P.yearly, unit: '/ year', note: `${P.trialDays}-day free trial, then renews yearly. Cancel anytime.`, cta: `Start ${P.trialDays}-day free trial`, feats: ['Everything in Free', 'Destination awareness and site presets', 'Unlimited recipes and folder watching', 'On-device AI and redaction', 'HWP/HWPX, Office pack, more formats'] },
-        { name: 'Pro Lifetime', price: P.lifetimeLaunch, was: P.lifetime, note: 'Launch price. Includes every update to the major version you buy.', cta: 'Buy lifetime', featured: true, badge: 'Launch offer', feats: ['Everything in Pro Yearly', 'Use your major version for life', '50% off the next major upgrade', 'Family Sharing'] },
+        { name: 'Free', price: '$0', note: `Every feature for your first ${P.welcomeTrialFiles} files · then ${P.freeDailyFiles} basic conversions a day · with ads`, cta: 'Get it on the App Store', feats: [`First ${P.welcomeTrialFiles} files: every feature, Pro included`, `Then ${P.freeDailyFiles} basic image, audio, video and document conversions a day`, 'Shift-drag wheel, Finder Quick Actions, menu bar drop', 'Before/after preview, 24-hour history, undo', 'Shows ads while free'] },
+        { name: 'Pro Yearly', price: P.yearly, unit: '/ year', note: `${P.trialDays}-day free trial, then renews yearly. Cancel anytime.`, cta: `Start ${P.trialDays}-day free trial`, feats: ['No limits · no ads', 'Destination awareness and site presets', 'Unlimited recipes and folder watching', 'On-device AI and redaction', 'HWP/HWPX, Office pack, more formats'] },
+        { name: 'Pro Lifetime', price: P.lifetimeLaunch, was: P.lifetime, note: 'Launch price. Includes every update to the major version you buy.', cta: 'Buy lifetime', featured: true, badge: 'Launch offer', feats: ['Everything in Pro Yearly · no ads', 'Use your major version for life', '50% off the next major upgrade', 'Family Sharing'] },
       ],
       foot: `Planned US App Store prices in USD. Local prices follow Apple’s price tiers for each storefront. Purchases, cancellations and refunds go through Apple. As of ${site.factsDate}.`,
       matrix: 'Compare every Free and Pro feature',
       mcols: ['Feature', 'Free', 'Pro'],
       mrows: [
-        ['Basic conversions (image, audio, video, document)', 'Unlimited', 'Unlimited'],
-        ['Batch size', '10 at a time', 'Unlimited'],
-        ['Target size (e.g. under 2 MB)', '5 a day', 'Unlimited + quality guard'],
+        ['Basic conversions (image, audio, video, document)', `First ${P.welcomeTrialFiles} + ${P.freeDailyFiles} a day`, 'No limit'],
+        ['Batch size', 'Up to today’s remaining free files', 'No limit'],
+        ['Target size (e.g. under 2 MB)', `First ${P.welcomeTrialFiles} files`, 'No limit + quality guard'],
+        ['GIF, AVIF, FLAC, Opus, WebM and more', `First ${P.welcomeTrialFiles} files`, '✓'],
         ['History and undo', '24 hours', '30 days + originals vault'],
-        ['Destination awareness and presets', `${P.proTrialCredits} tries`, '✓'],
-        ['Recipes and folder watching', `${P.proTrialCredits} tries`, '✓'],
-        ['On-device AI (background, OCR, subtitles, upscale)', `${P.proTrialCredits} tries`, '✓'],
-        ['Automatic redaction', `${P.proTrialCredits} tries`, '✓'],
-        ['HWP/HWPX and ID photo maker', `${P.proTrialCredits} tries`, '✓'],
+        ['Destination awareness and presets', `First ${P.welcomeTrialFiles} files`, '✓'],
+        ['Recipes and folder watching', `First ${P.welcomeTrialFiles} files`, '✓'],
+        ['On-device AI (background, OCR, subtitles, upscale)', `First ${P.welcomeTrialFiles} files`, '✓'],
+        ['Automatic redaction', `First ${P.welcomeTrialFiles} files`, '✓'],
+        ['HWP/HWPX and ID photo maker', `First ${P.welcomeTrialFiles} files`, '✓'],
         ['Notch shelf and clipboard automation', 'One basic shelf', '✓'],
-        ['More formats: WebM, MKV, FLAC, AVIF and more', '—', '✓'],
+        ['Ads', 'Shown', 'None'],
       ],
     },
     compare: {
@@ -299,7 +302,7 @@ const copy = {
       cols: ['', 'Kumquat (launch plan)', 'Online converters (typical)', 'Tangerine 2.0.2'],
       rows: [
         ['Where files are processed', 'On your Mac', 'On the service’s servers', 'On your Mac'],
-        ['Free tier', 'Unlimited basic conversions', 'Varies (count and size limits are common)', 'First 20 uses'],
+        ['Free tier', `Every feature for the first ${P.welcomeTrialFiles} files, then ${P.freeDailyFiles} basic conversions a day (with ads)`, 'Varies (count and size limits are common)', 'First 20 uses'],
         ['Paid price', `Lifetime ${P.lifetime} (launch ${P.lifetimeLaunch}) or ${P.yearly}/year`, 'Varies', 'One-time $29.99'],
         ['Intel Macs', 'Supported', 'Any browser', 'Not supported (Apple silicon only)'],
         ['Minimum macOS', 'macOS 12', '—', 'macOS 13'],
@@ -314,9 +317,10 @@ const copy = {
       h2: 'Questions, answered.',
       side: 'Can’t find it here? Check the <a href="support/">support page</a> or email us.',
       items: [
-        ['Are basic conversions really free for good?', 'Yes. Basic image, audio, video and document conversions have no count or time limit. Automation such as destination awareness, recipes and AI is Pro, and you can try each Pro feature a few times for free.'],
+        ['How much can I do for free?', `Your first ${P.welcomeTrialFiles} files can use every feature, Pro included. After that, basic image, audio, video and document conversions are free for ${P.freeDailyFiles} files a day, and batches run up to the files you have left that day. Target size, GIF, AVIF, FLAC, Opus, WebM, automation and AI are Pro.`],
+        ['Are there ads?', 'The free version shows ads inside the app: either a note about Kumquat Pro or a sponsor we work with directly. The ad list is downloaded from this website; the app sends no identifiers or usage data, and nothing is personalized or tracked. There is no third-party ad SDK. Pro has no ads.'],
         ['Does it run on Intel Macs or older macOS?', 'It supports Intel and Apple silicon Macs on macOS 12 Monterey or later. Some AI features turn on depending on the OS version, and anything your Mac can’t run is hidden from the menus.'],
-        ['Are my files sent over the internet?', 'No. Conversion and AI run on your Mac. The network is only used to refresh the list of destination presets, and you can switch to full offline mode in Settings. See the <a href="privacy/">Privacy Policy</a>.'],
+        ['Are my files sent over the internet?', 'No. Conversion and AI run on your Mac. The network is only used to download the destination presets and the ad list, and neither request carries your files or any identifier. See the <a href="privacy/">Privacy Policy</a>.'],
         ['Will it overwrite my originals?', 'Never. Originals stay in place and results are saved next to them. You can undo the last action, and Pro lets you choose how long the originals vault keeps copies.'],
         ['Can it convert Korean HWP files?', 'HWPX and HWP to PDF and DOCX are planned for Pro. We’ll announce timing in the <a href="changelog/">changelog</a>.'],
         ['How do I cancel or get a refund?', 'All purchases go through the App Store. Cancel in System Settings › Apple ID › Media & Purchases › Manage Subscriptions, and request refunds through Apple’s Report a Problem page. Step-by-step instructions are on the <a href="support/">support</a> page.'],
@@ -324,7 +328,7 @@ const copy = {
     },
     final: {
       h2: 'Make your next upload<br><em>fit the first time.</em>',
-      p: 'Basic conversions are free. Install it, start dragging a file and tap Shift.',
+      p: `Your first ${P.welcomeTrialFiles} files get every feature free. Install it, start dragging a file and tap Shift.`,
       cta: 'Get it on the App Store',
       note: 'Not released yet · placeholder campaign link',
       reqs: ['macOS 12 Monterey or later', 'Intel · Apple silicon', 'English · Korean', 'Data Not Collected'],
@@ -367,7 +371,7 @@ export function render(ctx) {
   const c = copy[ctx.lang];
   const ko = ctx.lang === 'ko';
   const ill = aiIllustrations();
-  const enTo = (s) => (ko ? s : s.replace('병합', 'merge').replace('분할', 'split').replace('목표 용량', 'target size').replace(/\(오디오 추출\)/g, ' (audio only)').replace('이미지', 'images'));
+  const enTo = (s) => (ko ? s : s.replace('병합', 'merge').replace('분할', 'split').replace('목표 용량', 'target size').replace(/\(오디오 추출\)/g, ' (audio only)').replace('이미지', 'images').replace('영상 → GIF', 'video → GIF'));
   const head = (h, extra = '') => `<div class="sec-head reveal"><p class="label">${h.label}</p><h2>${h.h2}</h2>${h.p ? `<p>${h.p}</p>` : ''}${extra}</div>`;
 
   const formatRows = formats

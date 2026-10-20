@@ -12,8 +12,8 @@ const chrome = process.env.CHROME || '/Applications/Google Chrome.app/Contents/M
 const out = fileURLToPath(new URL('../public/assets/og/', import.meta.url));
 const fonts = new URL('../public/assets/fonts/', import.meta.url).href;
 const variants = {
-  ko: { h: '드롭하면,<br><span class="o">목적지에</span> 딱 맞게.', p: 'Mac 파일 변환 · 기본 변환 무제한 무료 · 데이터 수집 안 함', tag: 'OG 이미지 자리표시자' },
-  en: { h: 'Drop it,<br>and it <em>fits.</em>', p: 'File converter for Mac · Unlimited free conversions · No data collected', tag: 'OG image placeholder' },
+  ko: { h: '드롭하면,<br><span class="o">목적지에</span> 딱 맞게.', p: 'Mac 파일 변환 · 처음 10개는 모든 기능 무료 · 데이터 수집 안 함', tag: 'OG 이미지 자리표시자' },
+  en: { h: 'Drop it,<br>and it <em>fits.</em>', p: 'File converter for Mac · First 10 files fully free · No data collected', tag: 'OG image placeholder' },
 };
 
 const page = ({ h, p, tag }) => `<!doctype html><html><head><meta charset="utf-8"><style>

@@ -9,9 +9,9 @@ export const priority = 0.5;
 const ko = (ctx) => docPage(ctx, {
   eyebrow: '개인정보 처리방침',
   title: 'Kumquat은 개인정보를 수집하지 않습니다.',
-  lede: '파일 변환, 압축, AI 처리는 모두 사용자의 Mac 안에서 이루어집니다. 이 문서는 그 사실과, 예외적으로 네트워크가 쓰이는 경우를 설명합니다.',
+  lede: '파일 변환, 압축, AI 처리는 모두 사용자의 Mac 안에서 이루어집니다. 이 문서는 그 사실과, 앱이 네트워크를 쓰는 두 가지 경우, 무료 사용자에게 보이는 광고를 설명합니다.',
   aside: `<h2>목차</h2><ol>
-    <li><a href="#summary">요약</a></li><li><a href="#app">앱이 처리하는 정보</a></li><li><a href="#network">네트워크 사용</a></li>
+    <li><a href="#summary">요약</a></li><li><a href="#app">앱이 처리하는 정보</a></li><li><a href="#network">네트워크 사용</a></li><li><a href="#ads">광고</a></li>
     <li><a href="#apple">구매와 Apple</a></li><li><a href="#site">웹사이트</a></li><li><a href="#legal">법정 고지 항목</a></li>
     <li><a href="#rights">권리와 문의</a></li><li><a href="#changes">변경</a></li></ol>`,
   body: `${draftBanner(ctx)}
@@ -22,6 +22,7 @@ const ko = (ctx) => docPage(ctx, {
             <li>Kumquat은 개인정보를 수집·저장·전송하지 않습니다. 회원가입, 계정, 로그인이 없습니다.</li>
             <li>사용자가 다루는 파일과 그 내용은 Mac 밖으로 나가지 않습니다. Kumquat이 운영하는 서버는 없습니다.</li>
             <li>분석, 광고, 크래시 리포트 SDK 등 서드파티 추적 도구를 쓰지 않습니다.</li>
+            <li>무료 사용자에게는 앱 안에 광고가 보이지만, 광고를 고르거나 보여 주는 데 사용자 정보를 쓰지 않고 추적하지 않습니다.</li>
             <li>App Store 개인정보 라벨은 “데이터 수집 안 함”으로 신고하는 것을 기준으로 합니다.</li>
           </ul>
 
@@ -36,6 +37,7 @@ const ko = (ctx) => docPage(ctx, {
               <tr><th scope="row">브라우저 확장이 읽는 업로드 칸 정보(허용 형식, 용량 안내 문구, 현재 도메인)</th><td>업로드 칸에 맞춘 자동 변환</td><td>앱으로만 전달하고 저장하지 않음. 페이지 내용은 수집하지 않음</td></tr>
               <tr><th scope="row">클립보드 내용(기능을 켠 경우)</th><td>복사한 이미지 자동 최적화, 변환해서 붙여넣기</td><td>저장하지 않음</td></tr>
               <tr><th scope="row">설정, 레시피, 사용자 프리셋</th><td>앱 동작</td><td>앱 컨테이너. 앱 삭제 시 함께 삭제</td></tr>
+              <tr><th scope="row">무료 사용 횟수(처음 체험에 쓴 파일 수, 오늘 쓴 무료 변환 수)</th><td>무료 사용 범위 적용</td><td>이 기기의 Keychain과 사용자 본인 iCloud 계정의 키-값 저장소에만 기록. 개발자는 이 값을 볼 수 없음</td></tr>
             </tbody>
           </table></div>
           <p>OCR, 받아쓰기, 배경 제거, 번역 같은 AI 기능은 Apple이 macOS에 제공하는 온디바이스 프레임워크(Vision, Speech, Core ML 등)로 처리합니다. Kumquat은 이 과정에서 데이터를 외부로 보내지 않습니다.</p>
@@ -47,11 +49,21 @@ const ko = (ctx) => docPage(ctx, {
           </ul>
 
           <h2 id="network">네트워크 사용</h2>
-          <p>Kumquat은 다음 한 가지 경우에만 인터넷에 연결합니다.</p>
+          <p>Kumquat은 다음 두 가지 경우에만 인터넷에 연결합니다. 두 요청 모두 이 웹사이트의 정적 파일을 내려받기만 하며, 파일·식별자·사용 정보를 보내지 않습니다.</p>
           <ul>
-            <li><strong>목적지 프리셋 갱신</strong>: 사이트별 허용 형식·용량 규칙 목록(서명된 JSON 파일)을 이 웹사이트에서 내려받습니다. 요청에는 파일이나 개인정보가 담기지 않습니다. 다만 인터넷 통신의 특성상 사이트를 호스팅하는 GitHub가 IP 주소 등 접속 기록을 처리할 수 있습니다(<a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub 개인정보 처리방침</a>).</li>
+            <li><strong>목적지 프리셋 갱신</strong>: 사이트별 허용 형식·용량 규칙 목록(서명된 JSON 파일)을 내려받습니다.</li>
+            <li><strong>광고 목록 받기(무료 사용자)</strong>: 하루 한 번 정도 스폰서 광고 목록(JSON 파일)을 내려받습니다. 어떤 광고를 보여 줄지는 앱이 기기 안에서 정합니다.</li>
           </ul>
-          <p>설정에서 <strong>완전 오프라인 모드</strong>를 켜면 이 갱신도 멈추고, 앱에 포함된 프리셋만 사용합니다.</p>
+          <p>인터넷 통신의 특성상 사이트를 호스팅하는 GitHub(GitHub Pages)가 IP 주소 등 접속 기록을 처리할 수 있습니다(<a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub 개인정보 처리방침</a>). Kumquat 개발자는 이 기록을 받지 않습니다.</p>
+          <p>설정에서 <strong>완전 오프라인 모드</strong>를 켜면 두 요청이 모두 멈추고, 앱에 포함된 프리셋과 Kumquat Pro 안내만 사용합니다.</p>
+
+          <h2 id="ads">광고</h2>
+          <ul>
+            <li>무료 사용 중에는 앱 안에 광고가 표시됩니다. Pro 사용자에게는 표시되지 않습니다.</li>
+            <li>광고는 Kumquat Pro 안내이거나, 개발자가 직접 계약한 스폰서 광고입니다. 서드파티 광고 네트워크나 광고 SDK는 쓰지 않습니다.</li>
+            <li>광고 노출·클릭 기록을 남기거나 보내지 않으며, 관심사·위치 등에 따른 맞춤 광고나 추적을 하지 않습니다.</li>
+            <li>광고를 누르면 광고주의 웹사이트가 브라우저에서 열립니다. 그 사이트에서 처리되는 정보는 광고주의 개인정보 처리방침을 따릅니다.</li>
+          </ul>
 
           <h2 id="apple">구매와 Apple</h2>
           <p>Pro 구매와 구독은 Apple의 App Store(StoreKit)로만 처리합니다. 결제 정보는 Apple이 처리하며 개발자는 받지 않습니다. 구매 여부는 기기에 있는 App Store 영수증으로 확인하며, 별도의 결제·라이선스 서버를 쓰지 않습니다.</p>
@@ -74,9 +86,9 @@ const ko = (ctx) => docPage(ctx, {
               <tr><th scope="row">처리 위탁</th><td>하지 않음</td></tr>
               <tr><th scope="row">국외 이전</th><td>하지 않음</td></tr>
               <tr><th scope="row">파기 절차·방법</th><td>보관하는 개인정보가 없음. 기기 안의 데이터는 앱 삭제 또는 설정의 “기록 지우기”로 즉시 삭제</td></tr>
-              <tr><th scope="row">자동 수집 장치(쿠키 등)</th><td>설치·운영하지 않음</td></tr>
+              <tr><th scope="row">자동 수집 장치(쿠키 등)</th><td>설치·운영하지 않음. 광고에도 식별자·추적 기술을 쓰지 않음</td></tr>
               <tr><th scope="row">만 14세 미만 아동</th><td>아동의 개인정보도 수집하지 않음</td></tr>
-              <tr><th scope="row">안전성 확보 조치</th><td>App Sandbox 적용, 서드파티 SDK 미사용, 네트워크 사용 최소화</td></tr>
+              <tr><th scope="row">안전성 확보 조치</th><td>App Sandbox 적용, 서드파티 SDK 미사용, 네트워크는 정적 파일 내려받기로 한정</td></tr>
               <tr><th scope="row">개인정보 보호책임자</th><td>[운영자 이름 확정 후 기재] · <a href="mailto:${site.email}">${site.email}</a></td></tr>
             </tbody>
           </table></div>
@@ -92,9 +104,9 @@ const ko = (ctx) => docPage(ctx, {
 const en = (ctx) => docPage(ctx, {
   eyebrow: 'Privacy Policy',
   title: 'Kumquat doesn’t collect your personal data.',
-  lede: 'Converting, compressing and AI processing all happen on your Mac. This policy explains that, and the one case where the app uses the network.',
+  lede: 'Converting, compressing and AI processing all happen on your Mac. This policy explains that, the two cases where the app uses the network, and the ads shown in the free version.',
   aside: `<h2>Contents</h2><ol>
-    <li><a href="#summary">Summary</a></li><li><a href="#app">What the app processes</a></li><li><a href="#network">Network use</a></li>
+    <li><a href="#summary">Summary</a></li><li><a href="#app">What the app processes</a></li><li><a href="#network">Network use</a></li><li><a href="#ads">Ads</a></li>
     <li><a href="#apple">Purchases and Apple</a></li><li><a href="#site">This website</a></li><li><a href="#rights">Your rights and contact</a></li><li><a href="#changes">Changes</a></li></ol>`,
   body: `${draftBanner(ctx)}
           <p class="meta-line">Draft written ${site.factsDate} · Effective date: set at app launch</p>
@@ -104,6 +116,7 @@ const en = (ctx) => docPage(ctx, {
             <li>Kumquat does not collect, store or transmit personal data. There is no sign-up, account or login.</li>
             <li>Your files and their contents never leave your Mac. Kumquat runs no servers.</li>
             <li>No third-party tracking: no analytics, advertising or crash-reporting SDKs.</li>
+            <li>The free version shows ads in the app, but no information about you is used to choose or show them, and nothing is tracked.</li>
             <li>The App Store privacy label is meant to be declared as “Data Not Collected.”</li>
           </ul>
 
@@ -118,6 +131,7 @@ const en = (ctx) => docPage(ctx, {
               <tr><th scope="row">Upload field details read by the browser extension (accepted types, size hint text, current domain)</th><td>Converting to fit the upload field</td><td>Passed to the app only and not stored. Page contents are not collected</td></tr>
               <tr><th scope="row">Clipboard contents (if you turn it on)</th><td>Optimizing copied images, convert-and-paste</td><td>Not stored</td></tr>
               <tr><th scope="row">Settings, recipes, custom presets</th><td>App behavior</td><td>App container. Removed when you delete the app</td></tr>
+              <tr><th scope="row">Free usage counts (files used in the welcome trial, free conversions used today)</th><td>Applying the free allowance</td><td>Stored only in this Mac’s Keychain and your own iCloud key-value storage. The developer cannot see these values</td></tr>
             </tbody>
           </table></div>
           <p>AI features such as OCR, transcription, background removal and translation use on-device frameworks Apple ships with macOS (Vision, Speech, Core ML and others). Kumquat sends nothing off your Mac in the process.</p>
@@ -129,11 +143,21 @@ const en = (ctx) => docPage(ctx, {
           </ul>
 
           <h2 id="network">Network use</h2>
-          <p>Kumquat connects to the internet in one case only.</p>
+          <p>Kumquat connects to the internet in two cases only. Both requests just download static files from this website; neither sends your files, any identifier or usage data.</p>
           <ul>
-            <li><strong>Refreshing destination presets</strong>: it downloads the list of per-site format and size rules (a signed JSON file) from this website. The request contains no files or personal data. Like any web request, GitHub, which hosts the site, may process your IP address and access logs (<a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub Privacy Statement</a>).</li>
+            <li><strong>Refreshing destination presets</strong>: downloads the list of per-site format and size rules (a signed JSON file).</li>
+            <li><strong>Fetching the ad list (free version)</strong>: about once a day, downloads the list of sponsor ads (a JSON file). The app picks which ad to show on your Mac.</li>
           </ul>
-          <p>Turn on <strong>full offline mode</strong> in Settings to stop this too and use only the presets bundled with the app.</p>
+          <p>Like any web request, GitHub, which hosts this site on GitHub Pages, may process your IP address and access logs (<a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub Privacy Statement</a>). The Kumquat developer does not receive these logs.</p>
+          <p>Turn on <strong>full offline mode</strong> in Settings to stop both requests; the app then uses only its bundled presets and its own Kumquat Pro notes.</p>
+
+          <h2 id="ads">Ads</h2>
+          <ul>
+            <li>The free version shows ads inside the app. Pro users see no ads.</li>
+            <li>Ads are either a note about Kumquat Pro or a sponsor the developer works with directly. No third-party ad network or ad SDK is used.</li>
+            <li>Ad views and taps are not recorded or sent anywhere, and there is no personalization by interests or location and no tracking.</li>
+            <li>Tapping an ad opens the advertiser’s website in your browser. Information handled there is governed by the advertiser’s privacy policy.</li>
+          </ul>
 
           <h2 id="apple">Purchases and Apple</h2>
           <p>Pro purchases and subscriptions are handled only through Apple’s App Store (StoreKit). Apple processes payment details; the developer never receives them. Your purchase is verified with the App Store receipt on your device, with no separate payment or license server.</p>
@@ -155,6 +179,6 @@ const en = (ctx) => docPage(ctx, {
 
 export function render(ctx) {
   return ctx.lang === 'ko'
-    ? { title: '개인정보 처리방침', description: 'Kumquat은 개인정보를 수집하지 않습니다. 파일 처리는 모두 Mac 안에서 이루어지며, 네트워크는 목적지 프리셋 갱신에만 씁니다.', body: ko(ctx) }
-    : { title: 'Privacy Policy', description: 'Kumquat collects no personal data. All file processing happens on your Mac; the network is used only to refresh destination presets.', body: en(ctx) };
+    ? { title: '개인정보 처리방침', description: 'Kumquat은 개인정보를 수집하지 않습니다. 파일 처리는 모두 Mac 안에서 이루어지며, 네트워크는 프리셋과 광고 목록을 받을 때만 씁니다. 광고에 추적·맞춤 기술을 쓰지 않습니다.', body: ko(ctx) }
+    : { title: 'Privacy Policy', description: 'Kumquat collects no personal data. All file processing happens on your Mac; the network is used only to download presets and the ad list, and ads are never personalized or tracked.', body: en(ctx) };
 }
