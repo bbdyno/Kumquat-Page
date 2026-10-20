@@ -1,0 +1,14 @@
+{
+  "name": "kumquat-page",
+  "private": true,
+  "type": "module",
+  "description": "Marketing, legal, support and guide pages for Kumquat (working title), a macOS file converter.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "preview": "node build.mjs && node serve.mjs",
+    "og": "node scripts/og.mjs"
+  }
+}
