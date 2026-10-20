@@ -25,7 +25,7 @@ const entries = {
 export function render(ctx) {
   const ko = ctx.lang === 'ko';
   const list = entries[ctx.lang]
-    .map(([when, ver, title, items]) => `<li><p class="meta-line"><span class="pill ${when === '계획' || when === 'Planned' ? 'muted' : 'free'}">${when}</span></p><h2>${ver} — ${title}</h2><ul>${items.map((i) => `<li>${i.replace(/`([^`]+)`/g, '<code>$1</code>')}</li>`).join('')}</ul></li>`)
+    .map(([when, ver, title, items]) => `<li><div class="when"><b>${ver}</b>${when}</div><div><h2>${title}</h2><ul>${items.map((i) => `<li>${i.replace(/`([^`]+)`/g, '<code>$1</code>')}</li>`).join('')}</ul></div></li>`)
     .join('\n          ');
   return {
     title: ko ? '변경 기록' : 'Changelog',

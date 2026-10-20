@@ -27,7 +27,7 @@ const ko = (ctx) => docPage(ctx, {
 
           <h2 id="app">앱이 처리하는 정보</h2>
           <p>아래 정보는 기능을 위해 <strong>사용자의 Mac 안에서만</strong> 처리되며, 개발자에게 전송되지 않습니다.</p>
-          <div class="table-wrap"><table>
+          <div class="table-scroll"><table>
             <thead><tr><th scope="col">정보</th><th scope="col">용도</th><th scope="col">저장 위치·기간</th></tr></thead>
             <tbody>
               <tr><th scope="row">사용자가 끌어 놓거나 선택한 파일</th><td>변환·압축·편집·AI 처리</td><td>결과 파일은 사용자가 정한 위치. 원본 보관함 사본은 앱 컨테이너에 두고 설정한 기간(기본 24시간) 후 삭제</td></tr>
@@ -66,7 +66,7 @@ const ko = (ctx) => docPage(ctx, {
 
           <h2 id="legal">법정 고지 항목</h2>
           <p>「개인정보 보호법」 제30조에 따라 공개해야 하는 항목을 정리합니다. Kumquat은 개인정보를 수집하지 않으므로 대부분의 항목이 해당하지 않습니다.</p>
-          <div class="table-wrap"><table>
+          <div class="table-scroll"><table>
             <tbody>
               <tr><th scope="row">처리 목적·항목</th><td>해당 없음(수집하지 않음)</td></tr>
               <tr><th scope="row">처리 및 보유 기간</th><td>해당 없음. 앱 안의 기록은 사용자 Mac에만 있으며 위 표의 기간에 따라 삭제</td></tr>
@@ -109,7 +109,7 @@ const en = (ctx) => docPage(ctx, {
 
           <h2 id="app">What the app processes</h2>
           <p>The information below is processed <strong>only on your Mac</strong> to make features work. None of it is sent to the developer.</p>
-          <div class="table-wrap"><table>
+          <div class="table-scroll"><table>
             <thead><tr><th scope="col">Information</th><th scope="col">Purpose</th><th scope="col">Where and how long</th></tr></thead>
             <tbody>
               <tr><th scope="row">Files you drop or choose</th><td>Converting, compressing, editing, AI</td><td>Results go where you choose. Copies in the originals vault live in the app container and are deleted after the period you set (24 hours by default)</td></tr>

@@ -64,7 +64,7 @@ export function render(ctx) {
             <li>결과가 원본 옆에 저장됩니다. 원본은 그대로 남습니다.</li>
           </ol>
           <div class="callout tip"><p><strong>Free</strong>: 목표 용량을 하루 5회 쓸 수 있습니다.<br><strong>Pro</strong>: 브라우저 확장이 홈택스 첨부 칸의 형식·용량 안내를 읽어, 칸에 바로 놓아도 맞춰 줍니다. 한도를 넘는 묶음은 여러 파일로 나눠 줍니다.</p></div>
-          ${storeCta(ctx, 'guide-hometax')}
+          <div class=\"doc-cta\">${storeCta(ctx, 'guide-hometax')}</div>
 
           <h2 id="final">6. 올리기 전 확인</h2>
           <ul>

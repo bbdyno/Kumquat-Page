@@ -2,7 +2,9 @@
 
 Marketing, legal, support and upload-guide pages for Kumquat (working title), a macOS file converter. Korean is the default at the site root; English lives under `/en/`. Downloads are App Store campaign links only.
 
-No framework and no dependencies: page modules in `src/pages/` are rendered by `build.mjs` (Node 20+) into `dist/`. No trackers, no cookies, no web fonts. The only script is `assets/site.js` (theme toggle, scroll demo, before/after slider, format search), and every page works without it.
+No framework and no npm dependencies: page modules in `src/pages/` are rendered by `build.mjs` (Node 20+) into `dist/`. No trackers, no cookies, no third-party font requests. The display serifs are self-hosted subsets in `public/assets/fonts/` (Instrument Serif and Noto Serif KR, both OFL; licenses alongside). The only script is `assets/site.js` (theme toggle, scroll demo, before/after slider, format search), and every page works without it.
+
+The visual direction and the Pinterest references it came from are written down in `DESIGN.md`.
 
 ## Commands
 
@@ -10,7 +12,10 @@ No framework and no dependencies: page modules in `src/pages/` are rendered by `
 npm run build     # src/ + public/ → dist/ (also writes sitemap.xml and robots.txt)
 npm run preview   # build, then serve dist/ at http://localhost:4321/Kumquat-Page/
 npm run og        # re-render the placeholder OG images with headless Chrome
+npm run fonts     # re-subset the serif fonts after heading copy changes (needs: pip install fonttools brotli)
 ```
+
+Run `npm run build` before `npm run fonts`: the subsetter reads the Korean heading text from `dist/`. Korean heading characters that are not in the subset fall back to the system serif until it is re-run.
 
 The preview server mounts the site under the same base path GitHub Pages uses, so relative links and `404.html` behave like production.
 

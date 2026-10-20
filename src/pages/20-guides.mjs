@@ -7,7 +7,7 @@ export const priority = 0.7;
 
 export function render(ctx) {
   const cards = guides
-    .map((g) => `<a class="card" href="${g.slug}/"><span class="pill ${g.pill === '무료로 가능' ? 'free' : ''}">${g.pill}</span><h2>${g.title}</h2><p>${g.summary}</p><span class="arrow">읽기 →</span></a>`)
+    .map((g) => `<a class="card" href="${g.slug}/"><span class="kicker">${g.pill}</span><h2>${g.title}</h2><p>${g.summary}</p><span class="more">읽기 →</span></a>`)
     .join('\n            ');
   return {
     title: '목적지 가이드 · 업로드 규격 맞추기',
@@ -20,7 +20,7 @@ export function render(ctx) {
             ${cards}
           </div>
           <div class="callout"><p>가이드는 계속 추가합니다. 다뤄 줬으면 하는 사이트가 있으면 <a href="../support/#report">지원 페이지</a>로 알려 주세요.</p></div>
-          ${storeCta(ctx, 'guides-index')}`,
+          <div class="doc-cta">${storeCta(ctx, 'guides-index')}</div>`,
     }),
   };
 }

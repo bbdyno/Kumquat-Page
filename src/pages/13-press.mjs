@@ -22,7 +22,7 @@ const ko = (ctx) => docPage(ctx, {
   lede: '기사와 리뷰에 쓸 수 있는 사실 정보와 소개 문구입니다. 리뷰용 프로모션 코드가 필요하면 메일로 연락해 주세요.',
   aside: `<h2>미디어 문의</h2><p><a href="mailto:${site.email}?subject=%5BPress%5D%20">${site.email}</a></p><h2>바로가기</h2><ul><li><a href="#facts">기본 정보</a></li><li><a href="#about">소개 문구</a></li><li><a href="#assets">이미지·로고</a></li></ul>`,
   body: `          <h2 id="facts">기본 정보</h2>
-          <div class="table-wrap"><table><tbody>
+          <div class="table-scroll"><table><tbody>
             <tr><th scope="row">이름</th><td>Kumquat(가칭) · App Store 표기 예정: Kumquat: File Converter</td></tr>
             <tr><th scope="row">분류</th><td>macOS 유틸리티 · 파일 변환·최적화</td></tr>
             <tr><th scope="row">출시</th><td>준비 중(Mac App Store 단독 배포)</td></tr>
@@ -62,7 +62,7 @@ const en = (ctx) => docPage(ctx, {
   lede: 'Facts and copy you can use in articles and reviews. Email us if you need a promo code for review.',
   aside: `<h2>Media contact</h2><p><a href="mailto:${site.email}?subject=%5BPress%5D%20">${site.email}</a></p><h2>Jump to</h2><ul><li><a href="#facts">Fact sheet</a></li><li><a href="#about">Descriptions</a></li><li><a href="#assets">Images and logo</a></li></ul>`,
   body: `          <h2 id="facts">Fact sheet</h2>
-          <div class="table-wrap"><table><tbody>
+          <div class="table-scroll"><table><tbody>
             <tr><th scope="row">Name</th><td>Kumquat (working title) · Planned App Store name: Kumquat: File Converter</td></tr>
             <tr><th scope="row">Category</th><td>macOS utility · file conversion and optimization</td></tr>
             <tr><th scope="row">Release</th><td>Coming soon (Mac App Store only)</td></tr>

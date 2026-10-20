@@ -29,13 +29,21 @@
     });
   }
 
+  // Hairline under the header once the page scrolls.
+  var header = document.querySelector('.site-header');
+  if (header) {
+    var onScroll = function () { header.classList.toggle('is-scrolled', window.scrollY > 8); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
   // Close the mobile menu after picking a link.
   document.querySelectorAll('.mobile-nav a').forEach(function (a) {
     a.addEventListener('click', function () { a.closest('details').open = false; });
   });
 
   // Reveal on scroll.
-  var revealables = document.querySelectorAll('.reveal, .recipe');
+  var revealables = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && !reduceMotion) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
@@ -49,7 +57,7 @@
 
   // Scroll demo: the active step drives the stage.
   var stage = document.querySelector('.stage');
-  var steps = document.querySelectorAll('.scrolly-step');
+  var steps = document.querySelectorAll('.step');
   if (stage && steps.length) {
     var sizeEl = stage.querySelector('[data-size]');
     var from = parseFloat(stage.dataset.from);
@@ -74,7 +82,11 @@
       steps.forEach(function (s) { s.classList.toggle('is-active', s.dataset.step === String(n)); });
       stage.style.setProperty('--fill', n === 3 ? (to / from * 100) + '%' : '100%');
       animateSize(n === 3 ? to : from);
-      stage.querySelectorAll('[data-hot]').forEach(function (el) { el.classList.toggle('is-hot', n >= 2); });
+      stage.querySelectorAll('.seg-hot').forEach(function (el) {
+        if (!el.dataset.baseFill) el.dataset.baseFill = el.getAttribute('fill');
+        el.setAttribute('fill', n >= 2 ? el.dataset.hotFill : el.dataset.baseFill);
+      });
+      stage.querySelectorAll('.label-hot').forEach(function (el) { el.classList.toggle('hot', n >= 2); });
     };
     if ('IntersectionObserver' in window) {
       var so = new IntersectionObserver(function (entries) {

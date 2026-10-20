@@ -15,9 +15,9 @@ const ko = (ctx) => docPage(ctx, {
   aside: `<h2>문의</h2><p><a href="mailto:${site.email}">${site.email}</a></p><h2>바로가기</h2><ul>
     <li><a href="#start">시작하기</a></li><li><a href="#trouble">문제 해결</a></li><li><a href="#purchase">구매·구독</a></li><li><a href="#report">버그 신고</a></li></ul>`,
   body: `          <div class="card-grid">
-            <a class="card" href="#purchase"><span class="pill">구매</span><h2>구독 해지·환불</h2><p>App Store에서 처리하는 방법</p></a>
-            <a class="card" href="#trouble"><span class="pill">문제 해결</span><h2>휠이 안 열려요</h2><p>단축키와 권한 확인</p></a>
-            <a class="card" href="../guides/"><span class="pill free">가이드</span><h2>목적지 가이드</h2><p>홈택스·정부24 업로드 규격 맞추기</p></a>
+            <a class="card" href="#purchase"><span class="kicker">구매</span><h2>구독 해지·환불</h2><p>App Store에서 처리하는 방법</p></a>
+            <a class="card" href="#trouble"><span class="kicker">문제 해결</span><h2>휠이 안 열려요</h2><p>단축키와 권한 확인</p></a>
+            <a class="card" href="../guides/"><span class="kicker">가이드</span><h2>목적지 가이드</h2><p>홈택스·정부24 업로드 규격 맞추기</p></a>
           </div>
 
           <h2 id="start">시작하기</h2>
@@ -62,8 +62,8 @@ const en = (ctx) => docPage(ctx, {
   aside: `<h2>Contact</h2><p><a href="mailto:${site.email}">${site.email}</a></p><h2>Jump to</h2><ul>
     <li><a href="#start">Getting started</a></li><li><a href="#trouble">Troubleshooting</a></li><li><a href="#purchase">Purchases</a></li><li><a href="#report">Report a bug</a></li></ul>`,
   body: `          <div class="card-grid">
-            <a class="card" href="#purchase"><span class="pill">Purchases</span><h2>Cancel or get a refund</h2><p>How the App Store handles it</p></a>
-            <a class="card" href="#trouble"><span class="pill">Troubleshooting</span><h2>The wheel won’t open</h2><p>Check the shortcut and permissions</p></a>
+            <a class="card" href="#purchase"><span class="kicker">Purchases</span><h2>Cancel or get a refund</h2><p>How the App Store handles it</p></a>
+            <a class="card" href="#trouble"><span class="kicker">Troubleshooting</span><h2>The wheel won’t open</h2><p>Check the shortcut and permissions</p></a>
           </div>
 
           <h2 id="start">Getting started</h2>

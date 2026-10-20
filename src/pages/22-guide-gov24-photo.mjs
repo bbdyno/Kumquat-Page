@@ -45,7 +45,7 @@ export function render(ctx) {
 
           <h2 id="pixels">2. cm를 픽셀로 바꾸기</h2>
           <p>사진 파일에는 cm가 없고 픽셀만 있습니다. 인쇄 해상도(dpi)를 정하면 픽셀 수를 계산할 수 있습니다.</p>
-          <div class="table-wrap"><table>
+          <div class="table-scroll"><table>
             <thead><tr><th scope="col">해상도</th><th scope="col">가로 (3.5cm)</th><th scope="col">세로 (4.5cm)</th></tr></thead>
             <tbody>
               <tr><th scope="row">300 dpi</th><td class="mono">413 px</td><td class="mono">531 px</td></tr>
@@ -64,14 +64,14 @@ export function render(ctx) {
           </ol>
           <p>배경에 사물이 보이거나 그림자가 지면 반려될 수 있습니다. 밝은 단색 벽 앞에서 다시 찍는 것이 가장 확실합니다.</p>
 
-          <h2 id="kumquat">4. Kumquat 증명사진 메이커 <span class="pill">Pro · 1.2 예정</span></h2>
+          <h2 id="kumquat">4. Kumquat 증명사진 메이커 <small class="meta-line">Pro · 1.2 예정</small></h2>
           <p>사진을 놓으면 정부24 프리셋에 맞춰 7:9로 자르고, 얼굴 위치와 크기를 검사하고, 배경을 단색으로 바꾼 JPG를 만듭니다. 배경 분리는 Mac 안에서 처리하므로 얼굴 사진이 어디로도 전송되지 않습니다.</p>
           <ul class="checks">
             <li>얼굴이 너무 작거나 치우치면 경고</li>
             <li>배경을 흰색 또는 지정한 단색으로 교체(macOS 14 이상에서 가장 정확)</li>
             <li>파일 용량 한도에 맞춰 JPG 품질 자동 조절</li>
           </ul>
-          ${storeCta(ctx, 'guide-gov24-photo')}
+          <div class=\"doc-cta\">${storeCta(ctx, 'guide-gov24-photo')}</div>
 
           <h2 id="check">5. 올리기 전 확인</h2>
           <ul>
