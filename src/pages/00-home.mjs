@@ -34,10 +34,10 @@ const copy = {
     },
     app: {
       label: '실제 화면',
-      h2: '메뉴 막대에 조용히,<br>필요할 때만 <em>나타납니다.</em>',
-      feats: [['stack', '드래그 중 Shift, 그리고 휠', '파일을 끄는 동안 ⇧를 누르면 커서 둘레에 휠이 뜹니다. 가운데에 놓으면 입력해서 찾을 수 있습니다.'], ['image-square', '결과 썸네일', '변환이 끝나면 화면 구석에 결과만 뜹니다. 마우스를 올리면 비교, 실행 취소, 줄어든 용량이 나옵니다.'], ['sliders-horizontal', '메뉴 막대와 설정', 'Dock 아이콘도 큰 창도 없습니다. 메뉴 막대 아이콘에 파일을 놓거나, 설정에서 휠 키와 누르는 방식을 고릅니다.']],
-      shots: { settings: '설정 창의 휠 탭: 휠 사용, 키, 동작 설정', hover: '결과 썸네일에 마우스를 올린 모습: 비교, 실행 취소, 2 MB 줄였습니다', drop: '메뉴 막대 아이콘에 이미지를 놓았을 때 나오는 동작 목록' },
-      tag: '실제 앱 화면 · 2026-10-20 개발 빌드',
+      h2: '변환은 끌어서,<br>기록은 <em>한 창에.</em>',
+      feats: [['stack', '드래그 중 Shift, 그리고 휠', '파일을 끄는 동안 ⇧를 누르면 커서 둘레에 휠이 뜹니다. 가운데에 놓으면 입력해서 찾을 수 있습니다.'], ['clock-counter-clockwise', '기록', '날짜별로 묶인 기록에서 썸네일을 보고, 검색하고, 비교하거나 되돌리고, Finder에서 바로 엽니다. 창에 파일을 놓아도 변환됩니다.'], ['chart-bar', '통계', '변환한 파일 수, 줄인 용량, 최근 14일 그래프, 자주 쓴 동작을 보여 줍니다. 사이드바 아래에는 남은 체험·무료 개수가 나옵니다.']],
+      shots: { main: 'Kumquat 메인 창: 사이드바(기록·통계·설정)와 통계 또는 날짜별 기록 목록', hover: '결과 썸네일에 마우스를 올린 모습: 비교, 실행 취소, 2 MB 줄였습니다' },
+      tag: '실제 앱 화면 · 기록 목록은 데모 데이터',
     },
     band: [
       [`${P.welcomeTrialFiles}개`, '처음 파일', 'Pro 포함 모든 기능 무료 체험'],
@@ -124,7 +124,7 @@ const copy = {
       h2: '가볍게 쓰면 <em>무료.</em>',
       p: `처음 파일 ${P.welcomeTrialFiles}개는 Pro까지 모두 무료. 그 뒤에는 기본 변환 하루 ${P.freeDailyFiles}개가 무료이고, 무료 사용 중에는 광고가 표시됩니다.`,
       plans: [
-        { name: 'Free', price: '무료', word: true, note: `처음 ${P.welcomeTrialFiles}개는 모든 기능 체험 · 이후 기본 변환 하루 ${P.freeDailyFiles}개 · 광고 포함`, cta: 'App Store에서 받기', feats: [`처음 파일 ${P.welcomeTrialFiles}개: Pro 포함 모든 기능`, `이후 이미지·오디오·영상·문서 기본 변환 하루 ${P.freeDailyFiles}개`, 'Shift-드래그 휠, Finder 빠른 동작, 메뉴바 드롭', '결과 썸네일에서 비교·실행 취소', '무료 사용 중 광고 표시'] },
+        { name: 'Free', price: '무료', word: true, note: `처음 ${P.welcomeTrialFiles}개는 모든 기능 체험 · 이후 기본 변환 하루 ${P.freeDailyFiles}개 · 광고 포함`, cta: 'App Store에서 받기', feats: [`처음 파일 ${P.welcomeTrialFiles}개: Pro 포함 모든 기능`, `이후 이미지·오디오·영상·문서 기본 변환 하루 ${P.freeDailyFiles}개`, 'Shift-드래그 휠, Finder 빠른 동작, 메뉴바 드롭', '기록·통계 창, 비교·실행 취소', '무료 사용 중 광고 표시'] },
         { name: 'Pro 연간', price: P.yearly, unit: '/ 년', note: `${P.trialDays}일 무료 체험 후 자동 갱신. 언제든 해지할 수 있습니다.`, cta: `${P.trialDays}일 무료 체험`, feats: ['제한 없음 · 광고 없음', '목표 용량과 GIF·AVIF 등 확장 포맷', '목적지 인식·레시피·폴더 감시 (1.1 예정)', '온디바이스 AI·민감정보 마스킹 (1.2 예정)', 'HWP/HWPX·Office 팩 (1.3 예정)'] },
         { name: 'Pro 평생', price: P.lifetimeLaunch, was: P.lifetime, note: `출시 할인가. 구매한 메이저 버전의 모든 업데이트 포함.`, cta: '평생 이용권 구매', featured: true, badge: '출시 할인', feats: ['Pro 연간의 모든 기능 · 광고 없음', '구매한 메이저 버전 평생 사용', '다음 메이저 업그레이드 50% 할인', '가족 공유 지원'] },
       ],
@@ -136,7 +136,7 @@ const copy = {
         ['일괄 처리', '오늘 남은 무료 개수만큼', '제한 없음'],
         ['목표 용량(예: 2 MB 이하)', `처음 ${P.welcomeTrialFiles}개 체험`, '제한 없음 + 품질 가드'],
         ['GIF·AVIF·FLAC·Opus·WebM 등', `처음 ${P.welcomeTrialFiles}개 체험`, '✓'],
-        ['실행 취소', '마지막 변환', '마지막 변환'],
+        ['기록 · 통계 창 · 실행 취소', '✓', '✓'],
         ['목적지 인식 · 국내 프리셋 (1.1 예정)', '—', '✓'],
         ['레시피 · 폴더 감시 (1.1 예정)', '—', '✓'],
         ['노치 선반 · 클립보드 자동화 (1.1 예정)', '—', '✓'],
@@ -172,7 +172,7 @@ const copy = {
         ['광고가 나오나요?', '무료 사용 중에는 앱 안에 광고가 표시됩니다. Kumquat Pro 안내이거나, 직접 계약한 스폰서 광고입니다. 광고 목록은 이 사이트에서 받아 오며, 앱은 식별자나 사용 정보를 보내지 않고 개인 맞춤·추적도 하지 않습니다. 서드파티 광고 SDK는 없습니다. Pro에서는 광고가 나오지 않습니다.'],
         ['Intel Mac이나 오래된 macOS에서도 되나요?', 'macOS 12 Monterey 이상의 Intel Mac과 Apple 실리콘 Mac 모두 지원합니다. 배경 제거·번역 등 일부 AI 기능은 OS 버전에 따라 단계적으로 켜지며, 지원하지 않는 기능은 메뉴에 나타나지 않습니다.'],
         ['파일이 인터넷으로 전송되나요?', '아니요. 변환과 AI 처리는 모두 Mac 안에서 이루어집니다. 네트워크는 광고 목록(그리고 1.1부터 목적지 프리셋 목록)을 받을 때만 쓰며, 이때도 파일이나 식별자는 보내지 않습니다. 자세한 내용은 <a href="privacy/">개인정보 처리방침</a>을 보세요.'],
-        ['원본 파일이 덮어써지지 않나요?', '원본은 항상 그대로 두고 결과를 옆에 저장합니다. 마지막 변환은 메뉴 막대의 실행 취소(⌘Z)나 결과 썸네일의 “실행 취소”로 되돌릴 수 있습니다.'],
+        ['원본 파일이 덮어써지지 않나요?', '원본은 항상 그대로 두고 결과를 옆에 저장합니다. 변환은 메뉴 막대의 실행 취소(⌘Z), 결과 썸네일, 기록 창에서 되돌릴 수 있습니다.'],
         ['HWP 파일도 PDF로 바꿀 수 있나요?', 'HWPX와 HWP를 PDF·DOCX로 바꾸는 기능을 Pro로 준비하고 있습니다. 출시 일정은 <a href="changelog/">변경 기록</a>에서 알려 드립니다.'],
         ['구독을 해지하거나 환불받으려면?', '구매와 결제는 App Store에서만 처리합니다. 구독 해지는 시스템 설정 › Apple ID › 미디어 및 구입 항목 › 구독 관리에서, 환불 요청은 Apple의 문제 신고 페이지에서 할 수 있습니다. <a href="support/">지원</a> 페이지에 단계별로 정리했습니다.'],
       ],
@@ -208,10 +208,10 @@ const copy = {
     },
     app: {
       label: 'Real screens',
-      h2: 'Quiet in the menu bar,<br>there <em>when you need it.</em>',
-      feats: [['stack', 'Shift while dragging, then the wheel', 'Tap ⇧ while dragging a file and the wheel opens around the cursor. Drop on the center to type and search.'], ['image-square', 'Result thumbnail', 'When a conversion finishes, only the result appears in the corner. Hover it to compare, undo or see how much smaller it got.'], ['sliders-horizontal', 'Menu bar and Settings', 'No Dock icon, no big window. Drop files on the menu bar icon, or pick the wheel key and trigger in Settings.']],
-      shots: { settings: 'Settings, Wheel tab: use the wheel, key and trigger', hover: 'Hovering the result thumbnail: compare, undo, 2 MB smaller', drop: 'Actions shown after dropping an image on the menu bar icon' },
-      tag: 'Real app screens, Korean UI · development build, 2026-10-20',
+      h2: 'Convert by dragging.<br>Keep track <em>in one window.</em>',
+      feats: [['stack', 'Shift while dragging, then the wheel', 'Tap ⇧ while dragging a file and the wheel opens around the cursor. Drop on the center to type and search.'], ['clock-counter-clockwise', 'History', 'A date-grouped list with thumbnails and search. Compare, undo or show any result in Finder, or drop files on the window to convert them.'], ['chart-bar', 'Stats', 'Files converted, space saved, a 14-day chart and your most-used actions. The sidebar shows trial files or today’s free conversions left.']],
+      shots: { main: 'Kumquat main window: sidebar with History, Stats and Settings, showing stats or the date-grouped history list', hover: 'Hovering the result thumbnail: compare, undo, 2 MB smaller' },
+      tag: 'Real app screens, Korean UI · history uses demo data',
     },
     band: [
       [`${P.welcomeTrialFiles}`, 'First files', 'Every feature free, Pro included'],
@@ -298,7 +298,7 @@ const copy = {
       h2: 'Start <em>free.</em> Stay light.',
       p: `Your first ${P.welcomeTrialFiles} files get everything, Pro included. After that, ${P.freeDailyFiles} basic conversions a day are free, and the free version shows ads.`,
       plans: [
-        { name: 'Free', price: '$0', note: `Every feature for your first ${P.welcomeTrialFiles} files · then ${P.freeDailyFiles} basic conversions a day · with ads`, cta: 'Get it on the App Store', feats: [`First ${P.welcomeTrialFiles} files: every feature, Pro included`, `Then ${P.freeDailyFiles} basic image, audio, video and document conversions a day`, 'Shift-drag wheel, Finder Quick Actions, menu bar drop', 'Compare and undo from the result thumbnail', 'Shows ads while free'] },
+        { name: 'Free', price: '$0', note: `Every feature for your first ${P.welcomeTrialFiles} files · then ${P.freeDailyFiles} basic conversions a day · with ads`, cta: 'Get it on the App Store', feats: [`First ${P.welcomeTrialFiles} files: every feature, Pro included`, `Then ${P.freeDailyFiles} basic image, audio, video and document conversions a day`, 'Shift-drag wheel, Finder Quick Actions, menu bar drop', 'History and stats window, compare and undo', 'Shows ads while free'] },
         { name: 'Pro Yearly', price: P.yearly, unit: '/ year', note: `${P.trialDays}-day free trial, then renews yearly. Cancel anytime.`, cta: `Start ${P.trialDays}-day free trial`, feats: ['No limits · no ads', 'Target size, GIF, AVIF and more formats', 'Destinations, recipes, folder watching (coming in 1.1)', 'On-device AI and redaction (coming in 1.2)', 'HWP/HWPX and Office pack (coming in 1.3)'] },
         { name: 'Pro Lifetime', price: P.lifetimeLaunch, was: P.lifetime, note: 'Launch price. Includes every update to the major version you buy.', cta: 'Buy lifetime', featured: true, badge: 'Launch offer', feats: ['Everything in Pro Yearly · no ads', 'Use your major version for life', '50% off the next major upgrade', 'Family Sharing'] },
       ],
@@ -310,7 +310,7 @@ const copy = {
         ['Batch size', 'Up to today’s remaining free files', 'No limit'],
         ['Target size (e.g. under 2 MB)', `First ${P.welcomeTrialFiles} files`, 'No limit + quality guard'],
         ['GIF, AVIF, FLAC, Opus, WebM and more', `First ${P.welcomeTrialFiles} files`, '✓'],
-        ['Undo', 'Last conversion', 'Last conversion'],
+        ['History and stats window, undo', '✓', '✓'],
         ['Destination awareness and presets (coming in 1.1)', '—', '✓'],
         ['Recipes and folder watching (coming in 1.1)', '—', '✓'],
         ['Notch shelf and clipboard automation (coming in 1.1)', '—', '✓'],
@@ -346,7 +346,7 @@ const copy = {
         ['Are there ads?', 'The free version shows ads inside the app: either a note about Kumquat Pro or a sponsor we work with directly. The ad list is downloaded from this website; the app sends no identifiers or usage data, and nothing is personalized or tracked. There is no third-party ad SDK. Pro has no ads.'],
         ['Does it run on Intel Macs or older macOS?', 'It supports Intel and Apple silicon Macs on macOS 12 Monterey or later. Some AI features turn on depending on the OS version, and anything your Mac can’t run is hidden from the menus.'],
         ['Are my files sent over the internet?', 'No. Conversion and AI run on your Mac. The network is only used to download the ad list (and, from 1.1, destination presets), and neither request carries your files or any identifier. See the <a href="privacy/">Privacy Policy</a>.'],
-        ['Will it overwrite my originals?', 'Never. Originals stay in place and results are saved next to them. Undo the last conversion from the menu bar (⌘Z) or the result thumbnail’s Undo button.'],
+        ['Will it overwrite my originals?', 'Never. Originals stay in place and results are saved next to them. Undo a conversion from the menu bar (⌘Z), the result thumbnail or the History window.'],
         ['Can it convert Korean HWP files?', 'HWPX and HWP to PDF and DOCX are planned for Pro. We’ll announce timing in the <a href="changelog/">changelog</a>.'],
         ['How do I cancel or get a refund?', 'All purchases go through the App Store. Cancel in System Settings › Apple ID › Media & Purchases › Manage Subscriptions, and request refunds through Apple’s Report a Problem page. Step-by-step instructions are on the <a href="support/">support</a> page.'],
       ],
@@ -415,8 +415,7 @@ export function render(ctx) {
           </ul>
         </div>
         <figure class="shots-stage reveal">
-          ${shot(ctx, 'settings1', c.app.shots.settings, { cls: 'st-settings' })}
-          ${shot(ctx, 'dropmenu', c.app.shots.drop, { cls: 'st-drop' })}
+          ${shot(ctx, 'main', c.app.shots.main, { cls: 'st-main' })}
           ${shot(ctx, 'toasthover', c.app.shots.hover, { cls: 'st-hover' })}
           <figcaption class="ph-tag">${c.app.tag}</figcaption>
         </figure>

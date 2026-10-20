@@ -202,7 +202,8 @@ ${body}
 
 // Real app captures (2x PNG from the app repo, converted to WebP). Shown at half their pixel size.
 // Both themes are in the page; CSS shows the one matching the site theme, so the manual toggle works too.
-const shotSizes = { wheel: [700, 700], toasthover: [468, 444], toastad: [468, 444], settings: [1304, 1014], settings1: [1304, 960], dropmenu: [366, 888], welcome: [1336, 1194] };
+// `main` pairs the stats window (light) with the history list (dark); there is no light capture of the history list yet.
+const shotSizes = { main: [1936, 1376], wheel: [700, 700], toasthover: [468, 444], toastad: [468, 444], settings: [1304, 1014], settings1: [1304, 960], dropmenu: [366, 888], welcome: [1336, 1194] };
 export function shot(ctx, name, alt, { cls = '', eager = false } = {}) {
   const [w, h] = shotSizes[name];
   const attrs = `width="${w / 2}" height="${h / 2}" decoding="async"${eager ? '' : ' loading="lazy"'}`;

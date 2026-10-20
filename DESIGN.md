@@ -9,7 +9,7 @@ Chosen on 2026-10-20 after reviewing about 140 Pinterest results (searches: "mac
 | Real photograph inside an arch-shaped frame with soft directional light | Hero arch holds a sunlit kumquat photo (Unsplash) with the real app's wheel and result thumbnail captures over it |
 | A small brand symbol next to the wordmark, echoed in the number band | Kumquat cross-section symbol (`mark` in `src/layout.mjs`) in the header, band, footer wordmark and favicon |
 | Thin-line icons in soft square tiles beside short feature text | Phosphor Light icons in `.feat-ico` / `.tile-ico` squares |
-| A real product UI next to a feature list | `#app` section: real captures of the Settings window, menu-bar drop menu and result thumbnail, layered. The app is menu-bar only, so there is no dashboard window to show (a main window is planned with recipes and destinations) |
+| A real product UI next to a feature list | `#app` section: the real main window (stats in light mode, the history list in dark mode) with the real result thumbnail layered over it. Recipes, destinations and the originals vault are not shown because they do not exist yet |
 | A black band of big serif numbers under the hero | `.band` with four facts (10개, 0, 12+, 5개) |
 | Orange used for one CTA and one tile only, against neutrals | Orange pill CTA, one solid orange bento tile, the final CTA panel; everything else neutral |
 | Bento grid on cream with mixed tile sizes, one dark tile, one orange tile | `.bento`: destination (wide), recipe (tall), privacy (dark), HWP, Pro trial (orange) |

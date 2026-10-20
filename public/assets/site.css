@@ -673,14 +673,12 @@ a.card:hover { color: var(--ink); transform: translateY(-3px); }
 .hero-toast { position: absolute; z-index: 3; right: 7%; top: 18%; width: min(30%, 190px); transform: rotate(3deg); }
 
 /* Real screens section: settings window with the drop menu and result thumbnail layered over it. */
-.shots-stage { position: relative; margin: 0; padding: 40px 40px 80px 80px; }
-.st-settings { position: relative; z-index: 1; max-width: 652px; }
-.st-drop { position: absolute; z-index: 2; left: 0; top: 0; width: 160px; }
+.shots-stage { position: relative; margin: 0; padding: 36px 60px 70px 0; }
+.st-main { position: relative; z-index: 1; max-width: 968px; }
 .st-hover { position: absolute; z-index: 3; right: 0; bottom: 0; width: 234px; }
 .shots-stage .ph-tag { left: auto; right: 0; bottom: auto; top: 0; }
 @media (max-width: 640px) {
-  .shots-stage { padding: 30px 0 60px 50px; }
-  .st-drop { width: 110px; }
+  .shots-stage { padding: 30px 30px 60px 0; }
   .st-hover { width: 160px; }
 }
 
