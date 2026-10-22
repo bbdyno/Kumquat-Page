@@ -1,5 +1,5 @@
 import { site, pricing, storeLink } from '../config.mjs';
-import { placeholder, btn, arrowSvg, mark, shot } from '../layout.mjs';
+import { btn, arrowSvg, mark, shot } from '../layout.mjs';
 import { icon } from '../icons.mjs';
 import { formats, kinds } from '../data/formats.mjs';
 import { maskIllustration } from '../data/illustrations.mjs';
@@ -22,7 +22,6 @@ const copy = {
       alt: '햇살 아래 놓인 금귤 사진',
       wheelAlt: 'Kumquat 휠: 금귤 단면 모양으로 JPG, PNG, HEIC, WebP, 2 MB 이하, 1 MB 이하, 1920 px, 메타데이터 제거가 펼쳐진 실제 화면',
       toastAlt: '변환 뒤 화면 구석에 뜨는 결과 썸네일',
-      uiTag: '실제 앱 화면',
       h1: '드롭하면,<br><em>목적지에</em> 딱 맞게.',
       lede: '파일을 끌다가 <kbd>Shift</kbd>를 한 번. 원하는 형식으로 바로 바뀌고, <span class="nowrap">홈택스·정부24·메일</span>에 올릴 파일을 2 MB·1 MB 이하로 줄이는 것도 한 번에. 모든 처리는 내 Mac 안에서만.',
       cta: 'App Store에서 받기',
@@ -37,7 +36,7 @@ const copy = {
       h2: '변환은 끌어서,<br>기록은 <em>한 창에.</em>',
       feats: [['stack', '드래그 중 Shift, 그리고 휠', '파일을 끄는 동안 ⇧를 누르면 커서 둘레에 휠이 뜹니다. 가운데에 놓으면 입력해서 찾을 수 있습니다.'], ['clock-counter-clockwise', '기록', '날짜별로 묶인 기록에서 썸네일을 보고, 검색하고, 비교하거나 되돌리고, Finder에서 바로 엽니다. 창에 파일을 놓아도 변환됩니다.'], ['chart-bar', '통계', '변환한 파일 수, 줄인 용량, 최근 14일 그래프, 자주 쓴 동작을 보여 줍니다. 사이드바 아래에는 남은 체험·무료 개수가 나옵니다.']],
       shots: { main: 'Kumquat 메인 창: 사이드바(기록·통계·설정)와 통계 또는 날짜별 기록 목록', hover: '결과 썸네일에 마우스를 올린 모습: 비교, 실행 취소, 2 MB 줄였습니다' },
-      tag: '실제 앱 화면 · 기록 목록은 데모 데이터',
+      note: '실제 앱 화면입니다. 기록 목록의 파일은 데모 데이터입니다.',
     },
     band: [
       [`${P.welcomeTrialFiles}개`, '처음 파일', 'Pro 포함 모든 기능 무료 체험'],
@@ -53,7 +52,6 @@ const copy = {
       drop: '홈택스 · 증빙서류 첨부',
       dropSmall: '예시 화면 · 업로드 칸의 허용 형식과 용량 한도를 읽어 옵니다',
       ok: '한도 안으로',
-      tag: '휠과 결과 썸네일은 실제 앱 화면',
       steps: [
         ['파일을 끌기 시작합니다', 'Finder, 메일 첨부, 스크린샷 어디서든. 평소처럼 끌면 됩니다. 앱을 먼저 열 필요가 없습니다.'],
         ['<kbd>Shift</kbd>를 누르면 휠이 열립니다', '그 파일로 할 수 있는 작업이 금귤 단면 모양 휠로 커서 둘레에 펼쳐집니다. 가운데에 놓으면 입력해서 찾을 수 있습니다.'],
@@ -92,7 +90,7 @@ const copy = {
         ['mask', '민감정보 마스킹', '주민등록번호·전화번호·카드번호·이메일을 찾아 가린 사본을 만듭니다. 원본은 건드리지 않습니다.'],
       ],
       before: '이전', after: '이후',
-      tags: { bg: 'macOS Vision으로 만든 실제 결과', up: '해상도 비교 예시', mask: '예시 문서' },
+      notes: { bg: '이 Mac에서 macOS Vision으로 배경을 지운 실제 결과입니다. 사진: Unsplash.', up: '1/5로 줄였다가 다시 키운 이미지와 원본을 나란히 놓은 비교입니다. 업스케일 결과가 아닙니다.', mask: '가상의 정보로 만든 예시 문서입니다.' },
       slider: '이전/이후 비교 위치',
     },
     formats: {
@@ -114,7 +112,8 @@ const copy = {
         ['0', '수집하는 데이터', 'App Store 개인정보 라벨 “데이터 수집 안 함”을 목표로 합니다. 분석·광고·크래시 SDK를 넣지 않습니다.'],
         ['0', '계정', '가입이나 로그인이 없습니다. 구매는 Apple ID로 App Store에서만 이루어집니다.'],
       ],
-      label2: 'App Store 개인정보 라벨 캡처 자리',
+      settingsAlt: 'Kumquat 설정 › 일반: 모든 변환은 이 Mac에서만 처리되고 계정도 분석 도구도 없다는 안내',
+      settingsNote: '앱 설정 › 일반에도 같은 약속이 적혀 있습니다.',
       vsTitle: '온라인 변환기와 무엇이 다른가요',
       vsBad: ['온라인 변환기', ['파일을 서버로 업로드', '서버에서 변환', '결과를 다시 다운로드', '보관 기간은 서비스 정책에 따름']],
       vsGood: ['Kumquat', ['Mac 안에서 바로 변환', '원본 옆에 결과 저장', '인터넷 없이도 동작', '완전 오프라인 모드']],
@@ -196,7 +195,6 @@ const copy = {
       alt: 'Kumquats on a table in late sunlight',
       wheelAlt: 'The Kumquat wheel, shaped like a kumquat slice, showing JPG, PNG, HEIC, WebP, under 2 MB, under 1 MB, 1920 px and strip metadata (Korean UI)',
       toastAlt: 'Result thumbnail shown in the corner after converting',
-      uiTag: 'Real app screens (Korean UI)',
       h1: 'Drop it,<br>and it <em>fits.</em>',
       lede: 'Start dragging a file and tap <kbd>Shift</kbd>. It turns into the format you need, and can shrink a file under 2 MB or 1 MB for uploads in the same move. Everything runs on your Mac.',
       cta: 'Get it on the App Store',
@@ -211,7 +209,7 @@ const copy = {
       h2: 'Convert by dragging.<br>Keep track <em>in one window.</em>',
       feats: [['stack', 'Shift while dragging, then the wheel', 'Tap ⇧ while dragging a file and the wheel opens around the cursor. Drop on the center to type and search.'], ['clock-counter-clockwise', 'History', 'A date-grouped list with thumbnails and search. Compare, undo or show any result in Finder, or drop files on the window to convert them.'], ['chart-bar', 'Stats', 'Files converted, space saved, a 14-day chart and your most-used actions. The sidebar shows trial files or today’s free conversions left.']],
       shots: { main: 'Kumquat main window: sidebar with History, Stats and Settings, showing stats or the date-grouped history list', hover: 'Hovering the result thumbnail: compare, undo, 2 MB smaller' },
-      tag: 'Real app screens, Korean UI · history uses demo data',
+      note: 'Real app screens (Korean UI). The files in the history list are demo data.',
     },
     band: [
       [`${P.welcomeTrialFiles}`, 'First files', 'Every feature free, Pro included'],
@@ -227,7 +225,6 @@ const copy = {
       drop: 'Tax portal · Attach receipts',
       dropSmall: 'Example screen · reads the accepted types and size limit from the upload field',
       ok: 'Fits the limit',
-      tag: 'Wheel and result thumbnail are real app screens',
       steps: [
         ['Start dragging a file', 'From Finder, a mail attachment or a screenshot. Drag it the way you always do. There’s no app to open first.'],
         ['Tap <kbd>Shift</kbd> to open the wheel', 'The actions for that file fan out around your cursor in a wheel shaped like a kumquat slice. Drop on the center to type and search.'],
@@ -266,7 +263,7 @@ const copy = {
         ['mask', 'Redact personal info', 'Finds ID numbers, phone numbers, card numbers and emails, then makes a redacted copy. The original stays as it was.'],
       ],
       before: 'Before', after: 'After',
-      tags: { bg: 'Real result made with macOS Vision', up: 'Resolution comparison (illustration)', mask: 'Sample document' },
+      notes: { bg: 'A real background-removal result made on this Mac with macOS Vision. Photo: Unsplash.', up: 'The image shrunk to 1/5 and enlarged again, beside the original. Not an upscaling result.', mask: 'A sample document with made-up details.' },
       slider: 'Before/after position',
     },
     formats: {
@@ -288,7 +285,8 @@ const copy = {
         ['0', 'data collected', 'We aim for the App Store privacy label “Data Not Collected.” No analytics, ad or crash-reporting SDKs.'],
         ['0', 'accounts', 'No sign-up, no login. Purchases go through your Apple ID on the App Store only.'],
       ],
-      label2: 'App Store privacy label screenshot goes here',
+      settingsAlt: 'Kumquat Settings › General: every conversion runs only on this Mac, with no account and no analytics (Korean UI)',
+      settingsNote: 'The same promise is written in the app’s Settings › General.',
       vsTitle: 'How it differs from online converters',
       vsBad: ['Online converter', ['Upload your file to a server', 'Convert on the server', 'Download the result', 'Retention depends on the service']],
       vsGood: ['Kumquat', ['Convert right on your Mac', 'Result saved next to the original', 'Works without internet', 'Full offline mode']],
@@ -394,7 +392,6 @@ export function render(ctx) {
           <img src="${img(ctx, 'hero-kumquats.webp')}" width="900" height="1046" alt="${c.hero.alt}" fetchpriority="high">
           ${shot(ctx, 'wheel', c.hero.wheelAlt, { cls: 'hero-wheel', eager: true })}
           ${shot(ctx, 'toastad', c.hero.toastAlt, { cls: 'hero-toast', eager: true })}
-          <figcaption class="ph-tag">${c.hero.uiTag}</figcaption>
         </figure>
       </div>
       <div class="wrap band-wrap">
@@ -417,7 +414,7 @@ export function render(ctx) {
         <figure class="shots-stage reveal">
           ${shot(ctx, 'main', c.app.shots.main, { cls: 'st-main' })}
           ${shot(ctx, 'toasthover', c.app.shots.hover, { cls: 'st-hover' })}
-          <figcaption class="ph-tag">${c.app.tag}</figcaption>
+          <figcaption class="fig-note">${c.app.note}</figcaption>
         </figure>
       </div>
     </section>
@@ -432,7 +429,6 @@ export function render(ctx) {
           <div class="how-stage">
             <div class="stage" data-step="1">
               <div class="stage-grid"></div>
-              <span class="ph-tag">${c.how.tag}</span>
               <div class="stage-wheel">${shot(ctx, 'wheel', c.hero.wheelAlt)}</div>
               <div class="stage-file">
                 <span class="file-tile">${icon('file-image')}</span>
@@ -494,7 +490,7 @@ export function render(ctx) {
         ${head(c.ai)}
         <div class="ai-layout">
           <div class="ai-tabs" role="tablist" aria-label="${c.ai.label}">
-            ${c.ai.tabs.map(([k, l, d], i) => `<button type="button" role="tab" id="tab-${k}" aria-controls="ba-${k}" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}"><span class="n">0${i + 1}</span><span><strong>${l}</strong><small>${d}</small></span></button>`).join('\n            ')}
+            ${c.ai.tabs.map(([k, l, d], i) => `<button type="button" role="tab" id="tab-${k}" aria-controls="ba-${k}" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}" data-caption="${c.ai.notes[k]}"><span class="n">0${i + 1}</span><span><strong>${l}</strong><small>${d}</small></span></button>`).join('\n            ')}
           </div>
           <div>
             ${c.ai.tabs
@@ -506,10 +502,10 @@ export function render(ctx) {
               <span class="ba-label before">${c.ai.before}</span><span class="ba-label after">${c.ai.after}</span>
               <div class="ba-handle" aria-hidden="true"></div>
               <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="${c.ai.slider}">
-              <span class="ph-tag">${c.ai.tags[k]}</span>
             </div>`,
               )
               .join('\n            ')}
+            <p class="fig-note" aria-live="polite" data-ai-caption>${c.ai.notes.bg}</p>
           </div>
         </div>
       </div>
@@ -554,7 +550,7 @@ export function render(ctx) {
               <div class="good"><strong>${c.privacy.vsGood[0]}</strong><ol>${c.privacy.vsGood[1].map((x) => `<li>${x}</li>`).join('')}</ol></div>
             </div>
           </div>
-          ${placeholder(c.privacy.label2, 'auto')}
+          <figure class="privacy-shot reveal">${shot(ctx, 'settings', c.privacy.settingsAlt)}<figcaption class="fig-note">${c.privacy.settingsNote}</figcaption></figure>
         </div>
       </div>
     </section>
@@ -621,6 +617,7 @@ export function render(ctx) {
     <section class="wrap">
       <div class="final reveal">
         <div>
+          <img class="final-icon" src="${img(ctx, 'app-icon.webp')}" width="96" height="96" alt="${ko ? 'Kumquat 앱 아이콘' : 'Kumquat app icon'}">
           <h2>${c.final.h2}</h2>
           <p>${c.final.p}</p>
           <div class="final-actions">

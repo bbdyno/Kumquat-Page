@@ -1,5 +1,5 @@
 import { site, pricing } from '../config.mjs';
-import { docPage, placeholder, shot } from '../layout.mjs';
+import { docPage, shot } from '../layout.mjs';
 
 export const path = 'press/';
 export const priority = 0.4;
@@ -49,7 +49,7 @@ const ko = (ctx) => docPage(ctx, {
 
           <h2 id="assets">이미지·로고</h2>
           <div class="card-grid">
-            ${placeholder('앱 아이콘 (1024×1024 PNG) 자리', '1 / 1')}
+            <figure class="press-shot"><img class="press-icon" src="${ctx.root}assets/img/app-icon.webp" width="128" height="128" alt="Kumquat 앱 아이콘"><figcaption>앱 아이콘 · <a href="${ctx.root}assets/img/app-icon-1024.png" download>1024×1024 PNG</a></figcaption></figure>
             <figure class="press-shot">${shot(ctx, 'wheel', '휠')}<figcaption>휠</figcaption></figure>
             <figure class="press-shot">${shot(ctx, 'welcome', '환영 화면')}<figcaption>환영 화면</figcaption></figure>
             <figure class="press-shot">${shot(ctx, 'settings', '설정 · 일반')}<figcaption>설정 · 일반</figcaption></figure>
@@ -93,7 +93,7 @@ const en = (ctx) => docPage(ctx, {
 
           <h2 id="assets">Images and logo</h2>
           <div class="card-grid">
-            ${placeholder('App icon (1024×1024 PNG) goes here', '1 / 1')}
+            <figure class="press-shot"><img class="press-icon" src="${ctx.root}assets/img/app-icon.webp" width="128" height="128" alt="Kumquat app icon"><figcaption>App icon · <a href="${ctx.root}assets/img/app-icon-1024.png" download>1024×1024 PNG</a></figcaption></figure>
             <figure class="press-shot">${shot(ctx, 'wheel', 'The wheel')}<figcaption>The wheel (Korean UI)</figcaption></figure>
             <figure class="press-shot">${shot(ctx, 'welcome', 'Welcome screen')}<figcaption>Welcome screen</figcaption></figure>
             <figure class="press-shot">${shot(ctx, 'settings', 'Settings, General')}<figcaption>Settings · General</figcaption></figure>

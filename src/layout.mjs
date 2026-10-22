@@ -174,10 +174,6 @@ export function storeCta(ctx, campaign, note) {
         </div>`;
 }
 
-export function placeholder(label, ratio = '16 / 10') {
-  return `<div class="placeholder" style="aspect-ratio:${ratio}" role="img" aria-label="${label}"><span class="ph-tag">${label}</span></div>`;
-}
-
 export function draftBanner(ctx) {
   return ctx.lang === 'ko'
     ? `<div class="draft-banner" role="note"><strong>초안</strong><span>법률 검토 전 문서입니다. 앱 출시 전에 내용이 바뀔 수 있으며, 확정본이 게시되기 전까지 법적 효력이 있는 최종 문서로 보지 마세요.</span></div>`
