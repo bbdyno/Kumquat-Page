@@ -4,7 +4,8 @@ import { docPage, draftBanner } from '../layout.mjs';
 export const path = 'terms/';
 export const priority = 0.4;
 
-// TODO before launch: legal review; decide custom EULA vs Apple's standard EULA; governing law;
+// Registered App Store EULA (2026-10-22): Apple Standard EULA + open source clause (Kumquat/AppStore/eula.txt). Keep §7 identical in meaning.
+// TODO before launch: legal review; governing law;
 // developer legal name and address (required by Apple's minimum EULA terms); register the EULA URL in App Store Connect.
 
 const P = pricing;
@@ -17,12 +18,12 @@ const ko = (ctx) => docPage(ctx, {
   aside: `<h2>목차</h2><ol>
     <li><a href="#t1">계약 당사자</a></li><li><a href="#t2">라이선스</a></li><li><a href="#t3">무료 기능과 Pro</a></li>
     <li><a href="#t4">자동 갱신 구독</a></li><li><a href="#t5">해지와 환불</a></li><li><a href="#t6">사용자 파일</a></li>
-    <li><a href="#t7">제3자 구성요소</a></li><li><a href="#t8">보증의 부인</a></li><li><a href="#t9">책임의 제한</a></li>
+    <li><a href="#t7">오픈소스 구성요소</a></li><li><a href="#t8">보증의 부인</a></li><li><a href="#t9">책임의 제한</a></li>
     <li><a href="#t10">지원과 유지보수</a></li><li><a href="#t11">제품 관련 청구</a></li><li><a href="#t12">지식재산권 청구</a></li>
     <li><a href="#t13">법령 준수</a></li><li><a href="#t14">제3자 수익자</a></li><li><a href="#t15">준거법</a></li><li><a href="#t16">변경과 연락처</a></li></ol>`,
   body: `${draftBanner(ctx)}
           <p class="meta-line">초안 작성일 ${site.factsDate} · 시행일: 앱 출시일에 확정</p>
-          <p>이 약관은 Apple의 <a href="${appleEula}" rel="noopener">표준 EULA</a>를 대신하는 맞춤형 최종 사용자 라이선스 계약입니다. 이 약관이 Apple 미디어 서비스 이용약관과 다를 경우, App Store 사용에 관해서는 Apple의 약관이 우선합니다.</p>
+          <p>Kumquat의 사용 허락은 App Store Connect에 등록한 최종 사용자 라이선스 계약(EULA)을 따릅니다. 이 EULA는 Apple의 <a href="${appleEula}" rel="noopener">표준 EULA</a>를 그대로 적용하고, 오픈소스 구성요소에 관한 조항(아래 7조)만 더한 것입니다. 이 페이지의 나머지 조항은 무료 사용, 구독, 광고 같은 서비스 조건을 설명하며, 사용 허락에 관해 등록된 EULA와 다른 부분이 있으면 등록된 EULA가 우선합니다. App Store 사용에 관해서는 Apple 미디어 서비스 이용약관이 우선합니다.</p>
 
           <h2 id="t1">1. 계약 당사자</h2>
           <p>이 계약은 사용자와 Kumquat 개발자(이하 “개발자”, [법적 이름·주소 확정 후 기재]) 사이에 체결되며, Apple과의 계약이 아닙니다. Kumquat과 그 콘텐츠에 대한 책임은 Apple이 아닌 개발자에게 있습니다.</p>
@@ -56,8 +57,11 @@ const ko = (ctx) => docPage(ctx, {
           <h2 id="t6">6. 사용자 파일</h2>
           <p>사용자가 처리하는 파일의 권리와 책임은 사용자에게 있습니다. Kumquat은 원본을 덮어쓰지 않도록 설계되었지만, 중요한 파일은 처리 전에 백업해 두시기 바랍니다. 목적지 프리셋(사이트별 형식·용량 규칙)은 편의를 위한 참고 정보이며, 각 사이트의 실제 요구사항과 다를 수 있습니다. 최종 제출 전 해당 사이트의 안내를 확인할 책임은 사용자에게 있습니다.</p>
 
-          <h2 id="t7">7. 제3자 구성요소</h2>
-          <p>Kumquat에는 오픈 소스 구성요소(예: LGPL 라이선스의 FFmpeg 라이브러리)가 포함될 수 있으며, 해당 구성요소에는 각자의 라이선스가 적용됩니다. 고지 사항은 앱의 정보 화면에서 볼 수 있습니다.</p>
+          <h2 id="t7">7. 오픈소스 구성요소</h2>
+          <p>Kumquat에는 FFmpeg, LAME 같은 오픈소스 소프트웨어가 들어 있으며, 이 구성요소는 각자의 라이선스(GNU 약소 일반 공중 사용 허가서(LGPL) 2.1 이상 등)에 따라 사용자에게 허락됩니다. 해당 구성요소의 사용에는 그 라이선스가 적용되고, 그 구성요소에 관해서는 이 약관과 표준 EULA보다 그 라이선스가 우선합니다.</p>
+          <p>이 약관의 어떤 내용도 그 라이선스가 보장하는 권리를 제한하지 않습니다. 여기에는 해당 구성요소를 수정할 권리와, 그 수정을 디버깅하기 위해 역설계할 권리가 포함됩니다.</p>
+          <p>대응하는 소스 코드 전체는 앱 안(<code>Kumquat.app/Contents/Resources/OpenSource</code>)에 함께 들어 있고, 라이선스 원문은 앱의 <strong>설정 › 정보 › 오픈소스 라이선스</strong>에서 볼 수 있습니다.</p>
+          <p>Kumquat 자체 코드는 LGPL로 허락되지 않습니다. 이 조항은 오픈소스 구성요소에만 적용됩니다.</p>
 
           <h2 id="t8">8. 보증의 부인</h2>
           <p>관련 법령이 허용하는 최대 범위에서 Kumquat은 “있는 그대로” 제공되며, 특정 목적 적합성이나 오류가 없음을 보증하지 않습니다. 앱이 보증 사항을 충족하지 못한 경우 사용자는 Apple에 알릴 수 있고, Apple은 해당 앱의 구매 금액을 환불할 수 있습니다. 법이 허용하는 최대 범위에서 Apple은 앱에 관해 그 밖의 어떠한 보증 의무도 지지 않으며, 보증 불이행으로 인한 그 밖의 청구·손실·책임·비용은 개발자의 책임입니다.</p>
@@ -94,12 +98,12 @@ const en = (ctx) => docPage(ctx, {
   aside: `<h2>Contents</h2><ol>
     <li><a href="#t1">Parties</a></li><li><a href="#t2">License</a></li><li><a href="#t3">Free and Pro</a></li>
     <li><a href="#t4">Auto-renewing subscription</a></li><li><a href="#t5">Cancellation and refunds</a></li><li><a href="#t6">Your files</a></li>
-    <li><a href="#t7">Third-party components</a></li><li><a href="#t8">Warranty disclaimer</a></li><li><a href="#t9">Limitation of liability</a></li>
+    <li><a href="#t7">Open source components</a></li><li><a href="#t8">Warranty disclaimer</a></li><li><a href="#t9">Limitation of liability</a></li>
     <li><a href="#t10">Support and maintenance</a></li><li><a href="#t11">Product claims</a></li><li><a href="#t12">Intellectual property claims</a></li>
     <li><a href="#t13">Legal compliance</a></li><li><a href="#t14">Third-party beneficiary</a></li><li><a href="#t15">Governing law</a></li><li><a href="#t16">Changes and contact</a></li></ol>`,
   body: `${draftBanner(ctx)}
           <p class="meta-line">Draft written ${site.factsDate} · Effective date: set at app launch</p>
-          <p>This is a custom end user license agreement that replaces Apple’s <a href="${appleEula}" rel="noopener">Standard EULA</a>. Where it conflicts with the Apple Media Services Terms and Conditions regarding use of the App Store, Apple’s terms prevail.</p>
+          <p>Kumquat is licensed to you under the end user license agreement (EULA) registered in App Store Connect. That EULA applies Apple’s <a href="${appleEula}" rel="noopener">Standard EULA</a> in full and adds only a clause on open source components (section 7 below). The rest of this page explains service terms such as free use, subscriptions and ads; where it differs from the registered EULA on the license itself, the registered EULA prevails. Regarding use of the App Store, the Apple Media Services Terms and Conditions prevail.</p>
 
           <h2 id="t1">1. Parties</h2>
           <p>This agreement is between you and the developer of Kumquat (“Developer”, [legal name and address to be added]), not Apple. The Developer, not Apple, is solely responsible for Kumquat and its content.</p>
@@ -133,8 +137,11 @@ const en = (ctx) => docPage(ctx, {
           <h2 id="t6">6. Your files</h2>
           <p>You keep all rights to, and responsibility for, the files you process. Kumquat is designed not to overwrite originals, but back up important files first. Destination presets (per-site format and size rules) are provided for convenience and may differ from a site’s actual requirements; check the site’s own instructions before you submit.</p>
 
-          <h2 id="t7">7. Third-party components</h2>
-          <p>Kumquat may include open-source components (for example, the FFmpeg libraries under the LGPL), each under its own license. Notices are available in the app’s About window.</p>
+          <h2 id="t7">7. Open source components</h2>
+          <p>Kumquat includes open source software that is licensed to you under its own terms, including FFmpeg and LAME under the GNU Lesser General Public License (LGPL) version 2.1 or later. Those terms govern your use of those components and take precedence over these terms and the Standard EULA for them.</p>
+          <p>Nothing in this agreement restricts your rights under those licenses, including the rights to modify those components and to reverse engineer for the purpose of debugging such modifications.</p>
+          <p>The complete corresponding source code is included inside the app (<code>Kumquat.app/Contents/Resources/OpenSource</code>), and the license texts are available in the app under <strong>Settings › About › Open Source Licenses</strong>.</p>
+          <p>Kumquat’s own code is not licensed under the LGPL. This section applies only to the open source components.</p>
 
           <h2 id="t8">8. Warranty disclaimer</h2>
           <p>To the maximum extent permitted by law, Kumquat is provided “as is,” without warranty of fitness for a particular purpose or freedom from errors. If the app fails to conform to any applicable warranty, you may notify Apple, and Apple may refund the purchase price of the app. To the maximum extent permitted by law, Apple has no other warranty obligation with respect to the app, and any other claims, losses, liabilities, damages, costs or expenses attributable to a failure to conform to any warranty are the Developer’s responsibility.</p>
