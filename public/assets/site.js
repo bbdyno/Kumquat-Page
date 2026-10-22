@@ -73,6 +73,33 @@
     setStep(1);
   }
 
+  // Promo video: plays muted only while on screen, never for reduced-motion users, always pausable.
+  document.querySelectorAll('video[data-autoplay]').forEach(function (video) {
+    var fig = video.closest('figure');
+    var btn = fig && fig.querySelector('.video-toggle');
+    var userPaused = reduceMotion;
+    var sync = function () {
+      var paused = video.paused;
+      if (fig) fig.classList.toggle('is-paused', paused);
+      if (btn) btn.setAttribute('aria-label', paused ? btn.dataset.labelPlay : btn.dataset.labelPause);
+    };
+    video.addEventListener('play', sync);
+    video.addEventListener('pause', sync);
+    sync();
+    if (btn) btn.addEventListener('click', function () {
+      if (video.paused) { userPaused = false; video.play().catch(function () {}); }
+      else { userPaused = true; video.pause(); }
+    });
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting && !userPaused) video.play().catch(function () {});
+          else if (!e.isIntersecting && !video.paused) video.pause();
+        });
+      }, { threshold: 0.35 }).observe(video);
+    }
+  });
+
   // AI before/after: tabs and slider.
   var tabs = document.querySelectorAll('.ai-tabs [role="tab"]');
   tabs.forEach(function (tab) {

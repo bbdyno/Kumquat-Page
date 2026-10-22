@@ -130,6 +130,16 @@ The app downloads `/ads/v1.json` (source: `public/ads/v1.json`) about once a day
 
 An empty `ads` array means no sponsors; the app then shows its own Kumquat Pro note. Update `updated` whenever the list changes.
 
+## Promo video
+
+The Korean landing page shows the app's promo motion graphic in “작동 방식” (the English page keeps the interactive demo). Source: `Kumquat/AppStore/promo/kumquat-promo-ko.mp4` (1080×1920, 17.5 s, no audio). The site copy is a 720×1280 re-encode plus a poster frame:
+
+```bash
+ffmpeg -i kumquat-promo-ko.mp4 -an -vf scale=720:1280:flags=lanczos -c:v libx264 -profile:v high -preset slow -crf 23 -pix_fmt yuv420p -movflags +faststart public/assets/video/promo-ko-720.mp4
+```
+
+It is muted, plays only while on screen, has a pause button, and does not autoplay for visitors who prefer reduced motion.
+
 ## Credits
 
 Photos (Unsplash License, free for commercial use; credited as a courtesy):

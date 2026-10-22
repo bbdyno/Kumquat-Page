@@ -48,6 +48,9 @@ const copy = {
       label: '작동 방식',
       h2: '끌어서, 고르고, <em>놓으면</em> 끝.',
       p: '변환 메뉴를 찾아 헤매지 않아도 됩니다. 끌고, ⇧를 누르고, 원하는 칸에 놓으면 됩니다.',
+      videoLabel: 'Kumquat 소개 영상(17초, 소리 없음): 파일을 끌다가 Shift를 누르면 휠이 펼쳐지고, 용량을 맞춘 결과를 비교하고, 기록 창에서 확인하는 실제 앱 화면',
+      play: '영상 재생',
+      pause: '영상 일시 정지',
       file: '금귤_정물.heic',
       drop: '홈택스 · 증빙서류 첨부',
       dropSmall: '예시 화면 · 업로드 칸의 허용 형식과 용량 한도를 읽어 옵니다',
@@ -426,7 +429,13 @@ export function render(ctx) {
           <ol class="steps">
             ${c.how.steps.map(([h, p], i) => `<li class="step${i === 0 ? ' is-active' : ''}" data-step="${i + 1}"><span class="num">0${i + 1}</span><div><h3>${h}</h3><p>${p}</p></div></li>`).join('\n            ')}
           </ol>
-          <div class="how-stage">
+${ko ? `          <div class="how-stage how-video-wrap">
+            <figure class="how-video">
+              <video src="${ctx.root}assets/video/promo-ko-720.mp4" poster="${ctx.root}assets/video/promo-ko-poster.webp" width="720" height="1280" muted loop playsinline preload="none" aria-label="${c.how.videoLabel}" data-autoplay></video>
+              <button class="video-toggle" type="button" aria-label="${c.how.pause}" data-label-play="${c.how.play}" data-label-pause="${c.how.pause}">${icon('pause', 'icon-pause')}${icon('play', 'icon-play')}</button>
+            </figure>
+          </div>
+` : `          <div class="how-stage">
             <div class="stage" data-step="1">
               <div class="stage-grid"></div>
               <div class="stage-wheel">${shot(ctx, 'wheel', c.hero.wheelAlt)}</div>
@@ -437,7 +446,7 @@ export function render(ctx) {
               </div>
               <div class="stage-result">${shot(ctx, 'toasthover', c.app.shots.hover)}</div>
             </div>
-          </div>
+`}          </div>
         </div>
       </div>
     </section>
