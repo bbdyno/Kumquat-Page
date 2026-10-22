@@ -4,7 +4,7 @@ import { docPage, draftBanner } from '../layout.mjs';
 export const path = 'privacy/';
 export const priority = 0.5;
 
-// TODO before launch: legal review (incl. 개인정보 보호법 §30 items), effective date, operator name/contact.
+// TODO before launch: legal review (incl. 개인정보 보호법 §30 items), effective date.
 
 const ko = (ctx) => docPage(ctx, {
   eyebrow: '개인정보 처리방침',
@@ -89,7 +89,8 @@ const ko = (ctx) => docPage(ctx, {
               <tr><th scope="row">자동 수집 장치(쿠키 등)</th><td>설치·운영하지 않음. 광고에도 식별자·추적 기술을 쓰지 않음</td></tr>
               <tr><th scope="row">만 14세 미만 아동</th><td>아동의 개인정보도 수집하지 않음</td></tr>
               <tr><th scope="row">안전성 확보 조치</th><td>App Sandbox 적용, 서드파티 SDK 미사용, 네트워크는 정적 파일 내려받기로 한정</td></tr>
-              <tr><th scope="row">개인정보 보호책임자</th><td>[운영자 이름 확정 후 기재] · <a href="mailto:${site.email}">${site.email}</a></td></tr>
+              <tr><th scope="row">운영자</th><td>${site.operator.name} · ${site.operator.addressKo}</td></tr>
+              <tr><th scope="row">개인정보 보호책임자</th><td>${site.operator.name} · <a href="mailto:${site.email}">${site.email}</a></td></tr>
             </tbody>
           </table></div>
 
@@ -172,6 +173,7 @@ const en = (ctx) => docPage(ctx, {
 
           <h2 id="rights">Your rights and contact</h2>
           <p>Because the developer holds no personal data about you, there is nothing to access, correct or delete on our side. You can clear history and settings on your Mac at any time. Questions: <a href="mailto:${site.email}">${site.email}</a>.</p>
+          <p>Operator and privacy contact: ${site.operator.name}, ${site.operator.addressEn}.</p>
 
           <h2 id="changes">Changes</h2>
           <p>Changes to this policy will be posted here with a new effective date. Material changes to how data is handled will also be noted in the app’s release notes.</p>`,

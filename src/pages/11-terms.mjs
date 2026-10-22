@@ -69,7 +69,7 @@ const ko = (ctx) => docPage(ctx, {
 
           <h2 id="t8">8. 변경과 연락처</h2>
           <p>이 페이지의 서비스 조건을 바꾸면 시행일과 함께 게시하고, 사용자에게 불리한 중대한 변경은 앱 업데이트 노트에도 알립니다.</p>
-          <p>문의: <a href="mailto:${site.email}">${site.email}</a> · <a href="../support/">지원 페이지</a></p>`,
+          <p>운영자: ${site.operator.name} · ${site.operator.addressKo}<br>문의: <a href="mailto:${site.email}">${site.email}</a> · <a href="../support/">지원 페이지</a></p>`,
 });
 
 const en = (ctx) => docPage(ctx, {
@@ -130,7 +130,7 @@ const en = (ctx) => docPage(ctx, {
 
           <h2 id="t8">8. Changes and contact</h2>
           <p>Changes to the service terms on this page will be posted with a new effective date, and material changes that are unfavorable to you will also be noted in the app’s release notes.</p>
-          <p>Contact: <a href="mailto:${site.email}">${site.email}</a> · <a href="../support/">Support page</a></p>`,
+          <p>Operator: ${site.operator.name}, ${site.operator.addressEn}<br>Contact: <a href="mailto:${site.email}">${site.email}</a> · <a href="../support/">Support page</a></p>`,
 });
 
 export function render(ctx) {

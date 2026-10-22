@@ -6,6 +6,8 @@ export const site = {
   url: 'https://bbdyno.github.io/Kumquat-Page/',
   // Support and ad-report address, shared with the app (Kumquat commit 3af987b) and the user's other app sites.
   email: 'della.kimko@gmail.com',
+  // Operator shown on the privacy and terms pages (confirmed by the user 2026-10-22).
+  operator: { name: 'bbdyno', addressKo: '서울특별시 구로구', addressEn: 'Guro-gu, Seoul, Republic of Korea' },
   // Date shown on facts that can go stale (pricing, comparison table).
   factsDate: '2026-10-20',
   appVersion: '출시 전',
