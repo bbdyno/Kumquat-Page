@@ -27,7 +27,7 @@ export const strings = {
       links: {
         product: [['#how', '작동 방식'], ['#formats', '지원 포맷'], ['#pricing', '가격'], ['#compare', '비교'], ['changelog/', '변경 기록']],
         resources: [['guides/', '목적지 가이드'], ['support/', '지원·FAQ'], ['press/', '보도 자료']],
-        legal: [['privacy/', '개인정보 처리방침'], ['terms/', '이용약관(EULA)']],
+        legal: [['privacy/', '개인정보 처리방침'], ['terms/', '이용약관(EULA)'], ['opensource/', '오픈소스']],
       },
       fine: 'Kumquat은 개발 중인 앱의 가칭이며, 이 사이트의 기능·가격은 출시 계획 기준입니다. Apple, Mac, macOS, App Store는 Apple Inc.의 상표입니다.',
     },
@@ -56,7 +56,7 @@ export const strings = {
       links: {
         product: [['#how', 'How it works'], ['#formats', 'Formats'], ['#pricing', 'Pricing'], ['#compare', 'Compare'], ['changelog/', 'Changelog']],
         resources: [['support/', 'Support & FAQ'], ['press/', 'Press kit'], ['../guides/', 'Upload guides (Korean)']],
-        legal: [['privacy/', 'Privacy Policy'], ['terms/', 'Terms of Use (EULA)']],
+        legal: [['privacy/', 'Privacy Policy'], ['terms/', 'Terms of Use (EULA)'], ['opensource/', 'Open source']],
       },
       fine: 'Kumquat is a working title for an app in development. Features and prices on this site describe the launch plan. Apple, Mac, macOS and App Store are trademarks of Apple Inc.',
     },
