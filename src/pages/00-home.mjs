@@ -19,7 +19,7 @@ const copy = {
     hero: {
       announceTag: '출시 준비 중',
       announce: `처음 파일 ${P.welcomeTrialFiles}개는 모든 기능 무료`,
-      menuAlt: 'Shrinkwrap 메뉴 막대 메뉴: 파일을 놓으면 보낼 곳부터 보여 줍니다',
+      menuAlt: 'Shrinkwrap의 보낼 곳 목록: 메일 첨부 합계 20MB, 메신저, 서류 제출 등',
       toastAlt: '줄이기가 끝난 뒤 화면 구석에 뜨는 결과 카드',
       h1: '보낼 곳에<br><em>딱 맞게.</em>',
       lede: '메일 첨부, 메신저, 서류 제출. 보낼 곳을 고르고 파일을 놓으면 그곳의 용량 한도에 맞는 새 파일을 만듭니다. 원본은 그대로 두고, 모든 처리는 Mac 안에서 합니다.',
@@ -180,7 +180,7 @@ const copy = {
     hero: {
       announceTag: 'Coming soon',
       announce: `Your first ${P.welcomeTrialFiles} files get every feature free`,
-      menuAlt: 'Shrinkwrap menu bar menu: drop a file and destinations come first',
+      menuAlt: 'Shrinkwrap destination list: email attachment 20 MB total, messenger, online forms and more',
       toastAlt: 'Result card shown in the corner after shrinking',
       h1: 'Sized to fit<br><em>where it’s going.</em>',
       lede: 'Email, chat, online forms. Pick where a file is going and drop it in. Shrinkwrap makes a new copy that fits the limit, leaves the original alone, and does it all on your Mac.',

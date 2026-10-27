@@ -210,7 +210,7 @@ ${body}
 //   toastad    result card as free users see it (with the ad line)
 //   toasthover result card on hover: compare, undo, similarity, new Mail message / share
 //   settings   Settings › General (on-device promise)
-const shotSizes = { main: [1936, 1376], toasthover: [468, 444], toastad: [468, 444], settings: [1304, 1014], dropmenu: [366, 888] };
+const shotSizes = { main: [1800, 1240], toasthover: [496, 444], toastad: [496, 444], settings: [1080, 736], dropmenu: [520, 660] };
 export function shot(ctx, name, alt, { cls = '', eager = false } = {}) {
   const [w, h] = shotSizes[name];
   const attrs = `width="${w / 2}" height="${h / 2}" decoding="async"${eager ? '' : ' loading="lazy"'}`;

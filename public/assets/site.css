@@ -664,7 +664,7 @@ a.card:hover { color: var(--ink); transform: translateY(-3px); }
 :root[data-theme="dark"] .shot .shot-dark { display: block; }
 
 /* Hero: the real menu bar drop menu and result card over the wrapped parcel. */
-.hero-menu { position: absolute; z-index: 3; left: 7%; bottom: 5%; width: min(25%, 160px); filter: drop-shadow(0 24px 40px rgba(20, 24, 40, 0.3)); }
+.hero-menu { position: absolute; z-index: 3; left: 7%; bottom: 5%; width: min(30%, 210px); filter: drop-shadow(0 24px 40px rgba(20, 24, 40, 0.3)); }
 .hero-toast { position: absolute; z-index: 3; right: 7%; top: 18%; width: min(30%, 190px); transform: rotate(3deg); }
 
 /* Real screens section: main window with the result card layered over it. */
