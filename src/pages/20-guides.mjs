@@ -11,12 +11,12 @@ export function render(ctx) {
     .map((g) => `<a class="card" href="${g.slug}/"><span class="kicker">${g.pill}</span><h2>${g.title}</h2><p>${g.summary}</p><span class="more">읽기 ${icon('arrow-up-right')}</span></a>`)
     .join('\n            ');
   return {
-    title: '목적지 가이드 · 업로드 규격 맞추기',
+    title: '보낼 곳 가이드 · 업로드 규격 맞추기',
     description: '홈택스, 정부24 등 국내 사이트에 파일을 올릴 때 형식과 용량, 사진 규격을 맞추는 방법을 Mac 기준으로 정리했습니다.',
     body: docPage(ctx, {
-      eyebrow: '목적지 가이드',
+      eyebrow: '보낼 곳 가이드',
       title: '올릴 곳마다 다른 규격, 한 번에 맞추기',
-      lede: '“파일 용량이 너무 큽니다”, “허용되지 않는 형식입니다”를 만났을 때 Mac에서 해결하는 방법입니다. 기본 앱으로 하는 방법을 먼저, Kumquat으로 줄이는 방법을 뒤에 적었습니다.',
+      lede: '“파일 용량이 너무 큽니다”, “허용되지 않는 형식입니다”를 만났을 때 Mac에서 해결하는 방법입니다. 기본 앱으로 하는 방법을 먼저, Shrinkwrap의 보낼 곳(서류 제출, 사진 첨부)으로 맞추는 방법을 뒤에 적었습니다.',
       body: `          <div class="card-grid">
             ${cards}
           </div>

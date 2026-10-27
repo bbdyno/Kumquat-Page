@@ -22,13 +22,13 @@ export function render(ctx) {
   };
   return {
     title: '홈택스 증빙서류 첨부 용량 줄이기 (Mac)',
-    description: '홈택스에 스캔 PDF나 아이폰 사진이 첨부되지 않을 때, Mac 기본 앱과 Kumquat으로 글자를 살리면서 용량을 줄이는 방법.',
+    description: '홈택스에 스캔 PDF나 아이폰 사진이 첨부되지 않을 때, Mac 기본 앱과 Shrinkwrap의 ‘서류 제출’로 글자를 살리면서 용량을 줄이는 방법.',
     head: `<script type="application/ld+json">${JSON.stringify(howTo)}</script>`,
     body: docPage(ctx, {
-      eyebrow: '목적지 가이드 · 홈택스',
+      eyebrow: '보낼 곳 가이드 · 홈택스',
       title: '홈택스 증빙서류, 용량 초과 없이 첨부하기',
       lede: '종합소득세·연말정산 증빙을 올리다 “파일 용량 초과”나 “허용되지 않는 확장자”를 만났다면, 대부분 스캔 해상도와 사진 형식 문제입니다. Mac에서 바로 해결하는 순서를 정리했습니다.',
-      aside: `<h2>목차</h2><ol><li><a href="#check">한도 먼저 확인</a></li><li><a href="#photo">사진: HEIC → JPG</a></li><li><a href="#scan">스캔 다시 하기</a></li><li><a href="#preview">미리보기로 줄이기</a></li><li><a href="#kumquat">Kumquat으로 줄이기</a></li><li><a href="#final">올리기 전 확인</a></li></ol>`,
+      aside: `<h2>목차</h2><ol><li><a href="#check">한도 먼저 확인</a></li><li><a href="#photo">사진: HEIC → JPG</a></li><li><a href="#scan">스캔 다시 하기</a></li><li><a href="#preview">미리보기로 줄이기</a></li><li><a href="#shrinkwrap">‘서류 제출’로 맞추기</a></li><li><a href="#final">올리기 전 확인</a></li></ol>`,
       body: `          <p class="meta-line">작성 ${site.factsDate} · macOS 12 이상 기준</p>
 
           <h2 id="check">1. 첨부 화면의 한도부터 확인하세요</h2>
@@ -56,14 +56,14 @@ export function render(ctx) {
           </ol>
           <p>간단하지만 압축 강도를 조절할 수 없어 글자가 뭉개질 때가 있습니다. 저장한 파일을 100%로 확대해 금액·사업자등록번호 같은 숫자가 또렷한지 꼭 확인하세요.</p>
 
-          <h2 id="kumquat">5. Kumquat으로 한도에 딱 맞추기</h2>
-          <p>Kumquat의 휠에는 “2 MB 이하”와 “1 MB 이하” 칸이 있습니다. 놓으면 그 용량 안에 들어올 때까지 품질을 조절해 줄입니다.</p>
+          <h2 id="shrinkwrap">5. Shrinkwrap의 ‘서류 제출’로 한도에 맞추기</h2>
+          <p>Shrinkwrap에서 보낼 곳으로 <strong>서류 제출</strong>을 고르면, PDF는 글자를 살린 채 안에 든 이미지만 압축하고, HEIC 사진은 JPG로, 문서는 PDF로 바꿔 한도 안에 맞춥니다.</p>
           <ol>
-            <li>PDF를 끌다가 <kbd>Shift</kbd>를 눌러 휠을 엽니다.</li>
-            <li>첨부 화면에서 확인한 한도에 맞춰 <strong>2 MB 이하</strong> 또는 <strong>1 MB 이하</strong> 칸에 놓습니다.</li>
-            <li>결과가 원본 옆에 저장됩니다. 원본은 그대로 남습니다. 결과 썸네일의 <strong>비교</strong>로 원본과 나란히 놓고 글자를 확인하세요.</li>
+            <li>Shrinkwrap 메인 창의 “어디로 보내나요?”에서 <strong>서류 제출</strong>을 고릅니다. 메뉴 막대 아이콘에 놓거나 Finder 빠른 동작에서 시작해도 됩니다.</li>
+            <li>서류 제출의 기본 한도는 파일당 5 MB입니다. 홈택스의 공식 한도가 아니라 Shrinkwrap의 기본값이므로, 1번에서 확인한 한도가 다르면 설정에서 그 값으로 바꿉니다.</li>
+            <li>PDF나 사진을 놓습니다. 새 파일이 만들어지고 원본은 그대로 남습니다. 결과에 표시되는 유사도와 결과 카드의 <strong>비교</strong>로 원본과 나란히 놓고 글자를 확인하세요.</li>
           </ol>
-          <div class="callout tip"><p><strong>무료</strong>: 목표 용량은 처음 파일 10개 체험 안에서 써 볼 수 있고, 이후에는 Pro 기능입니다. 체험이 끝난 뒤에는 2~4번의 기본 앱 방법을 쓰세요.<br><strong>1.1 예정</strong>: 브라우저 확장이 홈택스 첨부 칸의 형식·용량 안내를 읽어, 칸에 바로 놓아도 맞춰 주는 기능을 준비하고 있습니다.</p></div>
+          <div class="callout tip"><p><strong>무료</strong>: 보낼 곳 맞춤은 처음 파일 10개 체험 안에서 써 볼 수 있고, 이후에는 Pro 기능입니다. 체험이 끝난 뒤에는 2~4번의 기본 앱 방법을 쓰세요.</p></div>
           <div class="doc-cta">${storeCta(ctx, 'guide-hometax')}</div>
 
           <h2 id="final">6. 올리기 전 확인</h2>
@@ -73,7 +73,7 @@ export function render(ctx) {
             <li>파일 이름은 짧고 특수문자 없이(예: <code>2026_의료비_영수증.pdf</code>) 정리했나요?</li>
             <li>제출에 필요 없는 다른 사람의 개인정보가 들어 있지 않나요?</li>
           </ul>
-          <p class="meta-line">이 가이드는 홈택스·국세청과 관계없는 Kumquat 팀이 작성했습니다. 제출 요건은 항상 홈택스 화면의 안내를 따르세요.</p>`,
+          <p class="meta-line">이 가이드는 홈택스·국세청과 관계없는 Shrinkwrap 팀이 작성했습니다. 제출 요건은 항상 홈택스 화면의 안내를 따르세요.</p>`,
     }),
   };
 }

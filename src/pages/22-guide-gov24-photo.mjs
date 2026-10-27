@@ -23,10 +23,10 @@ export function render(ctx) {
     title: '정부24 증명사진 규격 맞추기 (Mac)',
     description: '주민등록증 재발급 등 정부24 온라인 신청에 쓰는 3.5×4.5cm 증명사진을 Mac에서 규격에 맞는 파일로 만드는 방법과 픽셀 계산.',
     body: docPage(ctx, {
-      eyebrow: '목적지 가이드 · 정부24',
+      eyebrow: '보낼 곳 가이드 · 정부24',
       title: '정부24 증명사진, 규격에 맞는 파일로 만들기',
       lede: '사진관 파일이나 직접 찍은 사진을 온라인 신청에 올리려면 비율, 픽셀, 배경을 맞춰야 합니다. Mac 기본 앱으로 하는 방법과 계산 근거를 정리했습니다.',
-      aside: `<h2>목차</h2><ol><li><a href="#spec">기본 규격</a></li><li><a href="#pixels">픽셀로 바꾸기</a></li><li><a href="#preview">미리보기로 맞추기</a></li><li><a href="#kumquat">Kumquat 증명사진 메이커</a></li><li><a href="#check">올리기 전 확인</a></li></ol>`,
+      aside: `<h2>목차</h2><ol><li><a href="#spec">기본 규격</a></li><li><a href="#pixels">픽셀로 바꾸기</a></li><li><a href="#preview">미리보기로 맞추기</a></li><li><a href="#shrinkwrap">‘사진 첨부’로 용량 맞추기</a></li><li><a href="#check">올리기 전 확인</a></li></ol>`,
       body: `          <p class="meta-line">작성 ${site.factsDate} · macOS 12 이상 기준</p>
 
           <h2 id="spec">1. 기본 규격</h2>
@@ -64,13 +64,14 @@ export function render(ctx) {
           </ol>
           <p>배경에 사물이 보이거나 그림자가 지면 반려될 수 있습니다. 밝은 단색 벽 앞에서 다시 찍는 것이 가장 확실합니다.</p>
 
-          <h2 id="kumquat">4. Kumquat 증명사진 메이커 <small class="meta-line">Pro · 1.2 예정</small></h2>
-          <p>사진을 놓으면 정부24 프리셋에 맞춰 7:9로 자르고, 얼굴 위치와 크기를 검사하고, 배경을 단색으로 바꾼 JPG를 만듭니다. 배경 분리는 Mac 안에서 처리하므로 얼굴 사진이 어디로도 전송되지 않습니다.</p>
-          <ul class="checks">
-            <li>얼굴이 너무 작거나 치우치면 경고</li>
-            <li>배경을 흰색 또는 지정한 단색으로 교체(macOS 14 이상에서 가장 정확)</li>
-            <li>파일 용량 한도에 맞춰 JPG 품질 자동 조절</li>
-          </ul>
+          <h2 id="shrinkwrap">4. Shrinkwrap의 ‘사진 첨부’로 용량 맞추기</h2>
+          <p>3번에서 7:9로 자른 사진을 Shrinkwrap에서 보낼 곳 <strong>사진 첨부</strong>로 보내면, 긴 변 1600 px 이하의 JPG로 바꾸고 파일당 500 KB 안에 들도록 줄입니다. HEIC 사진도 JPG가 됩니다.</p>
+          <ol>
+            <li>Shrinkwrap 메인 창의 “어디로 보내나요?”에서 <strong>사진 첨부</strong>를 고릅니다.</li>
+            <li>500 KB는 정부24의 공식 기준이 아니라 Shrinkwrap의 기본값입니다. 신청 화면에 용량 기준이 따로 있으면 설정에서 사진 첨부의 한도를 그 값으로 바꿉니다.</li>
+            <li>사진을 놓습니다. 새 JPG가 만들어지고 원본은 그대로 남습니다. 결과 카드의 <strong>비교</strong>로 얼굴이 흐려지지 않았는지 확인하세요.</li>
+          </ol>
+          <p>자르기와 얼굴 위치는 Shrinkwrap이 맞추지 않습니다. 비율과 구도는 3번처럼 미리보기에서 먼저 정리하세요. 보낼 곳 맞춤은 처음 파일 10개 체험 안에서 써 볼 수 있고, 이후에는 Pro 기능입니다.</p>
           <div class="doc-cta">${storeCta(ctx, 'guide-gov24-photo')}</div>
 
           <h2 id="check">5. 올리기 전 확인</h2>
@@ -80,7 +81,7 @@ export function render(ctx) {
             <li>배경에 무늬나 그림자가 없나요?</li>
             <li>보정으로 얼굴 모양이 실제와 달라지지 않았나요?</li>
           </ul>
-          <p class="meta-line">이 가이드는 정부24·행정안전부와 관계없는 Kumquat 팀이 작성했습니다. 사진 기준은 신청 화면과 담당 기관의 안내를 따르세요.</p>`,
+          <p class="meta-line">이 가이드는 정부24·행정안전부와 관계없는 Shrinkwrap 팀이 작성했습니다. 사진 기준은 신청 화면과 담당 기관의 안내를 따르세요.</p>`,
     }),
   };
 }
