@@ -1,4 +1,4 @@
-// Kumquat site: small progressive enhancements. Every page works without this file.
+// Shrinkwrap site: small progressive enhancements. Every page works without this file.
 (function () {
   'use strict';
   var root = document.documentElement;

@@ -8,7 +8,7 @@ export const priority = 0.5;
 
 const ko = (ctx) => docPage(ctx, {
   eyebrow: '개인정보 처리방침',
-  title: 'Kumquat은 개인정보를 수집하지 않습니다.',
+  title: 'Shrinkwrap은 개인정보를 수집하지 않습니다.',
   lede: '파일 변환, 압축, AI 처리는 모두 사용자의 Mac 안에서 이루어집니다. 이 문서는 그 사실과, 앱이 네트워크를 쓰는 두 가지 경우, 무료 사용자에게 보이는 광고를 설명합니다.',
   aside: `<h2>목차</h2><ol>
     <li><a href="#summary">요약</a></li><li><a href="#app">앱이 처리하는 정보</a></li><li><a href="#network">네트워크 사용</a></li><li><a href="#ads">광고</a></li>
@@ -19,8 +19,8 @@ const ko = (ctx) => docPage(ctx, {
 
           <h2 id="summary">요약</h2>
           <ul>
-            <li>Kumquat은 개인정보를 수집·저장·전송하지 않습니다. 회원가입, 계정, 로그인이 없습니다.</li>
-            <li>사용자가 다루는 파일과 그 내용은 Mac 밖으로 나가지 않습니다. Kumquat이 운영하는 서버는 없습니다.</li>
+            <li>Shrinkwrap은 개인정보를 수집·저장·전송하지 않습니다. 회원가입, 계정, 로그인이 없습니다.</li>
+            <li>사용자가 다루는 파일과 그 내용은 Mac 밖으로 나가지 않습니다. Shrinkwrap이 운영하는 서버는 없습니다.</li>
             <li>분석, 광고, 크래시 리포트 SDK 등 서드파티 추적 도구를 쓰지 않습니다.</li>
             <li>무료 사용자에게는 앱 안에 광고가 보이지만, 광고를 고르거나 보여 주는 데 사용자 정보를 쓰지 않고 추적하지 않습니다.</li>
             <li>App Store 개인정보 라벨은 “데이터 수집 안 함”으로 신고하는 것을 기준으로 합니다.</li>
@@ -33,10 +33,11 @@ const ko = (ctx) => docPage(ctx, {
             <tbody>
               <tr><th scope="row">사용자가 끌어 놓거나 선택한 파일</th><td>변환·압축·편집·AI 처리</td><td>결과 파일은 원본 옆(또는 설정에서 허용한 폴더)에 저장. 원본은 그대로 둠</td></tr>
               <tr><th scope="row">작업 기록과 통계(파일 이름, 작업 종류, 시각, 용량 변화)</th><td>기록·통계 창, 실행 취소</td><td>앱 컨테이너에만 저장. 앱 삭제 시 함께 삭제</td></tr>
-              <tr><th scope="row">커서 아래 앱의 번들 ID</th><td>목적지 인식(1.1 예정 기능. 예: 메일에 놓으면 첨부 규격 적용)</td><td>저장하지 않음. 창 제목이나 화면 내용은 읽지 않음</td></tr>
+              <tr><th scope="row">커서 아래 앱의 번들 ID</th><td>보낼 곳 자동 인식(1.1 예정 기능. 예: 메일에 놓으면 메일 첨부 한도 적용)</td><td>저장하지 않음. 창 제목이나 화면 내용은 읽지 않음</td></tr>
               <tr><th scope="row">브라우저 확장이 읽는 업로드 칸 정보(허용 형식, 용량 안내 문구, 현재 도메인)</th><td>업로드 칸에 맞춘 자동 변환(1.1 예정 기능)</td><td>앱으로만 전달하고 저장하지 않음. 페이지 내용은 수집하지 않음</td></tr>
               <tr><th scope="row">클립보드 내용(기능을 켠 경우)</th><td>복사한 이미지 자동 최적화, 변환해서 붙여넣기(1.1 예정 기능)</td><td>저장하지 않음</td></tr>
-              <tr><th scope="row">설정(레시피·사용자 프리셋은 1.1부터)</th><td>앱 동작</td><td>앱 컨테이너. 앱 삭제 시 함께 삭제</td></tr>
+              <tr><th scope="row">“새 메일에 첨부”나 공유로 보내는 결과 파일</th><td>사용자가 고른 앱(메일 등)으로 넘기기</td><td>Shrinkwrap은 보관하지 않음. 넘긴 뒤에는 그 앱의 처리 방식을 따름</td></tr>
+              <tr><th scope="row">설정(보낼 곳별 한도 포함. 레시피·사용자 프리셋은 1.1부터)</th><td>앱 동작</td><td>앱 컨테이너. 앱 삭제 시 함께 삭제</td></tr>
               <tr><th scope="row">무료 사용 횟수(처음 체험에 쓴 파일 수, 오늘 쓴 무료 변환 수)</th><td>무료 사용 범위 적용</td><td>이 기기의 Keychain과 사용자 본인 iCloud 계정의 키-값 저장소에만 기록. 개발자는 이 값을 볼 수 없음</td></tr>
             </tbody>
           </table></div>
@@ -49,18 +50,18 @@ const ko = (ctx) => docPage(ctx, {
           </ul>
 
           <h2 id="network">네트워크 사용</h2>
-          <p>Kumquat은 다음 두 가지 경우에만 인터넷에 연결합니다. 두 요청 모두 이 웹사이트의 정적 파일을 내려받기만 하며, 파일·식별자·사용 정보를 보내지 않습니다.</p>
+          <p>Shrinkwrap은 다음 두 가지 경우에만 인터넷에 연결합니다. 두 요청 모두 이 웹사이트의 정적 파일을 내려받기만 하며, 파일·식별자·사용 정보를 보내지 않습니다.</p>
           <ul>
             <li><strong>목적지 프리셋 갱신</strong>: 사이트별 허용 형식·용량 규칙 목록(서명된 JSON 파일)을 내려받습니다.</li>
             <li><strong>광고 목록 받기(무료 사용자)</strong>: 하루 한 번 정도 스폰서 광고 목록(JSON 파일)을 내려받습니다. 어떤 광고를 보여 줄지는 앱이 기기 안에서 정합니다.</li>
           </ul>
-          <p>인터넷 통신의 특성상 사이트를 호스팅하는 GitHub(GitHub Pages)가 IP 주소 등 접속 기록을 처리할 수 있습니다(<a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub 개인정보 처리방침</a>). Kumquat 개발자는 이 기록을 받지 않습니다.</p>
-          <p>설정에서 <strong>완전 오프라인 모드</strong>를 켜면 두 요청이 모두 멈추고, 앱에 포함된 프리셋과 Kumquat Pro 안내만 사용합니다.</p>
+          <p>인터넷 통신의 특성상 사이트를 호스팅하는 GitHub(GitHub Pages)가 IP 주소 등 접속 기록을 처리할 수 있습니다(<a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub 개인정보 처리방침</a>). Shrinkwrap 개발자는 이 기록을 받지 않습니다.</p>
+          <p>설정에서 <strong>완전 오프라인 모드</strong>를 켜면 두 요청이 모두 멈추고, 앱에 포함된 프리셋과 Shrinkwrap Pro 안내만 사용합니다.</p>
 
           <h2 id="ads">광고</h2>
           <ul>
             <li>무료 사용 중에는 앱 안에 광고가 표시됩니다. Pro 사용자에게는 표시되지 않습니다.</li>
-            <li>광고는 Kumquat Pro 안내이거나, 개발자가 직접 계약한 스폰서 광고입니다. 서드파티 광고 네트워크나 광고 SDK는 쓰지 않습니다.</li>
+            <li>광고는 Shrinkwrap Pro 안내이거나, 개발자가 직접 계약한 스폰서 광고입니다. 서드파티 광고 네트워크나 광고 SDK는 쓰지 않습니다.</li>
             <li>광고 노출·클릭 기록을 남기거나 보내지 않으며, 관심사·위치 등에 따른 맞춤 광고나 추적을 하지 않습니다.</li>
             <li>광고를 누르면 광고주의 웹사이트가 브라우저에서 열립니다. 그 사이트에서 처리되는 정보는 광고주의 개인정보 처리방침을 따릅니다.</li>
           </ul>
@@ -77,7 +78,7 @@ const ko = (ctx) => docPage(ctx, {
           </ul>
 
           <h2 id="legal">법정 고지 항목</h2>
-          <p>「개인정보 보호법」 제30조에 따라 공개해야 하는 항목을 정리합니다. Kumquat은 개인정보를 수집하지 않으므로 대부분의 항목이 해당하지 않습니다.</p>
+          <p>「개인정보 보호법」 제30조에 따라 공개해야 하는 항목을 정리합니다. Shrinkwrap은 개인정보를 수집하지 않으므로 대부분의 항목이 해당하지 않습니다.</p>
           <div class="table-scroll"><table>
             <tbody>
               <tr><th scope="row">처리 목적·항목</th><td>해당 없음(수집하지 않음)</td></tr>
@@ -104,7 +105,7 @@ const ko = (ctx) => docPage(ctx, {
 
 const en = (ctx) => docPage(ctx, {
   eyebrow: 'Privacy Policy',
-  title: 'Kumquat doesn’t collect your personal data.',
+  title: 'Shrinkwrap doesn’t collect your personal data.',
   lede: 'Converting, compressing and AI processing all happen on your Mac. This policy explains that, the two cases where the app uses the network, and the ads shown in the free version.',
   aside: `<h2>Contents</h2><ol>
     <li><a href="#summary">Summary</a></li><li><a href="#app">What the app processes</a></li><li><a href="#network">Network use</a></li><li><a href="#ads">Ads</a></li>
@@ -114,8 +115,8 @@ const en = (ctx) => docPage(ctx, {
 
           <h2 id="summary">Summary</h2>
           <ul>
-            <li>Kumquat does not collect, store or transmit personal data. There is no sign-up, account or login.</li>
-            <li>Your files and their contents never leave your Mac. Kumquat runs no servers.</li>
+            <li>Shrinkwrap does not collect, store or transmit personal data. There is no sign-up, account or login.</li>
+            <li>Your files and their contents never leave your Mac. Shrinkwrap runs no servers.</li>
             <li>No third-party tracking: no analytics, advertising or crash-reporting SDKs.</li>
             <li>The free version shows ads in the app, but no information about you is used to choose or show them, and nothing is tracked.</li>
             <li>The App Store privacy label is meant to be declared as “Data Not Collected.”</li>
@@ -128,10 +129,11 @@ const en = (ctx) => docPage(ctx, {
             <tbody>
               <tr><th scope="row">Files you drop or choose</th><td>Converting, compressing, editing, AI</td><td>Results are saved next to the original (or in a folder you allowed in Settings). Originals are left as they are</td></tr>
               <tr><th scope="row">History and stats (file name, action, time, size change)</th><td>History and Stats window, undo</td><td>Stored only in the app container. Removed when you delete the app</td></tr>
-              <tr><th scope="row">Bundle ID of the app under the cursor</th><td>Destination awareness (coming in 1.1; e.g. attachment specs when dropping on Mail)</td><td>Not stored. Window titles and screen contents are never read</td></tr>
+              <tr><th scope="row">Bundle ID of the app under the cursor</th><td>Automatic destination detection (coming in 1.1; e.g. the email attachment limit when dropping on Mail)</td><td>Not stored. Window titles and screen contents are never read</td></tr>
               <tr><th scope="row">Upload field details read by the browser extension (accepted types, size hint text, current domain)</th><td>Converting to fit the upload field (coming in 1.1)</td><td>Passed to the app only and not stored. Page contents are not collected</td></tr>
               <tr><th scope="row">Clipboard contents (if you turn it on)</th><td>Optimizing copied images, convert-and-paste (coming in 1.1)</td><td>Not stored</td></tr>
-              <tr><th scope="row">Settings (recipes and custom presets from 1.1)</th><td>App behavior</td><td>App container. Removed when you delete the app</td></tr>
+              <tr><th scope="row">Result files you send with “New Mail message” or Share</th><td>Handing them to the app you choose (such as Mail)</td><td>Not kept by Shrinkwrap. After hand-off, that app’s own practices apply</td></tr>
+              <tr><th scope="row">Settings (including per-destination limits; recipes and custom presets from 1.1)</th><td>App behavior</td><td>App container. Removed when you delete the app</td></tr>
               <tr><th scope="row">Free usage counts (files used in the welcome trial, free conversions used today)</th><td>Applying the free allowance</td><td>Stored only in this Mac’s Keychain and your own iCloud key-value storage. The developer cannot see these values</td></tr>
             </tbody>
           </table></div>
@@ -144,18 +146,18 @@ const en = (ctx) => docPage(ctx, {
           </ul>
 
           <h2 id="network">Network use</h2>
-          <p>Kumquat connects to the internet in two cases only. Both requests just download static files from this website; neither sends your files, any identifier or usage data.</p>
+          <p>Shrinkwrap connects to the internet in two cases only. Both requests just download static files from this website; neither sends your files, any identifier or usage data.</p>
           <ul>
             <li><strong>Refreshing destination presets</strong>: downloads the list of per-site format and size rules (a signed JSON file).</li>
             <li><strong>Fetching the ad list (free version)</strong>: about once a day, downloads the list of sponsor ads (a JSON file). The app picks which ad to show on your Mac.</li>
           </ul>
-          <p>Like any web request, GitHub, which hosts this site on GitHub Pages, may process your IP address and access logs (<a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub Privacy Statement</a>). The Kumquat developer does not receive these logs.</p>
-          <p>Turn on <strong>full offline mode</strong> in Settings to stop both requests; the app then uses only its bundled presets and its own Kumquat Pro notes.</p>
+          <p>Like any web request, GitHub, which hosts this site on GitHub Pages, may process your IP address and access logs (<a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub Privacy Statement</a>). The Shrinkwrap developer does not receive these logs.</p>
+          <p>Turn on <strong>full offline mode</strong> in Settings to stop both requests; the app then uses only its bundled presets and its own Shrinkwrap Pro notes.</p>
 
           <h2 id="ads">Ads</h2>
           <ul>
             <li>The free version shows ads inside the app. Pro users see no ads.</li>
-            <li>Ads are either a note about Kumquat Pro or a sponsor the developer works with directly. No third-party ad network or ad SDK is used.</li>
+            <li>Ads are either a note about Shrinkwrap Pro or a sponsor the developer works with directly. No third-party ad network or ad SDK is used.</li>
             <li>Ad views and taps are not recorded or sent anywhere, and there is no personalization by interests or location and no tracking.</li>
             <li>Tapping an ad opens the advertiser’s website in your browser. Information handled there is governed by the advertiser’s privacy policy.</li>
           </ul>
@@ -181,6 +183,6 @@ const en = (ctx) => docPage(ctx, {
 
 export function render(ctx) {
   return ctx.lang === 'ko'
-    ? { title: '개인정보 처리방침', description: 'Kumquat은 개인정보를 수집하지 않습니다. 파일 처리는 모두 Mac 안에서 이루어지며, 네트워크는 프리셋과 광고 목록을 받을 때만 씁니다. 광고에 추적·맞춤 기술을 쓰지 않습니다.', body: ko(ctx) }
-    : { title: 'Privacy Policy', description: 'Kumquat collects no personal data. All file processing happens on your Mac; the network is used only to download presets and the ad list, and ads are never personalized or tracked.', body: en(ctx) };
+    ? { title: '개인정보 처리방침', description: 'Shrinkwrap은 개인정보를 수집하지 않습니다. 파일 처리는 모두 Mac 안에서 이루어지며, 네트워크는 프리셋과 광고 목록을 받을 때만 씁니다. 광고에 추적·맞춤 기술을 쓰지 않습니다.', body: ko(ctx) }
+    : { title: 'Privacy Policy', description: 'Shrinkwrap collects no personal data. All file processing happens on your Mac; the network is used only to download presets and the ad list, and ads are never personalized or tracked.', body: en(ctx) };
 }

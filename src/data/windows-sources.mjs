@@ -1,4 +1,4 @@
-// Kumquat for Windows open source release (GitHub release windows-sources-1 on this repo, 2026-10-26).
+// Windows app open source release (GitHub release windows-sources-1 on this repo, 2026-10-26).
 // Generated from the release SHA256SUMS.txt. When the Windows app ships new FFmpeg/libvips versions, publish
 // windows-sources-2 and add it here; never remove an old release while that app version may still be in use.
 export const windowsSources = [

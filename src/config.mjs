@@ -1,19 +1,20 @@
 // Site-wide settings. Everything marked TODO must be confirmed before launch.
 
 export const site = {
-  name: 'Kumquat',
+  // Shown name since the 2026-10-27 rebrand (docs/REBRAND.md in the app repo). Repo, bundle ID and site URL keep the old name.
+  name: 'Shrinkwrap',
   // TODO: replace with the custom domain if one is bought. Used only for canonical, hreflang, OG and sitemap URLs.
   url: 'https://bbdyno.github.io/Kumquat-Page/',
-  // Support and ad-report address, shared with the app (Kumquat commit 3af987b) and the user's other app sites.
+  // Support and ad-report address, shared with the app (app repo commit 3af987b) and the user's other app sites.
   email: 'della.kimko@gmail.com',
   // Operator shown on the privacy and terms pages (confirmed by the user 2026-10-22).
   operator: { name: 'bbdyno', addressKo: '서울특별시 구로구', addressEn: 'Guro-gu, Seoul, Republic of Korea' },
-  // Date shown on facts that can go stale (pricing, comparison table).
+  // Date shown on facts that can go stale (pricing, destination defaults).
   factsDate: '2026-10-20',
   appVersion: '출시 전',
 };
 
-// App Store links (Kumquat 1.0.0 submitted for review 2026-10-20; links open once the app is public).
+// App Store links (1.0.0 submitted 2026-10-20, rejected under 4.3(a), being resubmitted as Shrinkwrap; links open once the app is public).
 // One `ct` value per page lets App Store Connect attribute installs to the page that sent them.
 // TODO: add `pt` (provider token, App Store Connect › Analytics › campaign link generator) once confirmed;
 // a wrong `pt` can break the link, so it is left out until then.

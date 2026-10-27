@@ -2,7 +2,7 @@
   "name": "kumquat-page",
   "private": true,
   "type": "module",
-  "description": "Marketing, legal, support and guide pages for Kumquat (working title), a macOS file converter.",
+  "description": "Marketing, legal, support and guide pages for Shrinkwrap, a macOS app that fits files to where they are going.",
   "engines": {
     "node": ">=20"
   },
