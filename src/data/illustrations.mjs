@@ -1,17 +1,18 @@
-// Sample document for the redaction before/after slider. Fake data only.
+// Decorative art. Colors come from CSS classes (see `.parcel` in site.css) so it follows light and dark mode;
+// scripts/og.mjs and scripts/readme-art.mjs inline their own fills.
 
-export function maskIllustration() {
-  const docLines = (masked) => {
-    const rows = [
-      ['성명 / Name', '홍길동', false],
-      ['주민등록번호 / ID No.', masked ? '██████-███████' : '900101-1234567', true],
-      ['연락처 / Phone', masked ? '010-████-████' : '010-1234-5678', true],
-      ['이메일 / Email', masked ? '█████@█████.com' : 'gildong@example.com', true],
-      ['주소 / Address', '서울시 예시구 예시로 12', false],
-    ];
-    return `<svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice"><rect width="800" height="500" fill="#e9e4dc"/><rect x="110" y="40" width="580" height="440" rx="10" fill="#fffdf9" stroke="#d8d0c4"/><text x="150" y="96" font-family="-apple-system, sans-serif" font-size="22" font-weight="700" fill="#1b1712">신청서 / Application (sample)</text><rect x="150" y="114" width="500" height="2" fill="#f2661b"/>${rows
-      .map(([k, v, s], i) => `<text x="150" y="${178 + i * 62}" font-family="-apple-system, sans-serif" font-size="14" fill="#857b6f">${k}</text><text x="410" y="${178 + i * 62}" font-family="ui-monospace, Menlo, monospace" font-size="18" fill="#1b1712">${v}</text>${masked && s ? `<rect x="402" y="${157 + i * 62}" width="${v.length * 10.9 + 16}" height="30" rx="5" fill="none" stroke="#f2661b" stroke-width="1.5"/>` : ''}<rect x="150" y="${198 + i * 62}" width="500" height="1" fill="#eee7dd"/>`)
-      .join('')}</svg>`;
-  };
-  return [docLines(false), docLines(true)];
+// A parcel tightly wrapped in clear film with one blue band: the brand mark drawn large for the hero arch.
+export function parcelArt() {
+  return `<svg class="parcel" viewBox="0 0 400 440" aria-hidden="true" focusable="false">
+  <ellipse class="floor" cx="200" cy="384" rx="156" ry="16"/>
+  <rect class="box" x="70" y="120" width="260" height="248" rx="42"/>
+  <path class="box-side" d="M70 312h260v14a42 42 0 0 1-42 42H112a42 42 0 0 1-42-42z"/>
+  <rect class="band" x="168" y="120" width="64" height="248"/>
+  <rect class="band-edge" x="226" y="120" width="6" height="248"/>
+  <rect class="film" x="63" y="113" width="274" height="262" rx="48"/>
+  <path class="pinch" d="M80 158c5-15 15-27 29-34M320 158c-5-15-15-27-29-34M80 330c5 15 15 27 29 34M320 330c-5 15-15 27-29 34M150 115c6 5 12 7 18 7M250 115c-6 5-12 7-18 7"/>
+  <path class="shine" stroke-width="11" opacity="0.5" d="M98 176c9-25 29-42 56-49"/>
+  <path class="shine" stroke-width="4" opacity="0.7" d="M100 214c2-9 5-17 10-24"/>
+  <path class="shine" stroke-width="5" opacity="0.45" d="M304 308c-6 17-19 30-36 37"/>
+</svg>`;
 }
