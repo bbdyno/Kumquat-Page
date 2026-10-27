@@ -13,23 +13,24 @@ reddit.com은 WebFetch와 크롬 확장 모두에서 안전 제한으로 막혀 
 
 ## 제목
 
-> [Developer] Kumquat – tap Shift while dragging a file to convert or shrink it (macOS 12+, free tier)
+> [Developer] Shrinkwrap – pick where a file is going (email, chat, a form) and it shrinks to fit (macOS 12+, free tier)
 
 (플레어가 개발자 표시를 대신하면 앞의 `[Developer]`는 빼기)
 
 ## 본문
 
-> Hi r/macapps, I'm the developer of Kumquat, a file converter for Mac. Disclosure up front: it's my app and it has paid tiers, details below.
+> Hi r/macapps, I'm the developer of Shrinkwrap, a Mac app that fits files to where they're going. Disclosure up front: it's my app and it has paid tiers, details below.
 >
 > **What it does**
-> Start dragging any file and tap Shift. A wheel opens at your cursor with only the actions that fit that file: convert to JPG, combine into PDF, shrink under 2 MB and so on. Drop on one and the result lands next to the original. Originals are never overwritten, and there's undo.
+> Shrinkwrap starts by asking "Where is it going?" Pick email attachment, messenger, small upload, online forms, photo upload, web images or a custom limit, drop your files, and it makes new copies that fit. Originals are never overwritten.
 >
 > **In 1.0**
-> - Images (HEIC, JPG, PNG, WebP, TIFF, BMP; GIF and AVIF in Pro), audio (MP3, AAC/M4A, WAV, AIFF), video (MP4, MOV), PDF split/merge/to images, DOCX/RTF/TXT/HTML to PDF, SRT↔VTT
-> - Target size: under 2 MB or 1 MB, 10 or 25 MB for video (Pro)
-> - Crop and rotate, copy as PNG or JPG, image quality setting, QR reading
-> - Main window with History (search, compare, undo, show in Finder) and Stats (space saved, 14-day chart)
-> - Finder Services, Shortcuts, menu bar drop
+> - Default limits you can change: email 20 MB in total, messenger 25 MB per file, small upload 10 MB, online forms 5 MB, photo upload 500 KB (JPG), web images 500 KB (WebP)
+> - Email: the 20 MB total is split across your files by size, so the whole message fits
+> - Quality guard: lowers resolution before text gets crushed, and shows similarity to the original
+> - PDFs for email and online forms keep their text; only the images inside are compressed
+> - Send results to a new Mail message, the share sheet or Finder; files that already fit are left alone
+> - Menu bar drop, Finder Quick Actions, Shortcuts, plain format conversion, history and stats
 > - Intel and Apple silicon, macOS 12 Monterey or later
 >
 > **Privacy**
@@ -37,13 +38,13 @@ reddit.com은 WebFetch와 크롬 확장 모두에서 안전 제한으로 막혀 
 >
 > **Pricing**
 > - Free: your first 10 files get every feature, Pro included. Then 5 basic conversions a day, with ads (a Pro note or a direct sponsor; no ad network, no tracking)
-> - Pro: $11.99/year with a 7-day free trial, or $24.99 lifetime ($19.99 launch price). No limits, no ads
+> - Pro (destinations, no limits, no ads): $11.99/year with a 7-day free trial, or $24.99 lifetime ($19.99 launch price)
 >
-> **Coming next:** recipes and folder watching (1.1), on-device AI such as background removal and OCR (1.2).
+> **Coming next:** recipes, folder watching and automatic destination detection.
 >
 > Mac App Store: `<APP STORE URL>`
 >
-> Happy to answer anything, and I'd really like to know which conversions you do most.
+> Happy to answer anything, and I'd really like to know which limits you run into most.
 
 ## 게시 전 확인
 

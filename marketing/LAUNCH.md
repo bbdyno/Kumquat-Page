@@ -1,8 +1,8 @@
-# Kumquat 출시 마케팅 체크리스트 (비용 0원)
+# Shrinkwrap 출시 마케팅 체크리스트 (비용 0원)
 
 출시 4주 전부터 출시 4주 후까지 할 일입니다. 돈이 드는 항목은 넣지 않았습니다. 이 폴더(`marketing/`)는 사이트 빌드에 들어가지 않습니다(`build.mjs`는 `src/pages/`와 `public/`만 읽습니다).
 
-- 작성일: 2026-10-20
+- 작성일: 2026-10-20 · Shrinkwrap 전환 반영: 2026-10-27(앱 저장소 `docs/REBRAND.md`)
 - 출시일(D): **미정**. 날짜가 정해지면 각 항목 옆 `(____-__-__)`에 적어 넣으세요.
 - 게시, 계정 만들기, 메일 보내기는 아직 아무것도 하지 않았습니다. 모두 직접 하셔야 합니다.
 
@@ -13,11 +13,18 @@
    - Pro 평생 $24.99(출시가 $19.99), Pro 연간 $11.99(7일 무료 체험), 광고 없음. 미국 App Store 기준 USD 계획가
    - macOS 12 이상, Intel·Apple 실리콘, 한국어·영어
    - 서버·계정·분석 SDK 없음. 개인정보 라벨은 사이트에 “데이터 수집 안 함” **목표**로 적혀 있으니, 실제 라벨이 App Store에 뜬 걸 확인한 뒤에만 “Data Not Collected”라고 단정해서 쓰세요.
-2. **1.0에 들어간 기능만 “지금 된다”고 쓰기.** 사이트 변경 기록(`src/pages/14-changelog.mjs`) 기준으로 1.0은 Shift-드래그 휠, 메뉴 막대 드롭, Finder 서비스, 단축어, 기록·통계 메인 창(날짜별 기록·썸네일·검색·비교·실행 취소·Finder에서 보기, 합계·절약 용량·14일 차트·자주 쓰는 작업), 이미지·영상·오디오·문서 변환, 목표 용량(2 MB·1 MB, 영상 10·25 MB), 자르기·회전, PNG·JPG로 복사, 이미지 품질 설정(작게·표준·높게), QR 읽기, 처음 10개 체험과 하루 5개 무료입니다(2026-10-20 사이트 커밋 d141e6c 기준).
-   - **1.0에 없는 것**(예정이라고만 쓰기): 레시피·폴더 감시, 목적지 인식·사이트 프리셋, 온디바이스 AI(배경 제거·업스케일·마스킹), HWP, 노치 선반, 클립보드 자동 최적화, 원본 보관함, **공유 확장**, **품질 가드**(OCR 가독성 확인). Finder 연동은 “빠른 동작”이 아니라 **Finder 서비스**입니다.
-   - 초안은 모두 이 기준으로 고쳤습니다. 출시 빌드가 또 달라지면 초안부터 고치세요.
-3. **추천·투표 부탁 금지.** Product Hunt, Hacker News, AlternativeTo 모두 금지합니다. “한번 써 보고 의견 주세요”까지만.
+2. **1.0에 들어간 기능만 “지금 된다”고 쓰기.** 1.0의 중심은 “어디로 보내나요?”입니다.
+   - 보낼 곳 7곳(기본 한도, 설정에서 변경 가능): 메일 첨부(전체 합계 20 MB를 파일 크기 비율로 나눔), 메신저(파일당 25 MB), 작은 업로드(10 MB), 서류 제출(5 MB, HEIC→JPG, 문서→PDF), 사진 첨부(500 KB, JPG), 웹·블로그 이미지(500 KB, WebP), 직접 지정(2 MB)
+   - 품질 가드(글자가 뭉개지기 전에 해상도부터 줄이고 원본과의 유사도 표시), 글자를 살리는 PDF 압축(메일 첨부·서류 제출), 이미 한도 안인 파일은 “이미 맞음”
+   - 결과를 새 메일에 첨부·공유·Finder에서 보기, 메뉴 막대 드롭, Finder 빠른 동작, 단축어(모두 보낼 곳부터 보여 줌)
+   - 다른 형식으로(이미지·영상·오디오·문서 변환), 자르기·회전, PNG·JPG로 복사, QR 읽기, 기록·통계 창, 처음 10개 체험과 하루 5개 무료
+   - **1.0에 없는 것**(예정이라고만 쓰기): 레시피·폴더 감시, 보낼 곳 자동 인식(앱 감지·Safari 확장·국내 사이트 프리셋), 온디바이스 AI(배경 제거·업스케일·마스킹), HWP, 노치 선반, 클립보드 자동 최적화, 원본 보관함
+   - 기본 한도는 각 서비스의 공식 한도가 아니라 앱의 기본값이라고 분명히 쓰기
+   - 출시 빌드가 달라지면 초안부터 고치세요.
+3. **추천·투표 부탁 금지.** Product Hunt, Hacker News 모두 금지합니다. “한번 써 보고 의견 주세요”까지만.
 4. **채널 규칙은 게시 직전에 다시 확인.** 아래 초안마다 확인한 규칙과 날짜(2026-10-20)를 적어 두었습니다. 규칙은 바뀝니다.
+5. **다른 앱과 비교하지 않기.** 다른 앱 이름, “대안”, “○○보다” 같은 비교 문구를 스토어·사이트·게시글·댓글 어디에도 쓰지 않습니다. 대안 목록형 사이트에 등록하거나 다른 앱의 대안으로 제안하지 않습니다. 비교 질문을 받으면 Shrinkwrap이 하는 일만 답합니다.
+6. **보조 기능은 내세우지 않기.** 설정에서 켜는 보조 기능(끌다가 키를 눌러 여는 메뉴)은 소개·스크린샷·영상에 넣지 않습니다. 첫 화면은 항상 “어디로 보내나요?”입니다.
 
 ## 1. 파일 목록
 
@@ -28,7 +35,6 @@
 | `posts/reddit-macapps.en.md` | Reddit r/macapps |
 | `posts/geeknews-show-gn.ko.md` | GeekNews Show GN |
 | `posts/disquiet.ko.md` | 디스콰이엇 프로덕트 등록과 런칭 포스트 |
-| `posts/alternativeto.en.md` | AlternativeTo 등록 문구(Tangerine 대안) |
 | `pitch/reviewer-email.md` | 리뷰어·유튜버 피치 메일(한/영) |
 
 ## 2. 일정
@@ -37,7 +43,7 @@
 
 - [ ] **App Store Connect 피처링 추천(Featuring Nominations)** 제출. 메뉴: App Store Connect › 앱 › Featuring Nominations. Apple은 출시 **최소 2주 전**, 넓게 검토받으려면 **최대 3개월 전**을 권합니다(developer.apple.com/app-store/getting-featured, 2026-10-20 확인). 그러니 출시일이 정해지는 즉시 내는 게 가장 좋고, 늦어도 D-14는 넘기지 마세요.
   - 유형: 새 앱 출시(App Launch)
-  - 강조할 점(사실만): Mac 전용 네이티브 유틸리티, 모든 처리가 Mac 안에서, Intel Mac과 macOS 12까지 지원, 한국어·영어 현지화, Finder 서비스·단축어 1.0부터, 기록·통계 메인 창
+  - 강조할 점(사실만): 보낼 곳에 맞춰 줄이는 Mac 전용 네이티브 유틸리티, 메일 첨부 합계 맞춤, 글자를 살리는 PDF 압축, 모든 처리가 Mac 안에서, Intel Mac과 macOS 12까지 지원, 한국어·영어 현지화, Finder 빠른 동작·단축어 1.0부터
   - 한국 스토어프런트용으로 한국어 설명도 함께. 피처링은 스토어프런트별로 큐레이션됩니다.
   - 선정되면 프로모션 아트워크 요청 메일이 올 수 있으니 App Store 프로모션 아트워크 가이드라인을 미리 읽어 두기
 - [ ] **ASO 필드 확정** (아래 3장). 스크린샷은 실제 1.0 빌드 화면으로 찍기. 사이트의 UI 예시를 스크린샷으로 쓰면 안 됩니다.
@@ -89,7 +95,6 @@
 ### D+1 ~ D+3 (____-__-__)
 
 - [ ] Hacker News Show HN(`posts/show-hn.en.md`). 미국 평일 오전(한국 시간 밤 10시~자정)
-- [ ] AlternativeTo 등록(`posts/alternativeto.en.md`). 출시 전 앱은 거절되므로 반드시 출시 후. 검토 대기열이 길다고 FAQ에 적혀 있습니다
 - [ ] r/macapps(`posts/reddit-macapps.en.md`). 게시 전에 사이드바 규칙 직접 확인, 필요하면 모드메일로 먼저 문의
 - [ ] App Store 리뷰에 답글(좋은 리뷰·나쁜 리뷰 모두)
 
@@ -106,22 +111,22 @@
 ### D+28 (____-__-__) 정리
 
 - [ ] 오퍼 코드 사용 현황 확인(App Store Connect)
-- [ ] 1.1 업데이트 계획이 잡히면 **업데이트 피처링 추천**을 다시 제출(목적지 인식은 “의미 있는 업데이트”에 해당)
+- [ ] 1.1 업데이트 계획이 잡히면 **업데이트 피처링 추천**을 다시 제출(보낼 곳 자동 인식은 “의미 있는 업데이트”에 해당)
 - [ ] GeekNews는 같은 프로젝트를 일정 기간 안에 다시 올릴 수 없습니다. 1.1은 큰 변화가 생기고 그 기간이 지난 뒤에만 다시 Show GN
 - [ ] r/macapps 개발자 글은 30일에 한 번이라는 설명이 있으니(제3자 요약, 확인 필요) 다음 글은 D+30 이후
 
 ## 3. ASO 필드
 
-App Store Connect 한도: 이름 30자, 부제 30자, 키워드 100자(쉼표 구분, 공백 불필요). 이름·부제에 있는 단어는 키워드에 다시 넣지 않습니다. 다른 앱 이름(Tangerine 등)과 서비스 상표(홈택스·정부24 등)는 키워드에 넣지 마세요(App Store 심사 지침 2.3.7).
+App Store Connect 한도: 이름 30자, 부제 30자, 키워드 100자(쉼표 구분, 공백 불필요). 이름·부제에 있는 단어는 키워드에 다시 넣지 않습니다. 다른 앱 이름과 서비스 상표(홈택스·정부24·카카오톡 등)는 키워드에 넣지 마세요(App Store 심사 지침 2.3.7).
 
 | 필드 | 한국어 | 영어 |
 | --- | --- | --- |
-| 이름 | Kumquat: File Converter (23자) | Kumquat: File Converter (23자) |
-| 부제 | 올릴 곳에 맞춰 파일 변환·압축 (17자) | Convert files to fit uploads (28자) |
-| 키워드 | `HEIC,JPG,PNG,PDF,WebP,MP3,MP4,용량줄이기,사진변환,이미지,동영상,PDF압축,리사이즈,일괄변환,자막,오프라인` (72자) | `heic,jpg,png,pdf,webp,compress,resize,image,photo,video,mp3,mp4,optimizer,shrink,batch,offline,size` (99자) |
+| 이름 | Shrinkwrap: 보낼 곳에 맞게 줄이기 (24자) | Shrinkwrap: Fit to Any Limit (28자) |
+| 부제 | 메일·메신저·서류 제출 용량 맞춤 (18자) | Email, chat and form uploads (28자) |
+| 키워드 | `용량줄이기,첨부,PDF압축,사진압축,동영상압축,이미지,HEIC,JPG,WebP,MP4,리사이즈,일괄,변환,오프라인` (63자) | `compress,shrink,resize,pdf,heic,jpg,webp,mp4,attachment,size,photo,video,optimizer,batch,offline` (96자) |
 
-- 한국어 키워드는 72자지만 UTF-8로는 134바이트입니다. App Store Connect 입력란이 글자 수로 세는지 확인하고, 넘치면 `오프라인`, `자막`부터 빼세요.
-- HWP·한글·증명사진·배경 제거는 해당 기능이 나오는 버전(1.2·1.3)에 키워드에 추가합니다. 지금 넣으면 없는 기능으로 검색 유입이 생깁니다.
+- 한국어 키워드는 UTF-8로 바이트가 더 많습니다. App Store Connect 입력란이 글자 수로 세는지 확인하고, 넘치면 `오프라인`, `일괄`부터 빼세요.
+- HWP·한글·증명사진·배경 제거는 해당 기능이 나오는 버전에 키워드에 추가합니다. 지금 넣으면 없는 기능으로 검색 유입이 생깁니다.
 
 **프로모션 텍스트**(170자, 심사 없이 수시 변경 가능)
 
@@ -133,17 +138,17 @@ App Store Connect 한도: 이름 30자, 부제 30자, 키워드 100자(쉼표 �
 
 | # | 화면 | 한국어 | 영어 |
 | --- | --- | --- | --- |
-| 1 | Shift-드래그 휠 | 끌다가 Shift 한 번, 바로 변환 | Tap Shift while dragging. Done. |
-| 2 | 목표 용량 | 2 MB·1 MB 이하로 한 번에 (Pro) | Under 2 MB or 1 MB in one drop (Pro) |
-| 3 | Finder 서비스·단축어 | Finder 우클릭과 단축어에서도 | Right from Finder Services and Shortcuts |
-| 4 | 비교·실행 취소 | 원본은 그대로, 언제든 되돌리기 | Originals stay. Undo anytime. |
-| 5 | 무료 범위 안내 화면 | 처음 10개는 모든 기능 무료 | Your first 10 files: every feature free |
-| 6 | 기록·통계 창 | 오늘 줄인 용량까지 한눈에 | Every conversion and the space saved, at a glance |
+| 1 | “어디로 보내나요?” 메인 창 | 보낼 곳을 고르면, 크기는 알아서 | Pick where it’s going. It fits. |
+| 2 | 메일 첨부 합계 맞춤 | 메일 첨부는 합계 20 MB에 맞춰 (Pro) | Email attachments fit as a set (Pro) |
+| 3 | 품질 가드·유사도 | 글자는 또렷하게, 유사도까지 (Pro) | Text stays sharp. See the similarity. (Pro) |
+| 4 | 서류 제출 PDF | 글자를 살리는 PDF 압축 (Pro) | PDF compression that keeps text (Pro) |
+| 5 | 새 메일에 첨부·공유 | 끝나면 바로 메일로 | Straight into a new Mail message |
+| 6 | 메뉴 막대·Finder 빠른 동작·단축어 | Mac 어디서든 보낼 곳부터 | Destinations first, anywhere on your Mac |
 | 7 | 설정·개인정보 | 업로드 없음, 계정 없음, 모두 Mac 안에서 | No uploads, no account, all on your Mac |
 
 ## 4. 리뷰어용 코드
 
-- Kumquat은 **무료 다운로드 + 인앱 구입**이라 앱 프로모 코드는 의미가 없습니다. 리뷰어에게 줄 것은 Pro입니다.
+- Shrinkwrap은 **무료 다운로드 + 인앱 구입**이라 앱 프로모 코드는 의미가 없습니다. 리뷰어에게 줄 것은 Pro입니다.
 - 인앱 구입 프로모 코드는 2026-03-26부터 새로 만들 수 없습니다. 대신 **오퍼 코드**(Offer Codes)를 씁니다.
 - 만들기: 인앱 구입(Pro 평생) › Offer Codes › **Free Offer**, **1회용 코드(one-time-use)**. 배치당 500개부터라 한 번에 500개가 생기지만 쓰는 것만 나눠 주면 됩니다. 만료는 최대 6개월
 - 조건: 앱이 Ready for Distribution, 인앱 구입이 Approved여야 생성 가능 → **출시일 전에는 못 만듭니다.** 출시 전 리뷰는 TestFlight로
@@ -155,8 +160,8 @@ App Store Connect 한도: 이름 30자, 부제 30자, 키워드 100자(쉼표 �
 
 무료 사용자에게 광고를 띄우는 슬롯(`public/ads/v1.json`, 지금은 `ads: []`)을 내 다른 앱 홍보에 쓰면 돈이 들지 않습니다. 다만 바로 넣기 전에 걸리는 게 세 가지 있습니다.
 
-1. **사이트 문구와 안 맞음.** FAQ·개인정보 처리방침·약관은 광고를 “Kumquat Pro 안내 또는 직접 계약한 스폰서”라고 설명합니다. 같은 개발자의 다른 앱은 둘 다 아닙니다. 먼저 이 세 곳에 “개발자의 다른 앱 소개”를 추가하세요(`00-home.mjs` FAQ, `10-privacy.mjs`, `11-terms.mjs`).
-2. **OS 버전 필터가 없음.** Kumquat은 macOS 12부터인데 Branchlane은 macOS 14, Remora는 macOS 15부터입니다(각 프로젝트의 `Project.swift`). 지금 JSON 형식에는 OS 조건이 없어서 macOS 12·13 사용자에게 설치 못 하는 앱이 뜹니다. 앱에서 `minMacOS` 같은 필드를 읽어 거르도록 한 뒤에 넣으세요. 식별자를 보내지 않는 원칙은 그대로 지켜집니다(판단은 Mac 안에서).
+1. **사이트 문구와 안 맞음.** FAQ·개인정보 처리방침·약관은 광고를 “Shrinkwrap Pro 안내 또는 직접 계약한 스폰서”라고 설명합니다. 같은 개발자의 다른 앱은 둘 다 아닙니다. 먼저 이 세 곳에 “개발자의 다른 앱 소개”를 추가하세요(`00-home.mjs` FAQ, `10-privacy.mjs`, `11-terms.mjs`).
+2. **OS 버전 필터가 없음.** Shrinkwrap은 macOS 12부터인데 Branchlane은 macOS 14, Remora는 macOS 15부터입니다(각 프로젝트의 `Project.swift`). 지금 JSON 형식에는 OS 조건이 없어서 macOS 12·13 사용자에게 설치 못 하는 앱이 뜹니다. 앱에서 `minMacOS` 같은 필드를 읽어 거르도록 한 뒤에 넣으세요. 식별자를 보내지 않는 원칙은 그대로 지켜집니다(판단은 Mac 안에서).
 3. **Remora는 아직 출시 전**(Remora-Page 기준). 출시 후에 추가합니다.
 
 넣을 때의 항목 예시(README의 형식 그대로 + 제안 필드 `minMacOS`):
@@ -204,6 +209,6 @@ App Store Connect 한도: 이름 30자, 부제 30자, 키워드 100자(쉼표 �
 ```
 
 - 문구는 각 앱 사이트의 제목·설명에서 가져왔습니다(Branchlane-Page, Remora-Page). Remora 한국어 항목은 Remora-Page `ko/`의 설명으로 같은 방식으로 만들면 됩니다.
-- App Store 링크에 `pt`(제공자 토큰)와 `ct=kumquat-ad`를 붙이면 App Store Connect에서 Kumquat 광고로 들어온 설치를 따로 볼 수 있습니다. 링크에 사용자 정보는 들어가지 않습니다.
-- 비율 제안: Kumquat Pro 안내와 번갈아 노출. 같은 앱 광고가 매번 뜨면 피로도가 높습니다.
-- 반대 방향도 가능: Remora(macOS)와 Branchlane에 Kumquat 소개를 넣을 수 있습니다. 각 앱의 광고 정책 문서와 개인정보 문구를 먼저 확인하세요.
+- App Store 링크에 `pt`(제공자 토큰)와 `ct=shrinkwrap-ad`를 붙이면 App Store Connect에서 Shrinkwrap 광고로 들어온 설치를 따로 볼 수 있습니다. 링크에 사용자 정보는 들어가지 않습니다.
+- 비율 제안: Shrinkwrap Pro 안내와 번갈아 노출. 같은 앱 광고가 매번 뜨면 피로도가 높습니다.
+- 반대 방향도 가능: Remora(macOS)와 Branchlane에 Shrinkwrap 소개를 넣을 수 있습니다. 각 앱의 광고 정책 문서와 개인정보 문구를 먼저 확인하세요.

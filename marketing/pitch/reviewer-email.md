@@ -14,20 +14,20 @@ Mac 앱 리뷰어(블로그·뉴스레터·매체)와 한국 Mac 유튜버용입
 
 ## 한국어
 
-**제목**: Mac 파일 변환 앱 Kumquat — 리뷰용 Pro 코드 드립니다
+**제목**: Mac 앱 Shrinkwrap — 보낼 곳에 맞춰 줄이는 앱, 리뷰용 Pro 코드 드립니다
 
 > {이름}님, 안녕하세요.
 >
-> {최근에 보신 글·영상 한 줄: 예) ○○ 영상에서 HEIC 변환 얘기하신 걸 보고 연락드립니다.}
+> {최근에 보신 글·영상 한 줄: 예) ○○ 영상에서 메일 첨부 용량 얘기하신 걸 보고 연락드립니다.}
 >
-> Mac용 파일 변환 앱 Kumquat을 혼자 만들고 있는 개발자입니다. {출시 전: 이달 ○일 Mac App Store 출시 예정이라 TestFlight로 먼저 써 보실 수 있게 준비했습니다. / 출시 후: ○일 Mac App Store에 출시했습니다.}
+> Mac 앱 Shrinkwrap을 혼자 만들고 있는 개발자입니다. {출시 전: 이달 ○일 Mac App Store 출시 예정이라 TestFlight로 먼저 써 보실 수 있게 준비했습니다. / 출시 후: ○일 Mac App Store에 출시했습니다.}
 >
-> 파일을 끌다가 Shift를 누르면 그 파일로 할 수 있는 작업이 커서 둘레에 휠로 펼쳐지고, 놓으면 결과가 원본 옆에 저장됩니다. 1.0에는 2 MB·1 MB(영상 10·25 MB) 목표 용량, 자르기·회전, PNG·JPG로 복사, QR 읽기, 변환 기록과 통계를 보는 메인 창, Finder 서비스·단축어가 들어 있습니다.
+> Shrinkwrap은 “어디로 보내나요?”부터 묻습니다. 메일 첨부, 메신저, 서류 제출, 사진 첨부 같은 보낼 곳을 고르고 파일을 놓으면 그곳의 한도에 맞는 새 파일을 만듭니다. 메일 첨부는 전체 20 MB를 파일 크기 비율로 나눠 맞추고, PDF는 글자를 살린 채 이미지만 압축하며, 결과는 새 메일에 바로 첨부할 수 있습니다.
 >
 > - 모든 처리는 Mac 안에서. 서버·계정·분석 SDK 없음
 > - macOS 12 이상, Intel·Apple 실리콘, 한국어·영어
 > - 무료: 처음 파일 10개는 모든 기능, 이후 기본 변환 하루 5개(광고 포함)
-> - Pro: 연 $11.99(7일 무료 체험) 또는 평생 $24.99(출시가 $19.99)
+> - Pro(보낼 곳 맞춤): 연 $11.99(7일 무료 체험) 또는 평생 $24.99(출시가 $19.99)
 >
 > {출시 전: TestFlight 초대 링크 — <링크> / 출시 후: Pro 평생 이용권 코드 — <코드>, 사용 링크 — <리딤 URL>}
 >
@@ -40,26 +40,26 @@ Mac 앱 리뷰어(블로그·뉴스레터·매체)와 한국 Mac 유튜버용입
 
 **한국 유튜버용 덧붙임 한 문단** (영상 소재가 될 만한 점, 1.0 사실만)
 
-> 영상으로 보여 주기 좋은 장면은 Finder에서 파일을 끌다가 Shift로 휠을 여는 부분, 그리고 스캔 PDF를 “2MB 이하”로 줄이는 전후 비교입니다. 홈택스·정부24 같은 국내 사이트 맞춤 프리셋은 1.1에 들어갈 예정이라 이번 빌드에는 없습니다.
+> 영상으로 보여 주기 좋은 장면은 사진 여러 장과 스캔 PDF를 “메일 첨부”에 놓아 합계 20 MB 안으로 맞춘 뒤 새 메일에 바로 붙는 부분, 그리고 “서류 제출”로 스캔 PDF를 줄여도 글자가 또렷한 전후 비교입니다. 기본 한도는 앱의 기본값이고, 홈택스·정부24 같은 국내 사이트를 자동으로 알아보는 기능은 이후 버전에 들어갈 예정이라 이번 빌드에는 없습니다.
 
 ---
 
 ## English
 
-**Subject**: Kumquat, a Mac file converter — Pro code for review
+**Subject**: Shrinkwrap, a Mac app that fits files to where they’re going — Pro code for review
 
 > Hi {name},
 >
-> {One line about their recent piece, e.g. "I enjoyed your roundup of Finder extensions last month."}
+> {One line about their recent piece, e.g. "I enjoyed your roundup of Mac utilities last month."}
 >
-> I'm the solo developer of Kumquat, a file converter for Mac. {Before launch: It comes out on the Mac App Store on {date}, and I've set up a TestFlight build so you can try it first. / After launch: It launched on the Mac App Store on {date}.}
+> I'm the solo developer of Shrinkwrap, a Mac app that fits files to where they're going. {Before launch: It comes out on the Mac App Store on {date}, and I've set up a TestFlight build so you can try it first. / After launch: It launched on the Mac App Store on {date}.}
 >
-> Start dragging a file and tap Shift: a wheel opens at the cursor with only the actions that fit that file, and the result is saved next to the original. Version 1.0 also does target size (under 2 MB or 1 MB, 10 or 25 MB for video), crop and rotate, copy as PNG or JPG and QR reading, with a main window for history and stats, plus Finder Services and Shortcuts.
+> Shrinkwrap starts by asking "Where is it going?" Pick an email attachment, a messenger, an online form or a photo upload, drop your files, and it makes new copies that fit that limit. Email attachments share a 20 MB total split across the files by size, PDFs keep their text while only the images inside are compressed, and results go straight into a new Mail message.
 >
 > - Everything runs on your Mac. No server, no account, no analytics SDK
 > - macOS 12 or later, Intel and Apple silicon, English and Korean
 > - Free: every feature for the first 10 files, then 5 basic conversions a day, with ads
-> - Pro: $11.99/year with a 7-day free trial, or $24.99 lifetime ($19.99 at launch)
+> - Pro (destinations): $11.99/year with a 7-day free trial, or $24.99 lifetime ($19.99 at launch)
 >
 > {Before launch: TestFlight invite — <link> / After launch: Pro Lifetime code — <code>, redeem at <redeem URL>}
 >
